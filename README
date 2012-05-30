@@ -1,0 +1,13 @@
+This program takes a video input and tracks markers of the hand using blob detection and correlation. 
+It assigns the detected blobs into two hand objects, and stores these in a gms file.
+
+In order to run this program the following libraries are required:
+libcv
+libcvaux
+libhighgui
+libcxcore
+
+cvblobslib_v6p1
+libgms
+
+The makefile then needs to be ammended to reflect the location of these last two libraries.
