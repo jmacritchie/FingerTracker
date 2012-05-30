@@ -1,0 +1,364 @@
+\hypertarget{namespaceGmswriter}{
+\section{Gmswriter Namespace Reference}
+\label{namespaceGmswriter}\index{Gmswriter@{Gmswriter}}
+}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{namespaceGmswriter_ae29ac381dbacafec38fd0a06eff6e1ba}{
+typedef std::vector$<$ CvPoint $>$ \hyperlink{namespaceGmswriter_ae29ac381dbacafec38fd0a06eff6e1ba}{PointVec}}
+\label{namespaceGmswriter_ae29ac381dbacafec38fd0a06eff6e1ba}
+
+\begin{DoxyCompactList}\small\item\em A vector containing CvPoint structures (an x,y coordinate) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+gms\_\-uct\_\-struct\_\-t $\ast$ \hyperlink{namespaceGmswriter_acd8da6b7bf958abc172af5f4fc0d0f53}{create} (const char $\ast$name, int nb\_\-units, int nb\_\-channels, gms\_\-channel\_\-type\_\-t info\_\-type, gms\_\-dimension\_\-t dimension)
+\begin{DoxyCompactList}\small\item\em create new gmsfile \end{DoxyCompactList}\item 
+gms\_\-storage\_\-info\_\-t \hyperlink{namespaceGmswriter_a1115e4f56ea4bb83f7f3371184b54851}{storenew} (gms\_\-uct\_\-struct\_\-t $\ast$uct, gms\_\-file\_\-t $\ast$gmsfile, const char $\ast$scenename, double $\ast$info\_\-xy, double frame\_\-rate, int nb\_\-frames, gms\_\-data\_\-type\_\-t data\_\-type)
+\begin{DoxyCompactList}\small\item\em Function to write data in array {\itshape info\_\-xy\/} into {\itshape gmsfile\/}. \end{DoxyCompactList}\item 
+gms\_\-storage\_\-info\_\-t \hyperlink{namespaceGmswriter_a049a4fab3326776271491f92a4759141}{storeold} (int startframe, gms\_\-uct\_\-struct\_\-t $\ast$uct, gms\_\-file\_\-t $\ast$gmsfile, const char $\ast$scenename, double $\ast$info\_\-xy, double frame\_\-rate, int nb\_\-frames, gms\_\-data\_\-type\_\-t data\_\-type)
+\begin{DoxyCompactList}\small\item\em Function to write data in array {\itshape info\_\-xy\/} into {\itshape gmsfile\/} from frame number {\itshape startframe\/}. \end{DoxyCompactList}\item 
+\hypertarget{namespaceGmswriter_a09a159d437b4f57c05b8d1cbbdc89901}{
+void {\bfseries writedata} (vector$<$ \hyperlink{namespaceGmswriter_ae29ac381dbacafec38fd0a06eff6e1ba}{PointVec} $>$ points, double $\ast$info\_\-xy, int startframe\_\-num)}
+\label{namespaceGmswriter_a09a159d437b4f57c05b8d1cbbdc89901}
+
+\item 
+\hypertarget{namespaceGmswriter_adfc674e2401c4752813e827c7c8cd10f}{
+void {\bfseries writedata} (vector$<$ \hyperlink{namespaceGmswriter_ae29ac381dbacafec38fd0a06eff6e1ba}{PointVec} $>$ points, double $\ast$info\_\-xy, vector$<$ int $>$ startframe\_\-nums)}
+\label{namespaceGmswriter_adfc674e2401c4752813e827c7c8cd10f}
+
+\item 
+void \hyperlink{namespaceGmswriter_a8737f53952c153d6e0b35c974cc99389}{writedata} (vector$<$ \hyperlink{namespaceGmswriter_ae29ac381dbacafec38fd0a06eff6e1ba}{PointVec} $>$ left, vector$<$ \hyperlink{namespaceGmswriter_ae29ac381dbacafec38fd0a06eff6e1ba}{PointVec} $>$ right, double $\ast$info\_\-xy, int startframe\_\-num)
+\begin{DoxyCompactList}\small\item\em Function rearranges data from Left hand object {\itshape left\/} and Right hand object {\itshape right\/} into an array of doubles. \end{DoxyCompactList}\item 
+void \hyperlink{namespaceGmswriter_af9ffd77859f980d091f948ce7b2b2e21}{readdata} (gms\_\-uct\_\-struct\_\-t $\ast$uct, gms\_\-file\_\-t $\ast$gms\_\-file, const gms\_\-storage\_\-info\_\-t storage\_\-info)
+\begin{DoxyCompactList}\small\item\em Function to read data from gmsfile. Prints information such as frame rate and structure to the screen. \end{DoxyCompactList}\item 
+\hypertarget{namespaceGmswriter_a564c249213d33942a85ff7f32a62cbc0}{
+void \hyperlink{namespaceGmswriter_a564c249213d33942a85ff7f32a62cbc0}{read\_\-all\_\-frames} (char $\ast$file\_\-name)}
+\label{namespaceGmswriter_a564c249213d33942a85ff7f32a62cbc0}
+
+\begin{DoxyCompactList}\small\item\em Function to read particular data from the file {\itshape filename\/}. \end{DoxyCompactList}\item 
+void \hyperlink{namespaceGmswriter_abbf023742c3a026bb42ff2b68f5c2b7b}{read\_\-frames} (int start, int end, char $\ast$file\_\-name)
+\begin{DoxyCompactList}\small\item\em Function to read particular data from frames {\itshape start\/} to {\itshape end\/}. \end{DoxyCompactList}\item 
+void \hyperlink{namespaceGmswriter_ae4ec14e80fdad25145c25e03e3b349d8}{read\_\-velocity} (int start, int end, char $\ast$file\_\-name)
+\begin{DoxyCompactList}\small\item\em Function to read particular data from frames {\itshape start\/} to {\itshape end\/}. \end{DoxyCompactList}\item 
+void \hyperlink{namespaceGmswriter_afe6922decd16e426c40bbfcedb3577dd}{read\_\-movements} (int start, int end, char $\ast$file\_\-name)
+\begin{DoxyCompactList}\small\item\em Function to read particular data from frames {\itshape start\/} to {\itshape end\/}. \end{DoxyCompactList}\item 
+void \hyperlink{namespaceGmswriter_aeaedba186d745f9fe60b3c6c506c5c83}{read\_\-curves} (int start, int end, char $\ast$file\_\-name)
+\begin{DoxyCompactList}\small\item\em Function to read particular data from frames {\itshape start\/} to {\itshape end\/}. \end{DoxyCompactList}\item 
+double \hyperlink{namespaceGmswriter_a70dd5f1fd34ef721305c179cba2a1512}{calc\_\-vel} (CvPoint point\_\-one, CvPoint point\_\-two, double frametime)
+\begin{DoxyCompactList}\small\item\em Function to calculate velocity of particular point. \end{DoxyCompactList}\item 
+double \hyperlink{namespaceGmswriter_a15d6b1b21ea4ed5da9a580b09e17a5b1}{calc\_\-dist} (CvPoint point\_\-one, CvPoint point\_\-two)
+\begin{DoxyCompactList}\small\item\em Function to calculate distance between two points. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Functions to create new gmsfiles and data structures, and to fill these with data, also for reading data files. 
+
+\subsection{Function Documentation}
+\hypertarget{namespaceGmswriter_a15d6b1b21ea4ed5da9a580b09e17a5b1}{
+\index{Gmswriter@{Gmswriter}!calc\_\-dist@{calc\_\-dist}}
+\index{calc\_\-dist@{calc\_\-dist}!Gmswriter@{Gmswriter}}
+\subsubsection[{calc\_\-dist}]{\setlength{\rightskip}{0pt plus 5cm}double Gmswriter::calc\_\-dist (
+\begin{DoxyParamCaption}
+\item[{CvPoint}]{point\_\-one, }
+\item[{CvPoint}]{point\_\-two}
+\end{DoxyParamCaption}
+)}}
+\label{namespaceGmswriter_a15d6b1b21ea4ed5da9a580b09e17a5b1}
+
+
+Function to calculate distance between two points. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em point\_\-one} & Point coordinates of first point \\
+\hline
+\mbox{\tt in}  & {\em point\_\-two} & Point coordinates of second point \\
+\hline
+\end{DoxyParams}
+\hypertarget{namespaceGmswriter_a70dd5f1fd34ef721305c179cba2a1512}{
+\index{Gmswriter@{Gmswriter}!calc\_\-vel@{calc\_\-vel}}
+\index{calc\_\-vel@{calc\_\-vel}!Gmswriter@{Gmswriter}}
+\subsubsection[{calc\_\-vel}]{\setlength{\rightskip}{0pt plus 5cm}double Gmswriter::calc\_\-vel (
+\begin{DoxyParamCaption}
+\item[{CvPoint}]{point\_\-one, }
+\item[{CvPoint}]{point\_\-two, }
+\item[{double}]{frametime}
+\end{DoxyParamCaption}
+)}}
+\label{namespaceGmswriter_a70dd5f1fd34ef721305c179cba2a1512}
+
+
+Function to calculate velocity of particular point. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em point\_\-one} & Point coordinate from first frame \\
+\hline
+\mbox{\tt in}  & {\em point\_\-two} & Point coordinate from second frame \\
+\hline
+\mbox{\tt in}  & {\em frametime} & Time between frames \\
+\hline
+\end{DoxyParams}
+\hypertarget{namespaceGmswriter_acd8da6b7bf958abc172af5f4fc0d0f53}{
+\index{Gmswriter@{Gmswriter}!create@{create}}
+\index{create@{create}!Gmswriter@{Gmswriter}}
+\subsubsection[{create}]{\setlength{\rightskip}{0pt plus 5cm}gms\_\-uct\_\-struct\_\-t $\ast$ Gmswriter::create (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name, }
+\item[{int}]{nb\_\-units, }
+\item[{int}]{nb\_\-channels, }
+\item[{gms\_\-channel\_\-type\_\-t}]{info\_\-type, }
+\item[{gms\_\-dimension\_\-t}]{dimension}
+\end{DoxyParamCaption}
+)}}
+\label{namespaceGmswriter_acd8da6b7bf958abc172af5f4fc0d0f53}
+
+
+create new gmsfile 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em name} & filename \\
+\hline
+\mbox{\tt in}  & {\em nb\_\-units} & number of units \\
+\hline
+\mbox{\tt in}  & {\em nb\_\-channels} & number of channels \\
+\hline
+\mbox{\tt in}  & {\em info\_\-type} & what type of data will be stored, options are GMS\_\-POSITION or GMS\_\-FORCE \\
+\hline
+\mbox{\tt in}  & {\em dimension} & dimensions of data to be stored, options are GMS\_\-X, GMS\_\-Y, GMS\_\-Z, GMS\_\-XY, GMS\_\-XZ, GMS\_\-YZ, GMS\_\-XYZ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+gms structure describing how data is encoded in the file For more information on gmsfiles and their structures, see \href{http://acroe.imag.fr/gms/}{\tt http://acroe.imag.fr/gms/} 
+\end{DoxyReturn}
+\hypertarget{namespaceGmswriter_aeaedba186d745f9fe60b3c6c506c5c83}{
+\index{Gmswriter@{Gmswriter}!read\_\-curves@{read\_\-curves}}
+\index{read\_\-curves@{read\_\-curves}!Gmswriter@{Gmswriter}}
+\subsubsection[{read\_\-curves}]{\setlength{\rightskip}{0pt plus 5cm}void Gmswriter::read\_\-curves (
+\begin{DoxyParamCaption}
+\item[{int}]{start, }
+\item[{int}]{end, }
+\item[{char $\ast$}]{file\_\-name}
+\end{DoxyParamCaption}
+)}}
+\label{namespaceGmswriter_aeaedba186d745f9fe60b3c6c506c5c83}
+
+
+Function to read particular data from frames {\itshape start\/} to {\itshape end\/}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em start} & Number of start frame \\
+\hline
+\mbox{\tt in}  & {\em end} & Number of end frame \\
+\hline
+\mbox{\tt in}  & {\em file\_\-name} & Name of file containing data \\
+\hline
+\end{DoxyParams}
+\hypertarget{namespaceGmswriter_abbf023742c3a026bb42ff2b68f5c2b7b}{
+\index{Gmswriter@{Gmswriter}!read\_\-frames@{read\_\-frames}}
+\index{read\_\-frames@{read\_\-frames}!Gmswriter@{Gmswriter}}
+\subsubsection[{read\_\-frames}]{\setlength{\rightskip}{0pt plus 5cm}void Gmswriter::read\_\-frames (
+\begin{DoxyParamCaption}
+\item[{int}]{start, }
+\item[{int}]{end, }
+\item[{char $\ast$}]{file\_\-name}
+\end{DoxyParamCaption}
+)}}
+\label{namespaceGmswriter_abbf023742c3a026bb42ff2b68f5c2b7b}
+
+
+Function to read particular data from frames {\itshape start\/} to {\itshape end\/}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em start} & Number of start frame \\
+\hline
+\mbox{\tt in}  & {\em end} & Number of end frame \\
+\hline
+\mbox{\tt in}  & {\em file\_\-name} & Name of file containing data \\
+\hline
+\end{DoxyParams}
+\hypertarget{namespaceGmswriter_afe6922decd16e426c40bbfcedb3577dd}{
+\index{Gmswriter@{Gmswriter}!read\_\-movements@{read\_\-movements}}
+\index{read\_\-movements@{read\_\-movements}!Gmswriter@{Gmswriter}}
+\subsubsection[{read\_\-movements}]{\setlength{\rightskip}{0pt plus 5cm}void Gmswriter::read\_\-movements (
+\begin{DoxyParamCaption}
+\item[{int}]{start, }
+\item[{int}]{end, }
+\item[{char $\ast$}]{file\_\-name}
+\end{DoxyParamCaption}
+)}}
+\label{namespaceGmswriter_afe6922decd16e426c40bbfcedb3577dd}
+
+
+Function to read particular data from frames {\itshape start\/} to {\itshape end\/}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em start} & Number of start frame \\
+\hline
+\mbox{\tt in}  & {\em end} & Number of end frame \\
+\hline
+\mbox{\tt in}  & {\em file\_\-name} & Name of file containing data \\
+\hline
+\end{DoxyParams}
+\hypertarget{namespaceGmswriter_ae4ec14e80fdad25145c25e03e3b349d8}{
+\index{Gmswriter@{Gmswriter}!read\_\-velocity@{read\_\-velocity}}
+\index{read\_\-velocity@{read\_\-velocity}!Gmswriter@{Gmswriter}}
+\subsubsection[{read\_\-velocity}]{\setlength{\rightskip}{0pt plus 5cm}void Gmswriter::read\_\-velocity (
+\begin{DoxyParamCaption}
+\item[{int}]{start, }
+\item[{int}]{end, }
+\item[{char $\ast$}]{file\_\-name}
+\end{DoxyParamCaption}
+)}}
+\label{namespaceGmswriter_ae4ec14e80fdad25145c25e03e3b349d8}
+
+
+Function to read particular data from frames {\itshape start\/} to {\itshape end\/}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em start} & Number of start frame \\
+\hline
+\mbox{\tt in}  & {\em end} & Number of end frame \\
+\hline
+\mbox{\tt in}  & {\em file\_\-name} & Name of file containing data \\
+\hline
+\end{DoxyParams}
+\hypertarget{namespaceGmswriter_af9ffd77859f980d091f948ce7b2b2e21}{
+\index{Gmswriter@{Gmswriter}!readdata@{readdata}}
+\index{readdata@{readdata}!Gmswriter@{Gmswriter}}
+\subsubsection[{readdata}]{\setlength{\rightskip}{0pt plus 5cm}void Gmswriter::readdata (
+\begin{DoxyParamCaption}
+\item[{gms\_\-uct\_\-struct\_\-t $\ast$}]{uct, }
+\item[{gms\_\-file\_\-t $\ast$}]{gms\_\-file, }
+\item[{const gms\_\-storage\_\-info\_\-t}]{storage\_\-info}
+\end{DoxyParamCaption}
+)}}
+\label{namespaceGmswriter_af9ffd77859f980d091f948ce7b2b2e21}
+
+
+Function to read data from gmsfile. Prints information such as frame rate and structure to the screen. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em uct} & Structure of gms file \\
+\hline
+\mbox{\tt in}  & {\em gms\_\-file} & Name of the gms file to be read \\
+\hline
+\mbox{\tt in}  & {\em storage\_\-info} & structure created in GMSwriter::store \\
+\hline
+\end{DoxyParams}
+\hypertarget{namespaceGmswriter_a1115e4f56ea4bb83f7f3371184b54851}{
+\index{Gmswriter@{Gmswriter}!storenew@{storenew}}
+\index{storenew@{storenew}!Gmswriter@{Gmswriter}}
+\subsubsection[{storenew}]{\setlength{\rightskip}{0pt plus 5cm}gms\_\-storage\_\-info\_\-t Gmswriter::storenew (
+\begin{DoxyParamCaption}
+\item[{gms\_\-uct\_\-struct\_\-t $\ast$}]{uct, }
+\item[{gms\_\-file\_\-t $\ast$}]{gmsfile, }
+\item[{const char $\ast$}]{scenename, }
+\item[{double $\ast$}]{info\_\-xy, }
+\item[{double}]{frame\_\-rate, }
+\item[{int}]{nb\_\-frames, }
+\item[{gms\_\-data\_\-type\_\-t}]{data\_\-type}
+\end{DoxyParamCaption}
+)}}
+\label{namespaceGmswriter_a1115e4f56ea4bb83f7f3371184b54851}
+
+
+Function to write data in array {\itshape info\_\-xy\/} into {\itshape gmsfile\/}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em uct} & gms structure created from the \char`\"{}create\char`\"{} function \\
+\hline
+\mbox{\tt in,out}  & {\em gmsfile} & Name of gmsfile \\
+\hline
+\mbox{\tt in}  & {\em scenename} & Name of this particular \char`\"{}scene\char`\"{} \\
+\hline
+\mbox{\tt in}  & {\em info\_\-xy} & Array of doubles containing data ordered in correct way \\
+\hline
+\mbox{\tt in}  & {\em frame\_\-rate} & Frame rate of the images \\
+\hline
+\mbox{\tt in}  & {\em nb\_\-frames} & Number of frames that has been recorded \\
+\hline
+\mbox{\tt in}  & {\em data\_\-type} & Encoding of the tracks, options are GMS\_\-FLOAT32, GMS\_\-FLOAT64 or GMS\_\-INT32 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+gms structure describing how the data is stored 
+\end{DoxyReturn}
+\hypertarget{namespaceGmswriter_a049a4fab3326776271491f92a4759141}{
+\index{Gmswriter@{Gmswriter}!storeold@{storeold}}
+\index{storeold@{storeold}!Gmswriter@{Gmswriter}}
+\subsubsection[{storeold}]{\setlength{\rightskip}{0pt plus 5cm}gms\_\-storage\_\-info\_\-t Gmswriter::storeold (
+\begin{DoxyParamCaption}
+\item[{int}]{startframe, }
+\item[{gms\_\-uct\_\-struct\_\-t $\ast$}]{uct, }
+\item[{gms\_\-file\_\-t $\ast$}]{gmsfile, }
+\item[{const char $\ast$}]{scenename, }
+\item[{double $\ast$}]{info\_\-xy, }
+\item[{double}]{frame\_\-rate, }
+\item[{int}]{nb\_\-frames, }
+\item[{gms\_\-data\_\-type\_\-t}]{data\_\-type}
+\end{DoxyParamCaption}
+)}}
+\label{namespaceGmswriter_a049a4fab3326776271491f92a4759141}
+
+
+Function to write data in array {\itshape info\_\-xy\/} into {\itshape gmsfile\/} from frame number {\itshape startframe\/}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em startframe} & number of starting frame \\
+\hline
+\mbox{\tt in}  & {\em uct} & gms structure created from the \char`\"{}create\char`\"{} function \\
+\hline
+\mbox{\tt in,out}  & {\em gmsfile} & Name of gmsfile \\
+\hline
+\mbox{\tt in}  & {\em scenename} & Name of this particular \char`\"{}scene\char`\"{} \\
+\hline
+\mbox{\tt in}  & {\em info\_\-xy} & Array containing data ordered in correct way \\
+\hline
+\mbox{\tt in}  & {\em frame\_\-rate} & Frame rate of the images \\
+\hline
+\mbox{\tt in}  & {\em nb\_\-frames} & Number of frames that has been recorded \\
+\hline
+\mbox{\tt in}  & {\em data\_\-type} & Encoding of the tracks, options are GMS\_\-FLOAT32, GMS\_\-FLOAT64 or GMS\_\-INT32 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+structure that describes how the frames are encoded in the file 
+\end{DoxyReturn}
+\hypertarget{namespaceGmswriter_a8737f53952c153d6e0b35c974cc99389}{
+\index{Gmswriter@{Gmswriter}!writedata@{writedata}}
+\index{writedata@{writedata}!Gmswriter@{Gmswriter}}
+\subsubsection[{writedata}]{\setlength{\rightskip}{0pt plus 5cm}void Gmswriter::writedata (
+\begin{DoxyParamCaption}
+\item[{vector$<$ PointVec $>$}]{left, }
+\item[{vector$<$ PointVec $>$}]{right, }
+\item[{double $\ast$}]{info\_\-xy, }
+\item[{int}]{startframe\_\-num}
+\end{DoxyParamCaption}
+)}}
+\label{namespaceGmswriter_a8737f53952c153d6e0b35c974cc99389}
+
+
+Function rearranges data from Left hand object {\itshape left\/} and Right hand object {\itshape right\/} into an array of doubles. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em left} & Vector of CVpoints from left hand object \\
+\hline
+\mbox{\tt in}  & {\em right} & Vector of CVpoints from right hand object \\
+\hline
+\mbox{\tt out}  & {\em info\_\-xy} & array of doubles where data will be arranged \\
+\hline
+\mbox{\tt in}  & {\em startframe\_\-num} & number of frame the data starts from \\
+\hline
+\end{DoxyParams}

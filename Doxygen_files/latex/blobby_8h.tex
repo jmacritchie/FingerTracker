@@ -1,0 +1,56 @@
+\hypertarget{blobby_8h}{
+\section{blobby.h File Reference}
+\label{blobby_8h}\index{blobby.h@{blobby.h}}
+}
+
+
+Documentation for \hyperlink{blobby_8h}{blobby.h}.  
+
+
+{\ttfamily \#include $<$iostream$>$}\par
+{\ttfamily \#include $<$fstream$>$}\par
+{\ttfamily \#include $<$stdlib.h$>$}\par
+{\ttfamily \#include $<$stdio.h$>$}\par
+{\ttfamily \#include $<$stdarg.h$>$}\par
+{\ttfamily \#include $<$ctype.h$>$}\par
+{\ttfamily \#include $<$cv.h$>$}\par
+{\ttfamily \#include $<$highgui.h$>$}\par
+{\ttfamily \#include $<$cxcore.h$>$}\par
+{\ttfamily \#include $<$math.h$>$}\par
+{\ttfamily \#include $<$vector$>$}\par
+{\ttfamily \#include $<$Blob.h$>$}\par
+{\ttfamily \#include $<$BlobResult.h$>$}\par
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \hyperlink{namespaceBlobby}{Blobby}
+
+
+\begin{DoxyCompactList}\small\item\em contains functions concerning the detection of blobs from images \end{DoxyCompactList}
+
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{blobby_8h_a7017012a1393f7249d0e03d6ac9f1c7b}{
+typedef std::vector$<$ CvPoint $>$ \hyperlink{blobby_8h_a7017012a1393f7249d0e03d6ac9f1c7b}{CoorVec}}
+\label{blobby_8h_a7017012a1393f7249d0e03d6ac9f1c7b}
+
+\begin{DoxyCompactList}\small\item\em A vector containing CvPoint structures (an x,y coordinate) \end{DoxyCompactList}\item 
+\hypertarget{blobby_8h_acfcd13bdeb017ed9d7f9529a9b77b328}{
+typedef std::vector$<$ CvPoint $>$::iterator \hyperlink{blobby_8h_acfcd13bdeb017ed9d7f9529a9b77b328}{CoorVecIt}}
+\label{blobby_8h_acfcd13bdeb017ed9d7f9529a9b77b328}
+
+\begin{DoxyCompactList}\small\item\em An iterator to point towards the CoorVec vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{namespaceBlobby_a6b0a3fc6359a4eab65507fad4011d0bd}{
+\hyperlink{blobby_8h_a7017012a1393f7249d0e03d6ac9f1c7b}{CoorVec} {\bfseries Blobby::detect} (IplImage $\ast$img, \hyperlink{blobby_8h_a7017012a1393f7249d0e03d6ac9f1c7b}{CoorVec} hands, int \&numblobs)}
+\label{namespaceBlobby_a6b0a3fc6359a4eab65507fad4011d0bd}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Documentation for \hyperlink{blobby_8h}{blobby.h}. 

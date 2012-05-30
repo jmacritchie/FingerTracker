@@ -1,0 +1,391 @@
+\hypertarget{gmswriter__fixed_8h}{
+\section{gmswriter\_\-fixed.h File Reference}
+\label{gmswriter__fixed_8h}\index{gmswriter\_\-fixed.h@{gmswriter\_\-fixed.h}}
+}
+
+
+Documentation for \hyperlink{gmswriter__fixed_8h}{gmswriter\_\-fixed.h}.  
+
+
+{\ttfamily \#include $<$iostream$>$}\par
+{\ttfamily \#include $<$stdlib.h$>$}\par
+{\ttfamily \#include $<$stdio.h$>$}\par
+{\ttfamily \#include $<$stdarg.h$>$}\par
+{\ttfamily \#include $<$ctype.h$>$}\par
+{\ttfamily \#include $<$cv.h$>$}\par
+{\ttfamily \#include $<$highgui.h$>$}\par
+{\ttfamily \#include $<$vector$>$}\par
+{\ttfamily \#include $<$math.h$>$}\par
+{\ttfamily \#include $<$string.h$>$}\par
+{\ttfamily \#include $<$assert.h$>$}\par
+{\ttfamily \#include $<$fstream$>$}\par
+{\ttfamily \#include $<$sstream$>$}\par
+{\ttfamily \#include \char`\"{}gms.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}fullhand.h\char`\"{}}\par
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classGnuStream}{GnuStream}
+\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \hyperlink{namespaceGmswriter}{Gmswriter}
+\end{DoxyCompactItemize}
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{gmswriter__fixed_8h_a534e86395d68d85cddba7427cfb0b6fd}{
+\#define {\bfseries LHWRIST\_\-L\_\-x}~0}
+\label{gmswriter__fixed_8h_a534e86395d68d85cddba7427cfb0b6fd}
+
+\item 
+\hypertarget{gmswriter__fixed_8h_ae7df01c40bd1e657402c696d21c66735}{
+\#define {\bfseries LHWRIST\_\-L\_\-y}~1}
+\label{gmswriter__fixed_8h_ae7df01c40bd1e657402c696d21c66735}
+
+\item 
+\hypertarget{gmswriter__fixed_8h_a3910424985d14eee52a29ed6f22224e8}{
+\#define {\bfseries LHWRIST\_\-R\_\-x}~2}
+\label{gmswriter__fixed_8h_a3910424985d14eee52a29ed6f22224e8}
+
+\item 
+\hypertarget{gmswriter__fixed_8h_a0a146176c3d4c6517c2c95ad11591553}{
+\#define {\bfseries LHWRIST\_\-R\_\-y}~3}
+\label{gmswriter__fixed_8h_a0a146176c3d4c6517c2c95ad11591553}
+
+\item 
+\hypertarget{gmswriter__fixed_8h_a014a39dc4e9376d64fd6d231491cb3f3}{
+\#define {\bfseries LHTHUMB\_\-M\_\-x}~4}
+\label{gmswriter__fixed_8h_a014a39dc4e9376d64fd6d231491cb3f3}
+
+\item 
+\hypertarget{gmswriter__fixed_8h_acdb8405d0d3e34f64358c03bd52ef44e}{
+\#define {\bfseries LHTHUMB\_\-M\_\-y}~5}
+\label{gmswriter__fixed_8h_acdb8405d0d3e34f64358c03bd52ef44e}
+
+\item 
+\hypertarget{gmswriter__fixed_8h_aff0a6632ed0724f10b03494f09208e18}{
+\#define {\bfseries LHFST\_\-M\_\-x}~6}
+\label{gmswriter__fixed_8h_aff0a6632ed0724f10b03494f09208e18}
+
+\item 
+\hypertarget{gmswriter__fixed_8h_a78a61b01a7ffd5cf32d82c3657728bd7}{
+\#define {\bfseries LHFST\_\-M\_\-y}~7}
+\label{gmswriter__fixed_8h_a78a61b01a7ffd5cf32d82c3657728bd7}
+
+\item 
+\hypertarget{gmswriter__fixed_8h_aed337994dcd7adc677351267f7e9ec81}{
+\#define {\bfseries LHSCND\_\-M\_\-x}~8}
+\label{gmswriter__fixed_8h_aed337994dcd7adc677351267f7e9ec81}
+
+\item 
+\hypertarget{gmswriter__fixed_8h_a48f8bdafacdbd0f9bac3a036ab9ce642}{
+\#define {\bfseries LHSCND\_\-M\_\-y}~9}
+\label{gmswriter__fixed_8h_a48f8bdafacdbd0f9bac3a036ab9ce642}
+
+\item 
+\hypertarget{gmswriter__fixed_8h_a9ce366834cf7a35c768c5c790abf04e0}{
+\#define {\bfseries LHTHRD\_\-M\_\-x}~10}
+\label{gmswriter__fixed_8h_a9ce366834cf7a35c768c5c790abf04e0}
+
+\item 
+\hypertarget{gmswriter__fixed_8h_a4abcff0c15c76cbd487077ebc82276b2}{
+\#define {\bfseries LHTHRD\_\-M\_\-y}~11}
+\label{gmswriter__fixed_8h_a4abcff0c15c76cbd487077ebc82276b2}
+
+\item 
+\hypertarget{gmswriter__fixed_8h_a1fe3b254f99b1ce82395cd0c644cba6c}{
+\#define {\bfseries LHPNK\_\-M\_\-x}~12}
+\label{gmswriter__fixed_8h_a1fe3b254f99b1ce82395cd0c644cba6c}
+
+\item 
+\hypertarget{gmswriter__fixed_8h_a38745c90389f4c2c3d9ab282853afe27}{
+\#define {\bfseries LHPNK\_\-M\_\-y}~13}
+\label{gmswriter__fixed_8h_a38745c90389f4c2c3d9ab282853afe27}
+
+\item 
+\hypertarget{gmswriter__fixed_8h_a466866f7b18c3afccd7150c8f74496cd}{
+\#define {\bfseries LHTHUMB\_\-P\_\-x}~14}
+\label{gmswriter__fixed_8h_a466866f7b18c3afccd7150c8f74496cd}
+
+\item 
+\hypertarget{gmswriter__fixed_8h_a761fbd8740af15b5322db00afe006764}{
+\#define {\bfseries LHTHUMB\_\-P\_\-y}~15}
+\label{gmswriter__fixed_8h_a761fbd8740af15b5322db00afe006764}
+
+\item 
+\hypertarget{gmswriter__fixed_8h_a9ddabc2b2e29564fc5b4fd9a77868cec}{
+\#define {\bfseries LHFST\_\-P\_\-x}~16}
+\label{gmswriter__fixed_8h_a9ddabc2b2e29564fc5b4fd9a77868cec}
+
+\item 
+\hypertarget{gmswriter__fixed_8h_ae653fe6f9a67e02a373b1db7588c8de0}{
+\#define {\bfseries LHFST\_\-P\_\-y}~17}
+\label{gmswriter__fixed_8h_ae653fe6f9a67e02a373b1db7588c8de0}
+
+\item 
+\hypertarget{gmswriter__fixed_8h_a1222c7ea1f309e53ba17eb19de318f22}{
+\#define {\bfseries LHSCND\_\-P\_\-x}~18}
+\label{gmswriter__fixed_8h_a1222c7ea1f309e53ba17eb19de318f22}
+
+\item 
+\hypertarget{gmswriter__fixed_8h_afd3a1eec895e55cb3406729534401609}{
+\#define {\bfseries LHSCND\_\-P\_\-y}~19}
+\label{gmswriter__fixed_8h_afd3a1eec895e55cb3406729534401609}
+
+\item 
+\hypertarget{gmswriter__fixed_8h_a545fd0741a92b669fcf971cd7fd5e907}{
+\#define {\bfseries LHTHRD\_\-P\_\-x}~20}
+\label{gmswriter__fixed_8h_a545fd0741a92b669fcf971cd7fd5e907}
+
+\item 
+\hypertarget{gmswriter__fixed_8h_ac5ac8f3249fbc383c19af54d6f4be0b9}{
+\#define {\bfseries LHTHRD\_\-P\_\-y}~21}
+\label{gmswriter__fixed_8h_ac5ac8f3249fbc383c19af54d6f4be0b9}
+
+\item 
+\hypertarget{gmswriter__fixed_8h_a9d25437dce12c47ba6ccebf0a7ce7cb2}{
+\#define {\bfseries LHPNK\_\-P\_\-x}~22}
+\label{gmswriter__fixed_8h_a9d25437dce12c47ba6ccebf0a7ce7cb2}
+
+\item 
+\hypertarget{gmswriter__fixed_8h_ab46c9f4a4f6f97d45380adddadc53205}{
+\#define {\bfseries LHPNK\_\-P\_\-y}~23}
+\label{gmswriter__fixed_8h_ab46c9f4a4f6f97d45380adddadc53205}
+
+\item 
+\hypertarget{gmswriter__fixed_8h_a37a5f8a08ed6d10f53c1aa3b1619dfc0}{
+\#define {\bfseries LHFST\_\-D\_\-x}~24}
+\label{gmswriter__fixed_8h_a37a5f8a08ed6d10f53c1aa3b1619dfc0}
+
+\item 
+\hypertarget{gmswriter__fixed_8h_a3cb88589018696dce0235fa416411579}{
+\#define {\bfseries LHFST\_\-D\_\-y}~25}
+\label{gmswriter__fixed_8h_a3cb88589018696dce0235fa416411579}
+
+\item 
+\hypertarget{gmswriter__fixed_8h_a3ff3cbc08dffe2d9ccc888ad2c8c3005}{
+\#define {\bfseries LHSCND\_\-D\_\-x}~26}
+\label{gmswriter__fixed_8h_a3ff3cbc08dffe2d9ccc888ad2c8c3005}
+
+\item 
+\hypertarget{gmswriter__fixed_8h_afbc6f88112eae18fdd5df76d4b65db3d}{
+\#define {\bfseries LHSCND\_\-D\_\-y}~27}
+\label{gmswriter__fixed_8h_afbc6f88112eae18fdd5df76d4b65db3d}
+
+\item 
+\hypertarget{gmswriter__fixed_8h_ae49d62198ccb1e3cc610cad432fa490b}{
+\#define {\bfseries LHTHRD\_\-D\_\-x}~28}
+\label{gmswriter__fixed_8h_ae49d62198ccb1e3cc610cad432fa490b}
+
+\item 
+\hypertarget{gmswriter__fixed_8h_aa12935cea6eacd7a3156083249c1e0f7}{
+\#define {\bfseries LHTHRD\_\-D\_\-y}~29}
+\label{gmswriter__fixed_8h_aa12935cea6eacd7a3156083249c1e0f7}
+
+\item 
+\hypertarget{gmswriter__fixed_8h_a78114bd50d932e2168f6259e3698c580}{
+\#define {\bfseries LHPNK\_\-D\_\-x}~30}
+\label{gmswriter__fixed_8h_a78114bd50d932e2168f6259e3698c580}
+
+\item 
+\hypertarget{gmswriter__fixed_8h_a66eae6bb98027ab14aaaba369ba38037}{
+\#define {\bfseries LHPNK\_\-D\_\-y}~31}
+\label{gmswriter__fixed_8h_a66eae6bb98027ab14aaaba369ba38037}
+
+\item 
+\hypertarget{gmswriter__fixed_8h_a3b01628c329b8718afd3bd05a142f67f}{
+\#define {\bfseries RHWRIST\_\-L\_\-x}~32}
+\label{gmswriter__fixed_8h_a3b01628c329b8718afd3bd05a142f67f}
+
+\item 
+\hypertarget{gmswriter__fixed_8h_a64efd85e1fda934b9972369cd522e763}{
+\#define {\bfseries RHWRIST\_\-L\_\-y}~33}
+\label{gmswriter__fixed_8h_a64efd85e1fda934b9972369cd522e763}
+
+\item 
+\hypertarget{gmswriter__fixed_8h_adeb46ede348d08051005b8d87b05857c}{
+\#define {\bfseries RHWRIST\_\-R\_\-x}~34}
+\label{gmswriter__fixed_8h_adeb46ede348d08051005b8d87b05857c}
+
+\item 
+\hypertarget{gmswriter__fixed_8h_ad7a57b836aa2b7f5159bedf2458265c8}{
+\#define {\bfseries RHWRIST\_\-R\_\-y}~35}
+\label{gmswriter__fixed_8h_ad7a57b836aa2b7f5159bedf2458265c8}
+
+\item 
+\hypertarget{gmswriter__fixed_8h_ad8928258f10716f121a1334f4ac1afc3}{
+\#define {\bfseries RHTHUMB\_\-M\_\-x}~36}
+\label{gmswriter__fixed_8h_ad8928258f10716f121a1334f4ac1afc3}
+
+\item 
+\hypertarget{gmswriter__fixed_8h_af59aac0244990e99504562fb3a9ba872}{
+\#define {\bfseries RHTHUMB\_\-M\_\-y}~37}
+\label{gmswriter__fixed_8h_af59aac0244990e99504562fb3a9ba872}
+
+\item 
+\hypertarget{gmswriter__fixed_8h_a9c3b88eca46d95088e2e9d12941ffc92}{
+\#define {\bfseries RHFST\_\-M\_\-x}~38}
+\label{gmswriter__fixed_8h_a9c3b88eca46d95088e2e9d12941ffc92}
+
+\item 
+\hypertarget{gmswriter__fixed_8h_a559822957d0606f9d73b8e3f1eaa8451}{
+\#define {\bfseries RHFST\_\-M\_\-y}~39}
+\label{gmswriter__fixed_8h_a559822957d0606f9d73b8e3f1eaa8451}
+
+\item 
+\hypertarget{gmswriter__fixed_8h_a64edca28e03eeea3ec5d394e89ca848f}{
+\#define {\bfseries RHSCND\_\-M\_\-x}~40}
+\label{gmswriter__fixed_8h_a64edca28e03eeea3ec5d394e89ca848f}
+
+\item 
+\hypertarget{gmswriter__fixed_8h_a2959eb1c9c3c6a48eadb93ffa461f18e}{
+\#define {\bfseries RHSCND\_\-M\_\-y}~41}
+\label{gmswriter__fixed_8h_a2959eb1c9c3c6a48eadb93ffa461f18e}
+
+\item 
+\hypertarget{gmswriter__fixed_8h_a4394ccb7b2d21e3255dbd697e90bfe30}{
+\#define {\bfseries RHTHRD\_\-M\_\-x}~42}
+\label{gmswriter__fixed_8h_a4394ccb7b2d21e3255dbd697e90bfe30}
+
+\item 
+\hypertarget{gmswriter__fixed_8h_a24fff158eecf27e3a587458a37d4bbfd}{
+\#define {\bfseries RHTHRD\_\-M\_\-y}~43}
+\label{gmswriter__fixed_8h_a24fff158eecf27e3a587458a37d4bbfd}
+
+\item 
+\hypertarget{gmswriter__fixed_8h_a4be19eccfa5843e3f20c15e6091d4fd8}{
+\#define {\bfseries RHPNK\_\-M\_\-x}~44}
+\label{gmswriter__fixed_8h_a4be19eccfa5843e3f20c15e6091d4fd8}
+
+\item 
+\hypertarget{gmswriter__fixed_8h_a93bd4205bfb58620951a72d5dc192c2c}{
+\#define {\bfseries RHPNK\_\-M\_\-y}~45}
+\label{gmswriter__fixed_8h_a93bd4205bfb58620951a72d5dc192c2c}
+
+\item 
+\hypertarget{gmswriter__fixed_8h_ac1f20444135a655b770b88a44720316f}{
+\#define {\bfseries RHTHUMB\_\-P\_\-x}~46}
+\label{gmswriter__fixed_8h_ac1f20444135a655b770b88a44720316f}
+
+\item 
+\hypertarget{gmswriter__fixed_8h_afbeead01b80feecae3840c7fc929b8b4}{
+\#define {\bfseries RHTHUMB\_\-P\_\-y}~47}
+\label{gmswriter__fixed_8h_afbeead01b80feecae3840c7fc929b8b4}
+
+\item 
+\hypertarget{gmswriter__fixed_8h_a5bd0107983e72cc57a487dda096736ba}{
+\#define {\bfseries RHFST\_\-P\_\-x}~48}
+\label{gmswriter__fixed_8h_a5bd0107983e72cc57a487dda096736ba}
+
+\item 
+\hypertarget{gmswriter__fixed_8h_aa8f78f9bf8d66156cbdc70e5b5a67a64}{
+\#define {\bfseries RHFST\_\-P\_\-y}~49}
+\label{gmswriter__fixed_8h_aa8f78f9bf8d66156cbdc70e5b5a67a64}
+
+\item 
+\hypertarget{gmswriter__fixed_8h_a71f9ae65a1589b9eb93ef8f5ccc0988f}{
+\#define {\bfseries RHSCND\_\-P\_\-x}~50}
+\label{gmswriter__fixed_8h_a71f9ae65a1589b9eb93ef8f5ccc0988f}
+
+\item 
+\hypertarget{gmswriter__fixed_8h_a51f068c13179d1d6493aa185f4738bd9}{
+\#define {\bfseries RHSCND\_\-P\_\-y}~51}
+\label{gmswriter__fixed_8h_a51f068c13179d1d6493aa185f4738bd9}
+
+\item 
+\hypertarget{gmswriter__fixed_8h_abe44a13ac0fb20ae0950d4ed764ca895}{
+\#define {\bfseries RHTHRD\_\-P\_\-x}~52}
+\label{gmswriter__fixed_8h_abe44a13ac0fb20ae0950d4ed764ca895}
+
+\item 
+\hypertarget{gmswriter__fixed_8h_afada9b327844e9f2a832b29bac522d7a}{
+\#define {\bfseries RHTHRD\_\-P\_\-y}~53}
+\label{gmswriter__fixed_8h_afada9b327844e9f2a832b29bac522d7a}
+
+\item 
+\hypertarget{gmswriter__fixed_8h_af398b4714f16d289c93b4fc60181b0fc}{
+\#define {\bfseries RHPNK\_\-P\_\-x}~54}
+\label{gmswriter__fixed_8h_af398b4714f16d289c93b4fc60181b0fc}
+
+\item 
+\hypertarget{gmswriter__fixed_8h_a657f6c8f178ab1bec80954e966083f93}{
+\#define {\bfseries RHPNK\_\-P\_\-y}~55}
+\label{gmswriter__fixed_8h_a657f6c8f178ab1bec80954e966083f93}
+
+\item 
+\hypertarget{gmswriter__fixed_8h_a79133b98bece1d99f2ea8b13fb1449c0}{
+\#define {\bfseries RHFST\_\-D\_\-x}~56}
+\label{gmswriter__fixed_8h_a79133b98bece1d99f2ea8b13fb1449c0}
+
+\item 
+\hypertarget{gmswriter__fixed_8h_ae3903ae2a30a6c08b37243d4c3d83a7f}{
+\#define {\bfseries RHFST\_\-D\_\-y}~57}
+\label{gmswriter__fixed_8h_ae3903ae2a30a6c08b37243d4c3d83a7f}
+
+\item 
+\hypertarget{gmswriter__fixed_8h_a68aee0a6846ec8db4e0292748021743d}{
+\#define {\bfseries RHSCND\_\-D\_\-x}~58}
+\label{gmswriter__fixed_8h_a68aee0a6846ec8db4e0292748021743d}
+
+\item 
+\hypertarget{gmswriter__fixed_8h_a9420f41a0cf5604a40fead801e1e0f54}{
+\#define {\bfseries RHSCND\_\-D\_\-y}~59}
+\label{gmswriter__fixed_8h_a9420f41a0cf5604a40fead801e1e0f54}
+
+\item 
+\hypertarget{gmswriter__fixed_8h_ad9313f9218f13d9595f17cf672b86114}{
+\#define {\bfseries RHTHRD\_\-D\_\-x}~60}
+\label{gmswriter__fixed_8h_ad9313f9218f13d9595f17cf672b86114}
+
+\item 
+\hypertarget{gmswriter__fixed_8h_a2060e41a94fe5ef14fe707c4e6d7dec3}{
+\#define {\bfseries RHTHRD\_\-D\_\-y}~61}
+\label{gmswriter__fixed_8h_a2060e41a94fe5ef14fe707c4e6d7dec3}
+
+\item 
+\hypertarget{gmswriter__fixed_8h_a249ccdaf513338126ddb3714972f9b8c}{
+\#define {\bfseries RHPNK\_\-D\_\-x}~62}
+\label{gmswriter__fixed_8h_a249ccdaf513338126ddb3714972f9b8c}
+
+\item 
+\hypertarget{gmswriter__fixed_8h_a1783ac050f6041f35bc6dede4d02b803}{
+\#define {\bfseries RHPNK\_\-D\_\-y}~63}
+\label{gmswriter__fixed_8h_a1783ac050f6041f35bc6dede4d02b803}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+gms\_\-uct\_\-struct\_\-t $\ast$ \hyperlink{namespaceGmswriter_acd8da6b7bf958abc172af5f4fc0d0f53}{Gmswriter::create} (const char $\ast$name, int nb\_\-units, int nb\_\-channels, gms\_\-channel\_\-type\_\-t info\_\-type, gms\_\-dimension\_\-t dimension)
+\begin{DoxyCompactList}\small\item\em create new gmsfile \end{DoxyCompactList}\item 
+gms\_\-storage\_\-info\_\-t \hyperlink{namespaceGmswriter_a1115e4f56ea4bb83f7f3371184b54851}{Gmswriter::storenew} (gms\_\-uct\_\-struct\_\-t $\ast$uct, gms\_\-file\_\-t $\ast$gmsfile, const char $\ast$scenename, double $\ast$info\_\-xy, double frame\_\-rate, int nb\_\-frames, gms\_\-data\_\-type\_\-t data\_\-type)
+\begin{DoxyCompactList}\small\item\em Function to write data in array {\itshape info\_\-xy\/} into {\itshape gmsfile\/}. \end{DoxyCompactList}\item 
+gms\_\-storage\_\-info\_\-t \hyperlink{namespaceGmswriter_a049a4fab3326776271491f92a4759141}{Gmswriter::storeold} (int startframe, gms\_\-uct\_\-struct\_\-t $\ast$uct, gms\_\-file\_\-t $\ast$gmsfile, const char $\ast$scenename, double $\ast$info\_\-xy, double frame\_\-rate, int nb\_\-frames, gms\_\-data\_\-type\_\-t data\_\-type)
+\begin{DoxyCompactList}\small\item\em Function to write data in array {\itshape info\_\-xy\/} into {\itshape gmsfile\/} from frame number {\itshape startframe\/}. \end{DoxyCompactList}\item 
+void \hyperlink{namespaceGmswriter_a8737f53952c153d6e0b35c974cc99389}{Gmswriter::writedata} (vector$<$ PointVec $>$ left, vector$<$ PointVec $>$ right, double $\ast$info\_\-xy, int startframe\_\-num)
+\begin{DoxyCompactList}\small\item\em Function rearranges data from Left hand object {\itshape left\/} and Right hand object {\itshape right\/} into an array of doubles. \end{DoxyCompactList}\item 
+void \hyperlink{namespaceGmswriter_af9ffd77859f980d091f948ce7b2b2e21}{Gmswriter::readdata} (gms\_\-uct\_\-struct\_\-t $\ast$uct, gms\_\-file\_\-t $\ast$gms\_\-file, const gms\_\-storage\_\-info\_\-t storage\_\-info)
+\begin{DoxyCompactList}\small\item\em Function to read data from gmsfile. Prints information such as frame rate and structure to the screen. \end{DoxyCompactList}\item 
+\hypertarget{namespaceGmswriter_a564c249213d33942a85ff7f32a62cbc0}{
+void \hyperlink{namespaceGmswriter_a564c249213d33942a85ff7f32a62cbc0}{Gmswriter::read\_\-all\_\-frames} (char $\ast$file\_\-name)}
+\label{namespaceGmswriter_a564c249213d33942a85ff7f32a62cbc0}
+
+\begin{DoxyCompactList}\small\item\em Function to read particular data from the file {\itshape filename\/}. \end{DoxyCompactList}\item 
+void \hyperlink{namespaceGmswriter_abbf023742c3a026bb42ff2b68f5c2b7b}{Gmswriter::read\_\-frames} (int start, int end, char $\ast$file\_\-name)
+\begin{DoxyCompactList}\small\item\em Function to read particular data from frames {\itshape start\/} to {\itshape end\/}. \end{DoxyCompactList}\item 
+void \hyperlink{namespaceGmswriter_ae4ec14e80fdad25145c25e03e3b349d8}{Gmswriter::read\_\-velocity} (int start, int end, char $\ast$file\_\-name)
+\begin{DoxyCompactList}\small\item\em Function to read particular data from frames {\itshape start\/} to {\itshape end\/}. \end{DoxyCompactList}\item 
+void \hyperlink{namespaceGmswriter_afe6922decd16e426c40bbfcedb3577dd}{Gmswriter::read\_\-movements} (int start, int end, char $\ast$file\_\-name)
+\begin{DoxyCompactList}\small\item\em Function to read particular data from frames {\itshape start\/} to {\itshape end\/}. \end{DoxyCompactList}\item 
+void \hyperlink{namespaceGmswriter_aeaedba186d745f9fe60b3c6c506c5c83}{Gmswriter::read\_\-curves} (int start, int end, char $\ast$file\_\-name)
+\begin{DoxyCompactList}\small\item\em Function to read particular data from frames {\itshape start\/} to {\itshape end\/}. \end{DoxyCompactList}\item 
+double \hyperlink{namespaceGmswriter_a70dd5f1fd34ef721305c179cba2a1512}{Gmswriter::calc\_\-vel} (CvPoint point\_\-one, CvPoint point\_\-two, double frametime)
+\begin{DoxyCompactList}\small\item\em Function to calculate velocity of particular point. \end{DoxyCompactList}\item 
+double \hyperlink{namespaceGmswriter_a15d6b1b21ea4ed5da9a580b09e17a5b1}{Gmswriter::calc\_\-dist} (CvPoint point\_\-one, CvPoint point\_\-two)
+\begin{DoxyCompactList}\small\item\em Function to calculate distance between two points. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Documentation for \hyperlink{gmswriter__fixed_8h}{gmswriter\_\-fixed.h}. 

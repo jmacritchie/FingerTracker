@@ -1,0 +1,56 @@
+\hypertarget{organise_8h}{
+\section{organise.h File Reference}
+\label{organise_8h}\index{organise.h@{organise.h}}
+}
+
+
+file describing namespace \hyperlink{namespaceOrganise}{Organise}  
+
+
+{\ttfamily \#include $<$stdlib.h$>$}\par
+{\ttfamily \#include $<$stdio.h$>$}\par
+{\ttfamily \#include $<$cv.h$>$}\par
+{\ttfamily \#include $<$cxcore.h$>$}\par
+{\ttfamily \#include $<$highgui.h$>$}\par
+{\ttfamily \#include $<$vector$>$}\par
+{\ttfamily \#include \char`\"{}fullhand.h\char`\"{}}\par
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \hyperlink{namespaceOrganise}{Organise}
+
+
+\begin{DoxyCompactList}\small\item\em Namespace containing functions that order vectors depending on x and y coordinates. \end{DoxyCompactList}
+
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{organise_8h_a7017012a1393f7249d0e03d6ac9f1c7b}{
+typedef std::vector$<$ CvPoint $>$ \hyperlink{organise_8h_a7017012a1393f7249d0e03d6ac9f1c7b}{CoorVec}}
+\label{organise_8h_a7017012a1393f7249d0e03d6ac9f1c7b}
+
+\begin{DoxyCompactList}\small\item\em A vector containing CvPoint structures (an x,y coordinate) \end{DoxyCompactList}\item 
+\hypertarget{organise_8h_acfcd13bdeb017ed9d7f9529a9b77b328}{
+typedef std::vector$<$ CvPoint $>$::iterator \hyperlink{organise_8h_acfcd13bdeb017ed9d7f9529a9b77b328}{CoorVecIt}}
+\label{organise_8h_acfcd13bdeb017ed9d7f9529a9b77b328}
+
+\begin{DoxyCompactList}\small\item\em An iterator to point towards the CoorVec vector. \end{DoxyCompactList}\item 
+\hypertarget{organise_8h_af617b6161d0af4668c255bbe3894b22d}{
+typedef std::vector$<$ double $>$ \hyperlink{organise_8h_af617b6161d0af4668c255bbe3894b22d}{DistVec}}
+\label{organise_8h_af617b6161d0af4668c255bbe3894b22d}
+
+\begin{DoxyCompactList}\small\item\em A vector containing doubles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{blobby_8h_a7017012a1393f7249d0e03d6ac9f1c7b}{CoorVec} \hyperlink{namespaceOrganise_aec4a1cc23ca1f744d7603f28ac8c50d4}{Organise::order\_\-x} (\hyperlink{blobby_8h_a7017012a1393f7249d0e03d6ac9f1c7b}{CoorVec} handvec, int width, int r\_\-or\_\-l)
+\begin{DoxyCompactList}\small\item\em Function that orders the coordinate points in vector {\itshape handvec\/} based on their x coordinate. \end{DoxyCompactList}\item 
+\hyperlink{blobby_8h_a7017012a1393f7249d0e03d6ac9f1c7b}{CoorVec} \hyperlink{namespaceOrganise_a72cef579a9fd93ebe84d4609148aeb0d}{Organise::order\_\-y} (\hyperlink{blobby_8h_a7017012a1393f7249d0e03d6ac9f1c7b}{CoorVec} handvec, int height)
+\begin{DoxyCompactList}\small\item\em Function that orders the coordinate points in vector {\itshape handvec\/} based on their y coordinate. \end{DoxyCompactList}\item 
+\hyperlink{blobby_8h_a7017012a1393f7249d0e03d6ac9f1c7b}{CoorVec} \hyperlink{namespaceOrganise_a04ab2ae6c764f4027318f9fcabb7a3bc}{Organise::checkblobs} (\hyperlink{blobby_8h_a7017012a1393f7249d0e03d6ac9f1c7b}{CoorVec} ordered)
+\begin{DoxyCompactList}\small\item\em Function to check that no two blobs are in fact right next to each other and could be considered the same blob. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+file describing namespace \hyperlink{namespaceOrganise}{Organise} 

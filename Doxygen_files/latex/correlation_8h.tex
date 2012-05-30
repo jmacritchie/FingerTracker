@@ -1,0 +1,72 @@
+\hypertarget{correlation_8h}{
+\section{correlation.h File Reference}
+\label{correlation_8h}\index{correlation.h@{correlation.h}}
+}
+
+
+Documentation for correlation namespace.  
+
+
+{\ttfamily \#include $<$iostream$>$}\par
+{\ttfamily \#include $<$fstream$>$}\par
+{\ttfamily \#include $<$stdlib.h$>$}\par
+{\ttfamily \#include $<$stdio.h$>$}\par
+{\ttfamily \#include $<$stdarg.h$>$}\par
+{\ttfamily \#include $<$ctype.h$>$}\par
+{\ttfamily \#include $<$cv.h$>$}\par
+{\ttfamily \#include $<$highgui.h$>$}\par
+{\ttfamily \#include $<$math.h$>$}\par
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \hyperlink{namespacecorrelation}{correlation}
+
+
+\begin{DoxyCompactList}\small\item\em functions used to create search areas/templates in the image, and perform correlation with blocks of proceeding images \end{DoxyCompactList}
+
+\end{DoxyCompactItemize}
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{correlation_8h_abd61ff8980203507437629bfd4ff1904}{
+\#define \hyperlink{correlation_8h_abd61ff8980203507437629bfd4ff1904}{DEPTH\_\-8\_\-BIT}~8}
+\label{correlation_8h_abd61ff8980203507437629bfd4ff1904}
+
+\begin{DoxyCompactList}\small\item\em depth in bits of the grayscale images \end{DoxyCompactList}\item 
+\hypertarget{correlation_8h_a1eac40c7912cec35e55b28d4c3073dcb}{
+\#define \hyperlink{correlation_8h_a1eac40c7912cec35e55b28d4c3073dcb}{DEPTH\_\-32\_\-FLOAT}~IPL\_\-DEPTH\_\-32F}
+\label{correlation_8h_a1eac40c7912cec35e55b28d4c3073dcb}
+
+\begin{DoxyCompactList}\small\item\em depth in bits of the colour images \end{DoxyCompactList}\item 
+\hypertarget{correlation_8h_a3bba806efccd91c382fdc613f759e472}{
+\#define \hyperlink{correlation_8h_a3bba806efccd91c382fdc613f759e472}{CHANNELS\_\-1}~1}
+\label{correlation_8h_a3bba806efccd91c382fdc613f759e472}
+
+\begin{DoxyCompactList}\small\item\em for 1 channel images i.e. grayscale \end{DoxyCompactList}\item 
+\hypertarget{correlation_8h_acc04f41d9d05f94d1230b4694518ed0e}{
+\#define \hyperlink{correlation_8h_acc04f41d9d05f94d1230b4694518ed0e}{CHANNELS\_\-3}~3}
+\label{correlation_8h_acc04f41d9d05f94d1230b4694518ed0e}
+
+\begin{DoxyCompactList}\small\item\em for 3 channel images i.e. colour \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{namespaceCorrelation_a78073b2eb7c61833839b3e4325338994}{
+void {\bfseries Correlation::search\_\-and\_\-template} (CvPoint pt, IplImage $\ast$picture, IplImage $\ast$corrblock, IplImage $\ast$mask)}
+\label{namespaceCorrelation_a78073b2eb7c61833839b3e4325338994}
+
+\item 
+\hypertarget{namespaceCorrelation_a9e8df9eea1af5bdd12cc30994a19f03b}{
+void {\bfseries Correlation::masktemplate} (CvPoint pt, IplImage $\ast$picture, IplImage $\ast$mask)}
+\label{namespaceCorrelation_a9e8df9eea1af5bdd12cc30994a19f03b}
+
+\item 
+\hypertarget{namespaceCorrelation_aed690045623572e4357950564745d6f0}{
+CvPoint {\bfseries Correlation::max\_\-correlation} (CvPoint point, IplImage $\ast$corrblock, IplImage $\ast$maskarea, IplImage $\ast$frame)}
+\label{namespaceCorrelation_aed690045623572e4357950564745d6f0}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Documentation for correlation namespace. 

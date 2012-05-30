@@ -1,0 +1,439 @@
+\hypertarget{classTransform}{
+\section{Transform Class Reference}
+\label{classTransform}\index{Transform@{Transform}}
+}
+
+
+class enabling the calculation of the transformation and rotation of all points in a hand set from one frame to the next  
+
+
+
+
+{\ttfamily \#include $<$transform.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classTransform_ad0bbbe9a52e032e5a03316b4d8a5a9d8}{Transform} (\hyperlink{blobby_8h_a7017012a1393f7249d0e03d6ac9f1c7b}{CoorVec} fingers1, \hyperlink{transform_8h_af617b6161d0af4668c255bbe3894b22d}{DistVec} dist1, \hyperlink{blobby_8h_a7017012a1393f7249d0e03d6ac9f1c7b}{CoorVec} fingers2, \hyperlink{transform_8h_af617b6161d0af4668c255bbe3894b22d}{DistVec} dist2, \hyperlink{classFullhand}{Fullhand} \&either\_\-hand)
+\begin{DoxyCompactList}\small\item\em Constructor intialising the set of points for the first frame, {\itshape fingers1\/} and the second frame {\itshape fingers2\/}. Also calls the calculate\_\-trans function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classTransform_ad8398306580018ac567b0f968b0facb7}{
+\hyperlink{transform_8h_af617b6161d0af4668c255bbe3894b22d}{DistVec} {\bfseries dist\_\-current}}
+\label{classTransform_ad8398306580018ac567b0f968b0facb7}
+
+\item 
+\hypertarget{classTransform_a8ae92a616b82933029317a453986e967}{
+\hyperlink{transform_8h_af617b6161d0af4668c255bbe3894b22d}{DistVec} {\bfseries dist\_\-next}}
+\label{classTransform_a8ae92a616b82933029317a453986e967}
+
+\item 
+\hypertarget{classTransform_ae12c54615ca4b2fe35fae5898998d784}{
+\hyperlink{blobby_8h_a7017012a1393f7249d0e03d6ac9f1c7b}{CoorVec} {\bfseries point\_\-current}}
+\label{classTransform_ae12c54615ca4b2fe35fae5898998d784}
+
+\item 
+\hypertarget{classTransform_a1b655c92d87df605280070f2efc2fff9}{
+\hyperlink{blobby_8h_a7017012a1393f7249d0e03d6ac9f1c7b}{CoorVec} {\bfseries point\_\-next}}
+\label{classTransform_a1b655c92d87df605280070f2efc2fff9}
+
+\item 
+\hypertarget{classTransform_aa5857549fc3c0d26f8d2fd515506b04a}{
+double {\bfseries dist\_\-thumbs}}
+\label{classTransform_aa5857549fc3c0d26f8d2fd515506b04a}
+
+\item 
+\hypertarget{classTransform_ae624a7fc9aa0c12b8323d065ac87882f}{
+double {\bfseries dist\_\-fsts}}
+\label{classTransform_ae624a7fc9aa0c12b8323d065ac87882f}
+
+\item 
+\hypertarget{classTransform_aeedffbea4143b0d5c567f5372a3af92c}{
+double {\bfseries dist\_\-scnds}}
+\label{classTransform_aeedffbea4143b0d5c567f5372a3af92c}
+
+\item 
+\hypertarget{classTransform_a1d1a2ccb36286c9c610ee137c9c208cc}{
+double {\bfseries dist\_\-thrds}}
+\label{classTransform_a1d1a2ccb36286c9c610ee137c9c208cc}
+
+\item 
+\hypertarget{classTransform_a147f7e85dc2aaa276dc3e30048fb7583}{
+double {\bfseries dist\_\-pinkies}}
+\label{classTransform_a147f7e85dc2aaa276dc3e30048fb7583}
+
+\item 
+\hypertarget{classTransform_a03a67781d79e850111165cb531f3295c}{
+double {\bfseries dist\_\-thumbs\_\-b}}
+\label{classTransform_a03a67781d79e850111165cb531f3295c}
+
+\item 
+\hypertarget{classTransform_a5ff4316cb747aae40e9d9f32303a091f}{
+double {\bfseries dist\_\-fsts\_\-b}}
+\label{classTransform_a5ff4316cb747aae40e9d9f32303a091f}
+
+\item 
+\hypertarget{classTransform_a928736af2e729081508bdc1594883371}{
+double {\bfseries dist\_\-scnds\_\-b}}
+\label{classTransform_a928736af2e729081508bdc1594883371}
+
+\item 
+\hypertarget{classTransform_a8bd7ef9a039f73f669c05259c0c91eaf}{
+double {\bfseries dist\_\-thrds\_\-b}}
+\label{classTransform_a8bd7ef9a039f73f669c05259c0c91eaf}
+
+\item 
+\hypertarget{classTransform_a0afd9df97c1ee6c1aae9335fce04e184}{
+double {\bfseries dist\_\-pinkies\_\-b}}
+\label{classTransform_a0afd9df97c1ee6c1aae9335fce04e184}
+
+\item 
+\hypertarget{classTransform_a477d0b77cff2d53c02c3281a5ae54f38}{
+double {\bfseries dist\_\-thumbs\_\-c}}
+\label{classTransform_a477d0b77cff2d53c02c3281a5ae54f38}
+
+\item 
+\hypertarget{classTransform_afededf7a9b3e8bc6055f4a5638b416dc}{
+double {\bfseries dist\_\-fsts\_\-c}}
+\label{classTransform_afededf7a9b3e8bc6055f4a5638b416dc}
+
+\item 
+\hypertarget{classTransform_a6ab42393d595c88fe94e63d797ef1ba5}{
+double {\bfseries dist\_\-scnds\_\-c}}
+\label{classTransform_a6ab42393d595c88fe94e63d797ef1ba5}
+
+\item 
+\hypertarget{classTransform_a08f6c785e60837b6fca6888963b16089}{
+double {\bfseries dist\_\-thrds\_\-c}}
+\label{classTransform_a08f6c785e60837b6fca6888963b16089}
+
+\item 
+\hypertarget{classTransform_a7ee053d895dead4d964deea254e9ac83}{
+double {\bfseries dist\_\-pinkies\_\-c}}
+\label{classTransform_a7ee053d895dead4d964deea254e9ac83}
+
+\item 
+\hypertarget{classTransform_a362d4d0332e89af5827b871c6ffbcb87}{
+bool {\bfseries same\_\-thumb}}
+\label{classTransform_a362d4d0332e89af5827b871c6ffbcb87}
+
+\item 
+\hypertarget{classTransform_abc3a07deb20303dac8eccf0a164a776b}{
+bool {\bfseries same\_\-first}}
+\label{classTransform_abc3a07deb20303dac8eccf0a164a776b}
+
+\item 
+\hypertarget{classTransform_a615ae8240d407bed6fee6e9eb855ab25}{
+bool {\bfseries same\_\-second}}
+\label{classTransform_a615ae8240d407bed6fee6e9eb855ab25}
+
+\item 
+\hypertarget{classTransform_a525221153653b15e35b6d27b2db175c4}{
+bool {\bfseries same\_\-third}}
+\label{classTransform_a525221153653b15e35b6d27b2db175c4}
+
+\item 
+\hypertarget{classTransform_a3aa3dc0ab327ef6034c5c54c2e2db001}{
+bool {\bfseries same\_\-pinkie}}
+\label{classTransform_a3aa3dc0ab327ef6034c5c54c2e2db001}
+
+\item 
+\hypertarget{classTransform_a519f5d5ffaa23efdb7afe8241ce1a38d}{
+bool {\bfseries same\_\-thumb\_\-b}}
+\label{classTransform_a519f5d5ffaa23efdb7afe8241ce1a38d}
+
+\item 
+\hypertarget{classTransform_aa0bb5ac3379d40181a9405358c49d63f}{
+bool {\bfseries same\_\-first\_\-b}}
+\label{classTransform_aa0bb5ac3379d40181a9405358c49d63f}
+
+\item 
+\hypertarget{classTransform_afa0163143b7ba4b063e611eef3567d30}{
+bool {\bfseries same\_\-second\_\-b}}
+\label{classTransform_afa0163143b7ba4b063e611eef3567d30}
+
+\item 
+\hypertarget{classTransform_a4483cdaf90578f4bf9e612f33e94dbb2}{
+bool {\bfseries same\_\-third\_\-b}}
+\label{classTransform_a4483cdaf90578f4bf9e612f33e94dbb2}
+
+\item 
+\hypertarget{classTransform_a85e1629959253c90c3c1a92ca7dbbc82}{
+bool {\bfseries same\_\-pinkie\_\-b}}
+\label{classTransform_a85e1629959253c90c3c1a92ca7dbbc82}
+
+\item 
+\hypertarget{classTransform_a9aba49683f135f3bb5264bba76e99583}{
+bool {\bfseries same\_\-thumb\_\-c}}
+\label{classTransform_a9aba49683f135f3bb5264bba76e99583}
+
+\item 
+\hypertarget{classTransform_a56eb7922c33e53fb354faa4ec85b39cf}{
+bool {\bfseries same\_\-first\_\-c}}
+\label{classTransform_a56eb7922c33e53fb354faa4ec85b39cf}
+
+\item 
+\hypertarget{classTransform_a510adb1c50488d506bbb994fcea9efe0}{
+bool {\bfseries same\_\-second\_\-c}}
+\label{classTransform_a510adb1c50488d506bbb994fcea9efe0}
+
+\item 
+\hypertarget{classTransform_a8fadea2b06d8eab0a5a9aa69841e7a2c}{
+bool {\bfseries same\_\-third\_\-c}}
+\label{classTransform_a8fadea2b06d8eab0a5a9aa69841e7a2c}
+
+\item 
+\hypertarget{classTransform_a87af68c57bec85ad8268dbb77f315ea0}{
+bool {\bfseries same\_\-pinkie\_\-c}}
+\label{classTransform_a87af68c57bec85ad8268dbb77f315ea0}
+
+\item 
+\hypertarget{classTransform_ad770fda2509f7cdd018088de2e7671e0}{
+double {\bfseries scale\_\-thumb}}
+\label{classTransform_ad770fda2509f7cdd018088de2e7671e0}
+
+\item 
+\hypertarget{classTransform_a4918a6c255e29babdfb9107876a5333c}{
+double {\bfseries scale\_\-fst}}
+\label{classTransform_a4918a6c255e29babdfb9107876a5333c}
+
+\item 
+\hypertarget{classTransform_a0db8320bdab28bd6d753dfcbaab07fe5}{
+double {\bfseries scale\_\-scnd}}
+\label{classTransform_a0db8320bdab28bd6d753dfcbaab07fe5}
+
+\item 
+\hypertarget{classTransform_a1fedefce2e118bef84e43860ade27461}{
+double {\bfseries scale\_\-thrd}}
+\label{classTransform_a1fedefce2e118bef84e43860ade27461}
+
+\item 
+\hypertarget{classTransform_a72220a66cf9b39ff047a8f9f35a43db7}{
+double {\bfseries scale\_\-pinkie}}
+\label{classTransform_a72220a66cf9b39ff047a8f9f35a43db7}
+
+\item 
+\hypertarget{classTransform_a9e85f2b54ac77a045080c3262ea73822}{
+double {\bfseries scale\_\-thumb\_\-b}}
+\label{classTransform_a9e85f2b54ac77a045080c3262ea73822}
+
+\item 
+\hypertarget{classTransform_a6d1239e5d51e77a4294e239ef0cd06f4}{
+double {\bfseries scale\_\-fst\_\-b}}
+\label{classTransform_a6d1239e5d51e77a4294e239ef0cd06f4}
+
+\item 
+\hypertarget{classTransform_a804d2609d0ed9fcd528e3f41d5052300}{
+double {\bfseries scale\_\-scnd\_\-b}}
+\label{classTransform_a804d2609d0ed9fcd528e3f41d5052300}
+
+\item 
+\hypertarget{classTransform_a5d35e4d7c5b49c78b909f023d2998d43}{
+double {\bfseries scale\_\-thrd\_\-b}}
+\label{classTransform_a5d35e4d7c5b49c78b909f023d2998d43}
+
+\item 
+\hypertarget{classTransform_a7fe9448534195d8d48fd1ccbbef67310}{
+double {\bfseries scale\_\-pinkie\_\-b}}
+\label{classTransform_a7fe9448534195d8d48fd1ccbbef67310}
+
+\item 
+\hypertarget{classTransform_a7949630351ae690bf99dfeab90805ada}{
+double {\bfseries scale\_\-thumb\_\-c}}
+\label{classTransform_a7949630351ae690bf99dfeab90805ada}
+
+\item 
+\hypertarget{classTransform_a3c6b0335b859c212c53b89894744701c}{
+double {\bfseries scale\_\-fst\_\-c}}
+\label{classTransform_a3c6b0335b859c212c53b89894744701c}
+
+\item 
+\hypertarget{classTransform_adcb5641a124093b01df576dbd01aa185}{
+double {\bfseries scale\_\-scnd\_\-c}}
+\label{classTransform_adcb5641a124093b01df576dbd01aa185}
+
+\item 
+\hypertarget{classTransform_a40830cd791b54c150eec6dafb6fd1391}{
+double {\bfseries scale\_\-thrd\_\-c}}
+\label{classTransform_a40830cd791b54c150eec6dafb6fd1391}
+
+\item 
+\hypertarget{classTransform_a453f3acdc5c84e3b5798235f05b9b35f}{
+double {\bfseries scale\_\-pinkie\_\-c}}
+\label{classTransform_a453f3acdc5c84e3b5798235f05b9b35f}
+
+\item 
+\hypertarget{classTransform_a22b68c2e8f4156ee36f6d2102dd243a4}{
+double {\bfseries rot\_\-thumb}}
+\label{classTransform_a22b68c2e8f4156ee36f6d2102dd243a4}
+
+\item 
+\hypertarget{classTransform_a14baff0d1fde70f766e647b3b901d486}{
+double {\bfseries rot\_\-fst}}
+\label{classTransform_a14baff0d1fde70f766e647b3b901d486}
+
+\item 
+\hypertarget{classTransform_a8654d3d13d1538922bcc64b8a36532fc}{
+double {\bfseries rot\_\-scnd}}
+\label{classTransform_a8654d3d13d1538922bcc64b8a36532fc}
+
+\item 
+\hypertarget{classTransform_a890b28f9c64064b6da105a7ae2a3c8bb}{
+double {\bfseries rot\_\-thrd}}
+\label{classTransform_a890b28f9c64064b6da105a7ae2a3c8bb}
+
+\item 
+\hypertarget{classTransform_afe1d79f5d5ba7dc4e652a35897ed9366}{
+double {\bfseries rot\_\-pinkie}}
+\label{classTransform_afe1d79f5d5ba7dc4e652a35897ed9366}
+
+\item 
+\hypertarget{classTransform_ac9aa3cb025901901e797358f1d358d8e}{
+double {\bfseries rot\_\-thumb\_\-b}}
+\label{classTransform_ac9aa3cb025901901e797358f1d358d8e}
+
+\item 
+\hypertarget{classTransform_a8ec174dfad046dba204cb41f46e9cbea}{
+double {\bfseries rot\_\-fst\_\-b}}
+\label{classTransform_a8ec174dfad046dba204cb41f46e9cbea}
+
+\item 
+\hypertarget{classTransform_a0e61f93586f7256456ad655a6e9b1573}{
+double {\bfseries rot\_\-scnd\_\-b}}
+\label{classTransform_a0e61f93586f7256456ad655a6e9b1573}
+
+\item 
+\hypertarget{classTransform_a02b3ea9b89724037e514c7a34b07136c}{
+double {\bfseries rot\_\-thrd\_\-b}}
+\label{classTransform_a02b3ea9b89724037e514c7a34b07136c}
+
+\item 
+\hypertarget{classTransform_a7b18e5078f8463d933e94e7f2dc3cd7e}{
+double {\bfseries rot\_\-pinkie\_\-b}}
+\label{classTransform_a7b18e5078f8463d933e94e7f2dc3cd7e}
+
+\item 
+\hypertarget{classTransform_a1f750dd045e13a63a27c5eecc3d96408}{
+double {\bfseries rot\_\-thumb\_\-c}}
+\label{classTransform_a1f750dd045e13a63a27c5eecc3d96408}
+
+\item 
+\hypertarget{classTransform_a921d50f025d81e11c2d1f8212b1806e0}{
+double {\bfseries rot\_\-fst\_\-c}}
+\label{classTransform_a921d50f025d81e11c2d1f8212b1806e0}
+
+\item 
+\hypertarget{classTransform_a0301639d36fcabdd3a9d4b94f990dc7d}{
+double {\bfseries rot\_\-scnd\_\-c}}
+\label{classTransform_a0301639d36fcabdd3a9d4b94f990dc7d}
+
+\item 
+\hypertarget{classTransform_a121c58d4374ae19c7f2c84eb3a77e2d6}{
+double {\bfseries rot\_\-thrd\_\-c}}
+\label{classTransform_a121c58d4374ae19c7f2c84eb3a77e2d6}
+
+\item 
+\hypertarget{classTransform_a1f7261e9ca39b7d131139c45a8c9f8df}{
+double {\bfseries rot\_\-pinkie\_\-c}}
+\label{classTransform_a1f7261e9ca39b7d131139c45a8c9f8df}
+
+\item 
+\hypertarget{classTransform_aad3289e792b93905f17c8cdcba4e7866}{
+int {\bfseries number\_\-detected}}
+\label{classTransform_aad3289e792b93905f17c8cdcba4e7866}
+
+\item 
+\hypertarget{classTransform_a3c93f4e32f572ed06ecc69a110507092}{
+\hyperlink{classFullhand}{Fullhand} {\bfseries argh}}
+\label{classTransform_a3c93f4e32f572ed06ecc69a110507092}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classTransform_ae339e3972cc3edb6ff8d597f50988499}{
+\hyperlink{classFullhand}{Fullhand} {\bfseries calculate\_\-trans} ()}
+\label{classTransform_ae339e3972cc3edb6ff8d597f50988499}
+
+\item 
+\hypertarget{classTransform_a368fe723e1609e2d89ee56791730425a}{
+\hyperlink{classFullhand}{Fullhand} {\bfseries find\_\-fingers} (int fingerNo, int number)}
+\label{classTransform_a368fe723e1609e2d89ee56791730425a}
+
+\item 
+\hypertarget{classTransform_a181f6ef523d83b6a7bbd2f7d7d605077}{
+double {\bfseries distance} (CvPoint one, CvPoint two)}
+\label{classTransform_a181f6ef523d83b6a7bbd2f7d7d605077}
+
+\item 
+\hypertarget{classTransform_a60d05a42d3eb98010e80d5592fdf899d}{
+double {\bfseries length\_\-cart2polar} (CvPoint cart)}
+\label{classTransform_a60d05a42d3eb98010e80d5592fdf899d}
+
+\item 
+\hypertarget{classTransform_ab3ba5d8788191d546c46dea00a11acf9}{
+double {\bfseries angle\_\-cart2polar} (CvPoint cart, double length)}
+\label{classTransform_ab3ba5d8788191d546c46dea00a11acf9}
+
+\item 
+\hypertarget{classTransform_a9de44b4def5d4ec3e8761fe5586b1387}{
+CvPoint {\bfseries polar2cart} (double pol\_\-length, double pol\_\-angle)}
+\label{classTransform_a9de44b4def5d4ec3e8761fe5586b1387}
+
+\item 
+\hypertarget{classTransform_a192c642eb0e11ff2088b3e5788c3bd04}{
+int {\bfseries sgn} (int number)}
+\label{classTransform_a192c642eb0e11ff2088b3e5788c3bd04}
+
+\item 
+\hypertarget{classTransform_af35d0394b97db2242312a744f40acfb4}{
+void {\bfseries calc\_\-distances} (CvPoint current, CvPoint next, bool occ, double \&dist, bool \&same, double \&scale, double \&rot, int \&detected)}
+\label{classTransform_af35d0394b97db2242312a744f40acfb4}
+
+\item 
+\hypertarget{classTransform_aa8693935ebffb2f823331d8d37fbec3e}{
+void {\bfseries calc\_\-rotation} (CvPoint current, CvPoint next, bool occ, bool same, double dist\_\-current, double dist\_\-next, double \&rot, double \&scale)}
+\label{classTransform_aa8693935ebffb2f823331d8d37fbec3e}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+class enabling the calculation of the transformation and rotation of all points in a hand set from one frame to the next 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classTransform_ad0bbbe9a52e032e5a03316b4d8a5a9d8}{
+\index{Transform@{Transform}!Transform@{Transform}}
+\index{Transform@{Transform}!Transform@{Transform}}
+\subsubsection[{Transform}]{\setlength{\rightskip}{0pt plus 5cm}Transform::Transform (
+\begin{DoxyParamCaption}
+\item[{{\bf CoorVec}}]{fingers1, }
+\item[{{\bf DistVec}}]{dist1, }
+\item[{{\bf CoorVec}}]{fingers2, }
+\item[{{\bf DistVec}}]{dist2, }
+\item[{{\bf Fullhand} \&}]{either\_\-hand}
+\end{DoxyParamCaption}
+)}}
+\label{classTransform_ad0bbbe9a52e032e5a03316b4d8a5a9d8}
+
+
+Constructor intialising the set of points for the first frame, {\itshape fingers1\/} and the second frame {\itshape fingers2\/}. Also calls the calculate\_\-trans function. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em fingers1} & Vector of coordinates for the first frame \\
+\hline
+\mbox{\tt in}  & {\em dist1} & Distances calculated for the first frame \\
+\hline
+\mbox{\tt in}  & {\em fingers2} & Vector of coordinates for the second frame \\
+\hline
+\mbox{\tt in}  & {\em dist1} & Distances calculated for the second frame \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{transform_8h}{transform.h}\item 
+transform.cpp\end{DoxyCompactItemize}

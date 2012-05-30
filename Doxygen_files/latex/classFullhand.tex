@@ -1,0 +1,1426 @@
+\hypertarget{classFullhand}{
+\section{Fullhand Class Reference}
+\label{classFullhand}\index{Fullhand@{Fullhand}}
+}
+
+
+class enabling the setting and retrieval of all points on the hand as well as various functions to group points into metacarpals, proximal and distal points  
+
+
+
+
+{\ttfamily \#include $<$fullhand.h$>$}
+
+Inheritance diagram for Fullhand:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classFullhand}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classFullhand_a378dc2811c5d503a5227d7085931549a}{
+\hyperlink{classFullhand_a378dc2811c5d503a5227d7085931549a}{Fullhand} ()}
+\label{classFullhand_a378dc2811c5d503a5227d7085931549a}
+
+\begin{DoxyCompactList}\small\item\em Constructor function for \hyperlink{classFullhand}{Fullhand} object. \end{DoxyCompactList}\item 
+\hyperlink{classFullhand_a6e457a92117b68cd19d643f2152d7224}{Fullhand} (bool whichhand)
+\begin{DoxyCompactList}\small\item\em Constructor function for \hyperlink{classFullhand}{Fullhand} object which initialises all variables for left or right hand. \end{DoxyCompactList}\item 
+\hypertarget{classFullhand_a23ca737334a9fafce3010341d8890d45}{
+\hyperlink{classFullhand_a23ca737334a9fafce3010341d8890d45}{$\sim$Fullhand} ()}
+\label{classFullhand_a23ca737334a9fafce3010341d8890d45}
+
+\begin{DoxyCompactList}\small\item\em Destructor function for \hyperlink{classFullhand}{Fullhand} object. \end{DoxyCompactList}\item 
+void \hyperlink{classFullhand_a30f72eeb4ec77f7fa34b9cee5d7df255}{setallbases} (\hyperlink{blobby_8h_a7017012a1393f7249d0e03d6ac9f1c7b}{CoorVec} \&rightgroup, int height, IplImage $\ast$prev, IplImage $\ast$now, int r\_\-or\_\-l)
+\begin{DoxyCompactList}\small\item\em Determines the base wrist points from the detected group of blobs {\itshape rightgroup\/} by performing correlation between the previous image {\itshape prev\/} and the current image {\itshape now\/}. \end{DoxyCompactList}\item 
+void \hyperlink{classFullhand_ad645abf60b7a1c1f85d3dd04a49d48a9}{setfingers} (\hyperlink{blobby_8h_a7017012a1393f7249d0e03d6ac9f1c7b}{CoorVec} hand, int r\_\-or\_\-l, int width, int height)
+\begin{DoxyCompactList}\small\item\em Orders the detected blobs in vector {\itshape hand\/} into groups by distance from the detected wrist points. These groups are then themselves ordered by x coordinate and angle from wrist point in order to determine which hand point they belong to. \end{DoxyCompactList}\item 
+IplImage $\ast$ \hyperlink{classFullhand_a296cf91ff96442ddf05397baa621acfe}{getfingers} (IplImage $\ast$fgr\_\-grp\_\-img)
+\begin{DoxyCompactList}\small\item\em Function to draw detected points and their joint connections on an image, including functions in case points are missing. \end{DoxyCompactList}\item 
+IplImage $\ast$ \hyperlink{classFullhand_aa3dd5a64c976321b5e3817684898ae97}{getfingerlines} (IplImage $\ast$fgr\_\-grp\_\-img)
+\begin{DoxyCompactList}\small\item\em Function to draw detected points and their joint connections on an image. \end{DoxyCompactList}\item 
+IplImage $\ast$ \hyperlink{classFullhand_ad6f1c876e703d0a6e30d7a5d202e36b5}{drawcrosses} (IplImage $\ast$fgr\_\-grp\_\-img)
+\begin{DoxyCompactList}\small\item\em Function to draw detected points on an image. \end{DoxyCompactList}\item 
+IplImage $\ast$ \hyperlink{classFullhand_a66c4f8020b5319a7002872045515251e}{getestimations} (IplImage $\ast$imahge)
+\begin{DoxyCompactList}\small\item\em Function to draw circles on estimated points for any lost or occluded markers. \end{DoxyCompactList}\item 
+CvPoint \hyperlink{classFullhand_ab9c7d8f54b1363adcd7b0902c0dbf4cf}{getbaseL} ()
+\begin{DoxyCompactList}\small\item\em Function to return the value of the Left wrist point baseptL. \end{DoxyCompactList}\item 
+CvPoint \hyperlink{classFullhand_a3381b5876d560c2f7dec7e6412f346ca}{getbaseR} ()
+\begin{DoxyCompactList}\small\item\em Function to return the value of the Right wrist point baseptR. \end{DoxyCompactList}\item 
+CvPoint \hyperlink{classFullhand_ab99327b3ecd306053d22e03bf8feaeb8}{getthumb} ()
+\begin{DoxyCompactList}\small\item\em Function to return the value of the thumb point. \end{DoxyCompactList}\item 
+CvPoint \hyperlink{classFullhand_ac5b2aa60280868b01d6c0d43f31d233a}{get1stfing} ()
+\begin{DoxyCompactList}\small\item\em Function to return the value of the 1st finger metacarpal. \end{DoxyCompactList}\item 
+CvPoint \hyperlink{classFullhand_a65b3f12b6d4300750ee55b7e819692ea}{get2ndfing} ()
+\begin{DoxyCompactList}\small\item\em Function to return the value of the 2nd finger metacarpal. \end{DoxyCompactList}\item 
+CvPoint \hyperlink{classFullhand_aeeac350d43d6ecda41bfb79d6855e5bd}{get3rdfing} ()
+\begin{DoxyCompactList}\small\item\em Function to return the value of the 3rd finger metacarpal. \end{DoxyCompactList}\item 
+CvPoint \hyperlink{classFullhand_a56bb1c2f627d6980fb5a0bdb8526cd66}{getpinkie} ()
+\begin{DoxyCompactList}\small\item\em Function to return the value of the pinkie finger metacarpal. \end{DoxyCompactList}\item 
+CvPoint \hyperlink{classFullhand_ac14533aae77906e829390fc46caf551e}{getthumb\_\-b} ()
+\begin{DoxyCompactList}\small\item\em Function to return the value of the thumb proximal joint. \end{DoxyCompactList}\item 
+CvPoint \hyperlink{classFullhand_ae96acba02047df62646bdd07cf4bd678}{get1stfing\_\-b} ()
+\begin{DoxyCompactList}\small\item\em Function to return the value of the 1st finger proximal joint. \end{DoxyCompactList}\item 
+CvPoint \hyperlink{classFullhand_aa710aeaf39108e802de8baa63193d93f}{get2ndfing\_\-b} ()
+\begin{DoxyCompactList}\small\item\em Function to return the value of the 2nd finger proximal joint. \end{DoxyCompactList}\item 
+CvPoint \hyperlink{classFullhand_a6e035e567ae7cefb04abc13010a0bea0}{get3rdfing\_\-b} ()
+\begin{DoxyCompactList}\small\item\em Function to return the value of the 3rd finger proximal joint. \end{DoxyCompactList}\item 
+CvPoint \hyperlink{classFullhand_abf1eccca6f6accd28ad5904593bc487f}{getpinkie\_\-b} ()
+\begin{DoxyCompactList}\small\item\em Function to return the value of the pinkie proximal joint. \end{DoxyCompactList}\item 
+CvPoint \hyperlink{classFullhand_a67493060acd9282f0e2ba86c5b081583}{get1stfing\_\-c} ()
+\begin{DoxyCompactList}\small\item\em Function to return the value of the 1st finger distal joint. \end{DoxyCompactList}\item 
+CvPoint \hyperlink{classFullhand_a92d00c267a33abdaf2d22853040a9250}{get2ndfing\_\-c} ()
+\begin{DoxyCompactList}\small\item\em Function to return the value of the 2nd finger distal joint. \end{DoxyCompactList}\item 
+CvPoint \hyperlink{classFullhand_aaabd67aea0c385a6c9b58f03d2ae0e28}{get3rdfing\_\-c} ()
+\begin{DoxyCompactList}\small\item\em Function to return the value of the 3rd finger distal joint. \end{DoxyCompactList}\item 
+CvPoint \hyperlink{classFullhand_ad997cf567d6778a32e31ceedf5913d0a}{getpinkie\_\-c} ()
+\begin{DoxyCompactList}\small\item\em Function to return the value of the pinkie distal joint. \end{DoxyCompactList}\item 
+void \hyperlink{classFullhand_a4ef8833718ba7b626289d4123544256c}{setbaseptL} (CvPoint a1)
+\begin{DoxyCompactList}\small\item\em Function to set the value of the Left wrist point baseptL. \end{DoxyCompactList}\item 
+void \hyperlink{classFullhand_a928e14bcfb8b5589adcea1c47a9d48f2}{setbaseptR} (CvPoint a2)
+\begin{DoxyCompactList}\small\item\em Function to set the value of the Right wrist point baseptR. \end{DoxyCompactList}\item 
+void \hyperlink{classFullhand_ab4eb28f51b6927e24524958dcd93233b}{setthumb} (CvPoint b)
+\begin{DoxyCompactList}\small\item\em Function to set the value of the thumb point thumb. \end{DoxyCompactList}\item 
+void \hyperlink{classFullhand_a650a2916dc3dc72f90442419c0ee71b1}{set1stfing} (CvPoint c)
+\begin{DoxyCompactList}\small\item\em Function to set the value of the 1st finger metacarpal. \end{DoxyCompactList}\item 
+void \hyperlink{classFullhand_a14a97b544809b004493914c36b8fe49a}{set2ndfing} (CvPoint d)
+\begin{DoxyCompactList}\small\item\em Function to set the value of the 2nd finger metacarpal. \end{DoxyCompactList}\item 
+void \hyperlink{classFullhand_ac0804f3450b70dc576cddcc519246755}{set3rdfing} (CvPoint e)
+\begin{DoxyCompactList}\small\item\em Function to set the value of the 3rd finger metacarpal. \end{DoxyCompactList}\item 
+void \hyperlink{classFullhand_acf218c9bc86d5e29b61b2885d86cd1c3}{setpinkie} (CvPoint f)
+\begin{DoxyCompactList}\small\item\em Function to set the value of the pinkie metacarpal. \end{DoxyCompactList}\item 
+void \hyperlink{classFullhand_a119df621ef1c610c7e39748d90e88fbe}{setthumb\_\-b} (CvPoint g)
+\begin{DoxyCompactList}\small\item\em Function to set the value of the thumb proximal joint. \end{DoxyCompactList}\item 
+void \hyperlink{classFullhand_ada79a4f4bc30b938fe4bf4133dda4898}{set1stfing\_\-b} (CvPoint h)
+\begin{DoxyCompactList}\small\item\em Function to set the value of the 1st finger proximal joint. \end{DoxyCompactList}\item 
+void \hyperlink{classFullhand_af9f0979ae5a18fb8c120df33c1b5ce81}{set2ndfing\_\-b} (CvPoint i)
+\begin{DoxyCompactList}\small\item\em Function to set the value of the 2nd finger proximal joint. \end{DoxyCompactList}\item 
+void \hyperlink{classFullhand_af397802eb0b3046110c2f79df9605f81}{set3rdfing\_\-b} (CvPoint j)
+\begin{DoxyCompactList}\small\item\em Function to set the value of the 3rd finger proximal joint. \end{DoxyCompactList}\item 
+void \hyperlink{classFullhand_adeb2b0887624feb3d963311254fd26da}{setpinkie\_\-b} (CvPoint k)
+\begin{DoxyCompactList}\small\item\em Function to set the value of the pinkie proximal joint. \end{DoxyCompactList}\item 
+void \hyperlink{classFullhand_a086ad19d367ae967f4b873ca2e86b9f8}{set1stfing\_\-c} (CvPoint l)
+\begin{DoxyCompactList}\small\item\em Function to set the value of the 1st finger distal joint. \end{DoxyCompactList}\item 
+void \hyperlink{classFullhand_ac015734d9709a1cda406efe9ed853a3b}{set2ndfing\_\-c} (CvPoint m)
+\begin{DoxyCompactList}\small\item\em Function to set the value of the 2nd finger distal joint. \end{DoxyCompactList}\item 
+void \hyperlink{classFullhand_a2da1b866a13f5c0e2dc06a55a0caa13b}{set3rdfing\_\-c} (CvPoint n)
+\begin{DoxyCompactList}\small\item\em Function to set the value of the 3rd finger distal joint. \end{DoxyCompactList}\item 
+void \hyperlink{classFullhand_a8a6857d6dcdefe5720ef8539e9b959de}{setpinkie\_\-c} (CvPoint o)
+\begin{DoxyCompactList}\small\item\em Function to set the value of the pinkie distal joint. \end{DoxyCompactList}\item 
+\hyperlink{blobby_8h_a7017012a1393f7249d0e03d6ac9f1c7b}{CoorVec} \hyperlink{classFullhand_a7102dde6836428200b958cb69302754a}{setpoints\_\-wrt\_\-org} ()
+\begin{DoxyCompactList}\small\item\em Function to set all the member coordinates of the \hyperlink{classFullhand}{Fullhand} object with respect to an origin point midway between the two wrist markers set to (0,0) \end{DoxyCompactList}\item 
+\hyperlink{transform_8h_af617b6161d0af4668c255bbe3894b22d}{DistVec} \hyperlink{classFullhand_a227ed94640f8000c76fc4a343da02787}{distances\_\-to\_\-org} (\hyperlink{blobby_8h_a7017012a1393f7249d0e03d6ac9f1c7b}{CoorVec} fingers)
+\begin{DoxyCompactList}\small\item\em Function to calculate distances between each member point and the origin. \end{DoxyCompactList}\item 
+void \hyperlink{classFullhand_a6bf1d5c8dca245244cd0e74c8a70796b}{metaset} (\hyperlink{blobby_8h_a7017012a1393f7249d0e03d6ac9f1c7b}{CoorVec} joints, bool r\_\-or\_\-l)
+\begin{DoxyCompactList}\small\item\em Function to set the points of the metacarpals of the hand from the input vector {\itshape joints\/}. If input vector has more elements than the number expected, function calculates distance between previous point and each point in the vector to find the detected point for this frame. \end{DoxyCompactList}\item 
+void \hyperlink{classFullhand_a16c759028b0aa56ef1f77d52f86f09cb}{proxset} (\hyperlink{blobby_8h_a7017012a1393f7249d0e03d6ac9f1c7b}{CoorVec} joints, bool r\_\-or\_\-l)
+\begin{DoxyCompactList}\small\item\em Function to set the points of the proximal joints of the hand from the input vector {\itshape joints\/}. If input vector has more elements than the number expected, function calculates distance between previous point and each point in the vector to find the detected point for this frame. \end{DoxyCompactList}\item 
+void \hyperlink{classFullhand_accd5f73ff7c0603b42eaa9a2579a0540}{distset} (\hyperlink{blobby_8h_a7017012a1393f7249d0e03d6ac9f1c7b}{CoorVec} joints, bool r\_\-or\_\-l)
+\begin{DoxyCompactList}\small\item\em Function to set the points of the distal joints of the hand from the input vector {\itshape joints\/}. If input vector has more elements than the number expected, function calculates distance between previous point and each point in the vector to find the detected point for this frame. \end{DoxyCompactList}\item 
+bool \hyperlink{classFullhand_a92e663c06eb0d0787cb721db20d661a2}{sort} (\hyperlink{blobby_8h_a7017012a1393f7249d0e03d6ac9f1c7b}{CoorVec} \&list, CvPoint \&finger)
+\begin{DoxyCompactList}\small\item\em Calculates distances between each point in vector {\itshape list\/} and the point {\itshape finger\/}. The point in vector {\itshape list\/} with the shortest distance calculated is assigned as the newly detected point of {\itshape finger\/}. \end{DoxyCompactList}\item 
+void \hyperlink{classFullhand_a1f1fc43f8637324a1e73808f35dff218}{checkgroups} (\hyperlink{blobby_8h_a7017012a1393f7249d0e03d6ac9f1c7b}{CoorVec} \&proxal, \hyperlink{blobby_8h_a7017012a1393f7249d0e03d6ac9f1c7b}{CoorVec} \&distal, int width)
+\begin{DoxyCompactList}\small\item\em Function to check whether any points in each joint group should belong to another based on their distance from the wrist points of the hand. Reassigns points to the other vector if necessary. \end{DoxyCompactList}\item 
+double \hyperlink{classFullhand_af3d5ae9929b6832b10459152ec1c9300}{angle} (CvPoint thepoint, CvPoint base)
+\begin{DoxyCompactList}\small\item\em Function to calculate the angle between a detected point and the virtual base point. \end{DoxyCompactList}\item 
+double \hyperlink{classFullhand_a591ffe2a9eab20ec6b52b6ced0c961d3}{distance} (CvPoint one, CvPoint two)
+\begin{DoxyCompactList}\small\item\em Function to calculate the distance between two detected points. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classFullhand_adfa61fb50125db0dbd152a5ccdc5210a}{
+bool {\bfseries r\_\-or\_\-l}}
+\label{classFullhand_adfa61fb50125db0dbd152a5ccdc5210a}
+
+\item 
+bool \hyperlink{classFullhand_a44fe7f34fc6bfcbd034d16b949ecf8b7}{lost\_\-baseL}
+\item 
+bool \hyperlink{classFullhand_a45a68f96640bf7207d6c2a58bd3ed834}{lost\_\-baseR}
+\item 
+bool \hyperlink{classFullhand_a9538ee796a33099f747d8972d9747816}{occ\_\-thumb}
+\item 
+bool \hyperlink{classFullhand_abfaffa48f3a18c954956cc9f97973d4d}{hid\_\-pinkie}
+\item 
+bool \hyperlink{classFullhand_aadb7136f7ce7e3a4a3ffb1188e7fb744}{lost\_\-fst}
+\item 
+bool \hyperlink{classFullhand_a3f1d564d16316785f7c94ee2c302e59f}{lost\_\-scnd}
+\item 
+bool \hyperlink{classFullhand_a26ec6d3639ec7cfa414d22f3ffc83663}{lost\_\-thrd}
+\item 
+bool \hyperlink{classFullhand_ae87bfe0cecb5ca9a366d7850c8c8bdd1}{occ\_\-thumb\_\-b}
+\item 
+bool \hyperlink{classFullhand_adddf4e45d1e336d48a7e0b8c0724979e}{hid\_\-pinkie\_\-b}
+\item 
+bool \hyperlink{classFullhand_aadd18a982717dfd5e7c10495db566752}{lost\_\-fst\_\-b}
+\item 
+bool \hyperlink{classFullhand_aaefe4741e3ddeb3fcb7525633df31fd0}{lost\_\-scnd\_\-b}
+\item 
+bool \hyperlink{classFullhand_a90731df9ecf27e13954ea3bea51dc5f2}{lost\_\-thrd\_\-b}
+\item 
+bool \hyperlink{classFullhand_a79d6ffa5c5dcd09ab56affa468b72b07}{lost\_\-fst\_\-c}
+\item 
+\hypertarget{classFullhand_a66f8383e88b30c3b5d430e062e014da1}{
+bool {\bfseries lost\_\-scnd\_\-c}}
+\label{classFullhand_a66f8383e88b30c3b5d430e062e014da1}
+
+\item 
+\hypertarget{classFullhand_aedaa0f5da2e827b3cb4ea1ad233a407e}{
+bool {\bfseries lost\_\-thrd\_\-c}}
+\label{classFullhand_aedaa0f5da2e827b3cb4ea1ad233a407e}
+
+\item 
+\hypertarget{classFullhand_a9896627365e8047bfd0435db5c9fc7f1}{
+bool {\bfseries hid\_\-pinkie\_\-c}}
+\label{classFullhand_a9896627365e8047bfd0435db5c9fc7f1}
+
+\item 
+CvPoint \hyperlink{classFullhand_a684a292b453f166c89d83bf44c5915bc}{est\_\-thumb}
+\item 
+CvPoint \hyperlink{classFullhand_a51e64566da2b001b0cbfecb9e0d05995}{est\_\-first}
+\item 
+CvPoint \hyperlink{classFullhand_a8c7e6d4c68fde49322b9f0b1b75e9875}{est\_\-second}
+\item 
+CvPoint \hyperlink{classFullhand_ac2f0b8420e115e46150ce3e890994cf2}{est\_\-third}
+\item 
+CvPoint \hyperlink{classFullhand_aecd703ced5ced05be9330318b507075c}{est\_\-pinkie}
+\item 
+CvPoint \hyperlink{classFullhand_ac9872a6e6fad61831b23adbf22447d49}{est\_\-thumb\_\-b}
+\item 
+CvPoint \hyperlink{classFullhand_acb06ed0b5a90fdb16e34af39604e2fc6}{est\_\-first\_\-b}
+\item 
+CvPoint \hyperlink{classFullhand_a28eba027020a49d241fcd932560b8b70}{est\_\-second\_\-b}
+\item 
+CvPoint \hyperlink{classFullhand_a988a924b677a58065150a33d50fe0dff}{est\_\-third\_\-b}
+\item 
+CvPoint \hyperlink{classFullhand_a86105eb44b5dbb35dee539a9d7b0739a}{est\_\-pinkie\_\-b}
+\item 
+CvPoint \hyperlink{classFullhand_a666a87e3e446ccaf3eea150f5f99cac7}{est\_\-thumb\_\-c}
+\item 
+\hypertarget{classFullhand_a30520d375ed870f0d15250c518f59281}{
+CvPoint {\bfseries est\_\-first\_\-c}}
+\label{classFullhand_a30520d375ed870f0d15250c518f59281}
+
+\item 
+\hypertarget{classFullhand_ac122aefd2a4a328a5e2f4da5585fe177}{
+CvPoint {\bfseries est\_\-second\_\-c}}
+\label{classFullhand_ac122aefd2a4a328a5e2f4da5585fe177}
+
+\item 
+\hypertarget{classFullhand_a4515beb515a100dd231b16a6b1ac40a5}{
+CvPoint {\bfseries est\_\-third\_\-c}}
+\label{classFullhand_a4515beb515a100dd231b16a6b1ac40a5}
+
+\item 
+\hypertarget{classFullhand_a6b946da734063f5afa43cf98141147be}{
+CvPoint {\bfseries est\_\-pinkie\_\-c}}
+\label{classFullhand_a6b946da734063f5afa43cf98141147be}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+CvPoint \hyperlink{classFullhand_af41f907b9a1a9db4c55ca8e79f0a7b02}{baseptL}
+\item 
+\hypertarget{classFullhand_a7a733bddc575276da9904f75113a572f}{
+CvPoint {\bfseries baseptR}}
+\label{classFullhand_a7a733bddc575276da9904f75113a572f}
+
+\item 
+\hypertarget{classFullhand_a0deb4507b0a9e6c8fae5788d475947e2}{
+CvPoint {\bfseries thumb}}
+\label{classFullhand_a0deb4507b0a9e6c8fae5788d475947e2}
+
+\item 
+\hypertarget{classFullhand_a75e7cbeac6cb249b0d2b528d33fd1e76}{
+CvPoint {\bfseries fstfinger}}
+\label{classFullhand_a75e7cbeac6cb249b0d2b528d33fd1e76}
+
+\item 
+\hypertarget{classFullhand_a08901fe0947c95d1dcb9dc1aae849598}{
+CvPoint {\bfseries scndfinger}}
+\label{classFullhand_a08901fe0947c95d1dcb9dc1aae849598}
+
+\item 
+\hypertarget{classFullhand_a364ca0c7aa0ca2e5cac78493d20ba524}{
+CvPoint {\bfseries thrdfinger}}
+\label{classFullhand_a364ca0c7aa0ca2e5cac78493d20ba524}
+
+\item 
+\hypertarget{classFullhand_ad99be1bdd835a6a1c6e727e785927fdf}{
+CvPoint {\bfseries pinkie}}
+\label{classFullhand_ad99be1bdd835a6a1c6e727e785927fdf}
+
+\item 
+\hypertarget{classFullhand_a94222756d853321311764f01778fded3}{
+CvPoint {\bfseries thumb\_\-b}}
+\label{classFullhand_a94222756d853321311764f01778fded3}
+
+\item 
+\hypertarget{classFullhand_a056e8cfb3aebd5987963ac405b16f96e}{
+CvPoint {\bfseries fstfinger\_\-b}}
+\label{classFullhand_a056e8cfb3aebd5987963ac405b16f96e}
+
+\item 
+\hypertarget{classFullhand_adba840b90e831e5ec8ee231a3d037c1a}{
+CvPoint {\bfseries scndfinger\_\-b}}
+\label{classFullhand_adba840b90e831e5ec8ee231a3d037c1a}
+
+\item 
+\hypertarget{classFullhand_acb8cb249608a178a45857b71b005452f}{
+CvPoint {\bfseries thrdfinger\_\-b}}
+\label{classFullhand_acb8cb249608a178a45857b71b005452f}
+
+\item 
+\hypertarget{classFullhand_ae75acbfcc1e4d6fcaee684a3cb5e0892}{
+CvPoint {\bfseries pinkie\_\-b}}
+\label{classFullhand_ae75acbfcc1e4d6fcaee684a3cb5e0892}
+
+\item 
+\hypertarget{classFullhand_a7032825d89acdc7509750d8e0e879360}{
+CvPoint {\bfseries fstfinger\_\-c}}
+\label{classFullhand_a7032825d89acdc7509750d8e0e879360}
+
+\item 
+\hypertarget{classFullhand_a2e277bf78dbeff15558c6f897778cf05}{
+CvPoint {\bfseries scndfinger\_\-c}}
+\label{classFullhand_a2e277bf78dbeff15558c6f897778cf05}
+
+\item 
+\hypertarget{classFullhand_a9632d93dcb951f01ef62a06746deac3f}{
+CvPoint {\bfseries thrdfinger\_\-c}}
+\label{classFullhand_a9632d93dcb951f01ef62a06746deac3f}
+
+\item 
+\hypertarget{classFullhand_ae0fc07df607be4a40627ed7d0c584330}{
+CvPoint {\bfseries pinkie\_\-c}}
+\label{classFullhand_ae0fc07df607be4a40627ed7d0c584330}
+
+\item 
+\hypertarget{classFullhand_aeb5ca0287db5a40291093e31d7b91932}{
+CvPoint {\bfseries org\_\-basept}}
+\label{classFullhand_aeb5ca0287db5a40291093e31d7b91932}
+
+\item 
+\hypertarget{classFullhand_a69a3f88c5ad006cb0d83a9a74420134c}{
+CvPoint {\bfseries org\_\-baseptL}}
+\label{classFullhand_a69a3f88c5ad006cb0d83a9a74420134c}
+
+\item 
+\hypertarget{classFullhand_afac19363c0da868972f91b50049792dc}{
+CvPoint {\bfseries org\_\-baseptR}}
+\label{classFullhand_afac19363c0da868972f91b50049792dc}
+
+\item 
+\hypertarget{classFullhand_a0aa4983ec40dccd2b97c688216fd5e61}{
+CvPoint {\bfseries org\_\-thumb}}
+\label{classFullhand_a0aa4983ec40dccd2b97c688216fd5e61}
+
+\item 
+\hypertarget{classFullhand_af7467b44677d3b04b2fff587210120f9}{
+CvPoint {\bfseries org\_\-fstfinger}}
+\label{classFullhand_af7467b44677d3b04b2fff587210120f9}
+
+\item 
+\hypertarget{classFullhand_a10622527b50db0075aa62717e2662ce3}{
+CvPoint {\bfseries org\_\-scndfinger}}
+\label{classFullhand_a10622527b50db0075aa62717e2662ce3}
+
+\item 
+\hypertarget{classFullhand_ad5083708840f59a0af06f22c16b6432d}{
+CvPoint {\bfseries org\_\-thrdfinger}}
+\label{classFullhand_ad5083708840f59a0af06f22c16b6432d}
+
+\item 
+\hypertarget{classFullhand_a4a33d16f41ab714f7a31857acd34b0d4}{
+CvPoint {\bfseries org\_\-pinkie}}
+\label{classFullhand_a4a33d16f41ab714f7a31857acd34b0d4}
+
+\item 
+\hypertarget{classFullhand_a0ce04dac29ca9232eee9f1c2ce26325b}{
+CvPoint {\bfseries org\_\-thumb\_\-b}}
+\label{classFullhand_a0ce04dac29ca9232eee9f1c2ce26325b}
+
+\item 
+\hypertarget{classFullhand_a64592e646648d3b4701910864f79c5f6}{
+CvPoint {\bfseries org\_\-fst\_\-b}}
+\label{classFullhand_a64592e646648d3b4701910864f79c5f6}
+
+\item 
+\hypertarget{classFullhand_a9ef7362591a913bf41a5dbfb017f26ff}{
+CvPoint {\bfseries org\_\-scnd\_\-b}}
+\label{classFullhand_a9ef7362591a913bf41a5dbfb017f26ff}
+
+\item 
+\hypertarget{classFullhand_aad2ea67f7041f2285df44d4f3791fb6f}{
+CvPoint {\bfseries org\_\-thrd\_\-b}}
+\label{classFullhand_aad2ea67f7041f2285df44d4f3791fb6f}
+
+\item 
+\hypertarget{classFullhand_af02b5b4168144fe0ec0e88272066f584}{
+CvPoint {\bfseries org\_\-pinkie\_\-b}}
+\label{classFullhand_af02b5b4168144fe0ec0e88272066f584}
+
+\item 
+\hypertarget{classFullhand_a7340d02d4b31e259541f9ad4a88ae7e6}{
+CvPoint {\bfseries org\_\-fst\_\-c}}
+\label{classFullhand_a7340d02d4b31e259541f9ad4a88ae7e6}
+
+\item 
+\hypertarget{classFullhand_a6bb2d3152b0974a12b03919516edc228}{
+CvPoint {\bfseries org\_\-scnd\_\-c}}
+\label{classFullhand_a6bb2d3152b0974a12b03919516edc228}
+
+\item 
+\hypertarget{classFullhand_a8701fff5650d5ad916404881529092d4}{
+CvPoint {\bfseries org\_\-thrd\_\-c}}
+\label{classFullhand_a8701fff5650d5ad916404881529092d4}
+
+\item 
+\hypertarget{classFullhand_aec909c7f79c84ad54cb293ccca0ac3a4}{
+CvPoint {\bfseries org\_\-pinkie\_\-c}}
+\label{classFullhand_aec909c7f79c84ad54cb293ccca0ac3a4}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+class enabling the setting and retrieval of all points on the hand as well as various functions to group points into metacarpals, proximal and distal points 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classFullhand_a6e457a92117b68cd19d643f2152d7224}{
+\index{Fullhand@{Fullhand}!Fullhand@{Fullhand}}
+\index{Fullhand@{Fullhand}!Fullhand@{Fullhand}}
+\subsubsection[{Fullhand}]{\setlength{\rightskip}{0pt plus 5cm}Fullhand::Fullhand (
+\begin{DoxyParamCaption}
+\item[{bool}]{whichhand}
+\end{DoxyParamCaption}
+)}}
+\label{classFullhand_a6e457a92117b68cd19d643f2152d7224}
+
+
+Constructor function for \hyperlink{classFullhand}{Fullhand} object which initialises all variables for left or right hand. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em whichhand} & Boolean value determining either Left or Right hand object to be constructed. True denotes Right hand and False denotes Left hand \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classFullhand_af3d5ae9929b6832b10459152ec1c9300}{
+\index{Fullhand@{Fullhand}!angle@{angle}}
+\index{angle@{angle}!Fullhand@{Fullhand}}
+\subsubsection[{angle}]{\setlength{\rightskip}{0pt plus 5cm}double Fullhand::angle (
+\begin{DoxyParamCaption}
+\item[{CvPoint}]{thepoint, }
+\item[{CvPoint}]{base}
+\end{DoxyParamCaption}
+)}}
+\label{classFullhand_af3d5ae9929b6832b10459152ec1c9300}
+
+
+Function to calculate the angle between a detected point and the virtual base point. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em thepoint} & Detected point coordinates \\
+\hline
+\mbox{\tt in}  & {\em base} & Virtual base point coordinates \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Calculated angle 
+\end{DoxyReturn}
+\hypertarget{classFullhand_a1f1fc43f8637324a1e73808f35dff218}{
+\index{Fullhand@{Fullhand}!checkgroups@{checkgroups}}
+\index{checkgroups@{checkgroups}!Fullhand@{Fullhand}}
+\subsubsection[{checkgroups}]{\setlength{\rightskip}{0pt plus 5cm}void Fullhand::checkgroups (
+\begin{DoxyParamCaption}
+\item[{{\bf CoorVec} \&}]{proxal, }
+\item[{{\bf CoorVec} \&}]{distal, }
+\item[{int}]{width}
+\end{DoxyParamCaption}
+)}}
+\label{classFullhand_a1f1fc43f8637324a1e73808f35dff218}
+
+
+Function to check whether any points in each joint group should belong to another based on their distance from the wrist points of the hand. Reassigns points to the other vector if necessary. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em proxal} & Vector containing points believed to be in the proxal joint group \\
+\hline
+\mbox{\tt in,out}  & {\em distal} & Vector containing points believed to be in the distal joint group \\
+\hline
+\mbox{\tt in}  & {\em width} & Width of the frame in pixels e.g. 216 \\
+\hline
+\end{DoxyParams}
+\hypertarget{classFullhand_a591ffe2a9eab20ec6b52b6ced0c961d3}{
+\index{Fullhand@{Fullhand}!distance@{distance}}
+\index{distance@{distance}!Fullhand@{Fullhand}}
+\subsubsection[{distance}]{\setlength{\rightskip}{0pt plus 5cm}double Fullhand::distance (
+\begin{DoxyParamCaption}
+\item[{CvPoint}]{thepoint, }
+\item[{CvPoint}]{base}
+\end{DoxyParamCaption}
+)}}
+\label{classFullhand_a591ffe2a9eab20ec6b52b6ced0c961d3}
+
+
+Function to calculate the distance between two detected points. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em one} & First detected point coordinates \\
+\hline
+\mbox{\tt in}  & {\em two} & Second detected point coordinates \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Calculated distance 
+\end{DoxyReturn}
+\hypertarget{classFullhand_a227ed94640f8000c76fc4a343da02787}{
+\index{Fullhand@{Fullhand}!distances\_\-to\_\-org@{distances\_\-to\_\-org}}
+\index{distances\_\-to\_\-org@{distances\_\-to\_\-org}!Fullhand@{Fullhand}}
+\subsubsection[{distances\_\-to\_\-org}]{\setlength{\rightskip}{0pt plus 5cm}{\bf DistVec} Fullhand::distances\_\-to\_\-org (
+\begin{DoxyParamCaption}
+\item[{{\bf CoorVec}}]{fingers}
+\end{DoxyParamCaption}
+)}}
+\label{classFullhand_a227ed94640f8000c76fc4a343da02787}
+
+
+Function to calculate distances between each member point and the origin. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em fingers} & Vector containing recalculated positions of each member point (output from setpoints\_\-wrt\_\-org function) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector {\itshape DistVec\/} containing distances between each member point and the origin. 
+\end{DoxyReturn}
+\hypertarget{classFullhand_accd5f73ff7c0603b42eaa9a2579a0540}{
+\index{Fullhand@{Fullhand}!distset@{distset}}
+\index{distset@{distset}!Fullhand@{Fullhand}}
+\subsubsection[{distset}]{\setlength{\rightskip}{0pt plus 5cm}void Fullhand::distset (
+\begin{DoxyParamCaption}
+\item[{{\bf CoorVec}}]{joints, }
+\item[{bool}]{r\_\-or\_\-l}
+\end{DoxyParamCaption}
+)}}
+\label{classFullhand_accd5f73ff7c0603b42eaa9a2579a0540}
+
+
+Function to set the points of the distal joints of the hand from the input vector {\itshape joints\/}. If input vector has more elements than the number expected, function calculates distance between previous point and each point in the vector to find the detected point for this frame. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em joints} & Vector containing suspected members of distal joints of the hand, unordered \\
+\hline
+\mbox{\tt in}  & {\em r\_\-or\_\-l} & Boolean value denoting which hand the points belong to. Left(false) or right(true). \\
+\hline
+\end{DoxyParams}
+\hypertarget{classFullhand_ad6f1c876e703d0a6e30d7a5d202e36b5}{
+\index{Fullhand@{Fullhand}!drawcrosses@{drawcrosses}}
+\index{drawcrosses@{drawcrosses}!Fullhand@{Fullhand}}
+\subsubsection[{drawcrosses}]{\setlength{\rightskip}{0pt plus 5cm}IplImage $\ast$ Fullhand::drawcrosses (
+\begin{DoxyParamCaption}
+\item[{IplImage $\ast$}]{fgr\_\-grp\_\-img}
+\end{DoxyParamCaption}
+)}}
+\label{classFullhand_ad6f1c876e703d0a6e30d7a5d202e36b5}
+
+
+Function to draw detected points on an image. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em fgr\_\-grp\_\-img} & Image to be drawn on \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Image with drawings 
+\end{DoxyReturn}
+\hypertarget{classFullhand_ac5b2aa60280868b01d6c0d43f31d233a}{
+\index{Fullhand@{Fullhand}!get1stfing@{get1stfing}}
+\index{get1stfing@{get1stfing}!Fullhand@{Fullhand}}
+\subsubsection[{get1stfing}]{\setlength{\rightskip}{0pt plus 5cm}CvPoint Fullhand::get1stfing (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classFullhand_ac5b2aa60280868b01d6c0d43f31d233a}
+
+
+Function to return the value of the 1st finger metacarpal. 
+
+\begin{DoxyReturn}{Returns}
+CvPoint coordinate of fstfinger 
+\end{DoxyReturn}
+\hypertarget{classFullhand_ae96acba02047df62646bdd07cf4bd678}{
+\index{Fullhand@{Fullhand}!get1stfing\_\-b@{get1stfing\_\-b}}
+\index{get1stfing\_\-b@{get1stfing\_\-b}!Fullhand@{Fullhand}}
+\subsubsection[{get1stfing\_\-b}]{\setlength{\rightskip}{0pt plus 5cm}CvPoint Fullhand::get1stfing\_\-b (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classFullhand_ae96acba02047df62646bdd07cf4bd678}
+
+
+Function to return the value of the 1st finger proximal joint. 
+
+\begin{DoxyReturn}{Returns}
+CvPoint coordinate of fstfinger\_\-b 
+\end{DoxyReturn}
+\hypertarget{classFullhand_a67493060acd9282f0e2ba86c5b081583}{
+\index{Fullhand@{Fullhand}!get1stfing\_\-c@{get1stfing\_\-c}}
+\index{get1stfing\_\-c@{get1stfing\_\-c}!Fullhand@{Fullhand}}
+\subsubsection[{get1stfing\_\-c}]{\setlength{\rightskip}{0pt plus 5cm}CvPoint Fullhand::get1stfing\_\-c (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classFullhand_a67493060acd9282f0e2ba86c5b081583}
+
+
+Function to return the value of the 1st finger distal joint. 
+
+\begin{DoxyReturn}{Returns}
+CvPoint coordinate of fstfinger\_\-c 
+\end{DoxyReturn}
+\hypertarget{classFullhand_a65b3f12b6d4300750ee55b7e819692ea}{
+\index{Fullhand@{Fullhand}!get2ndfing@{get2ndfing}}
+\index{get2ndfing@{get2ndfing}!Fullhand@{Fullhand}}
+\subsubsection[{get2ndfing}]{\setlength{\rightskip}{0pt plus 5cm}CvPoint Fullhand::get2ndfing (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classFullhand_a65b3f12b6d4300750ee55b7e819692ea}
+
+
+Function to return the value of the 2nd finger metacarpal. 
+
+\begin{DoxyReturn}{Returns}
+CvPoint coordinate of scndfinger 
+\end{DoxyReturn}
+\hypertarget{classFullhand_aa710aeaf39108e802de8baa63193d93f}{
+\index{Fullhand@{Fullhand}!get2ndfing\_\-b@{get2ndfing\_\-b}}
+\index{get2ndfing\_\-b@{get2ndfing\_\-b}!Fullhand@{Fullhand}}
+\subsubsection[{get2ndfing\_\-b}]{\setlength{\rightskip}{0pt plus 5cm}CvPoint Fullhand::get2ndfing\_\-b (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classFullhand_aa710aeaf39108e802de8baa63193d93f}
+
+
+Function to return the value of the 2nd finger proximal joint. 
+
+\begin{DoxyReturn}{Returns}
+CvPoint coordinate of scndfinger\_\-b 
+\end{DoxyReturn}
+\hypertarget{classFullhand_a92d00c267a33abdaf2d22853040a9250}{
+\index{Fullhand@{Fullhand}!get2ndfing\_\-c@{get2ndfing\_\-c}}
+\index{get2ndfing\_\-c@{get2ndfing\_\-c}!Fullhand@{Fullhand}}
+\subsubsection[{get2ndfing\_\-c}]{\setlength{\rightskip}{0pt plus 5cm}CvPoint Fullhand::get2ndfing\_\-c (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classFullhand_a92d00c267a33abdaf2d22853040a9250}
+
+
+Function to return the value of the 2nd finger distal joint. 
+
+\begin{DoxyReturn}{Returns}
+CvPoint coordinate of scndfinger\_\-c 
+\end{DoxyReturn}
+\hypertarget{classFullhand_aeeac350d43d6ecda41bfb79d6855e5bd}{
+\index{Fullhand@{Fullhand}!get3rdfing@{get3rdfing}}
+\index{get3rdfing@{get3rdfing}!Fullhand@{Fullhand}}
+\subsubsection[{get3rdfing}]{\setlength{\rightskip}{0pt plus 5cm}CvPoint Fullhand::get3rdfing (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classFullhand_aeeac350d43d6ecda41bfb79d6855e5bd}
+
+
+Function to return the value of the 3rd finger metacarpal. 
+
+\begin{DoxyReturn}{Returns}
+CvPoint coordinate of thrdfinger 
+\end{DoxyReturn}
+\hypertarget{classFullhand_a6e035e567ae7cefb04abc13010a0bea0}{
+\index{Fullhand@{Fullhand}!get3rdfing\_\-b@{get3rdfing\_\-b}}
+\index{get3rdfing\_\-b@{get3rdfing\_\-b}!Fullhand@{Fullhand}}
+\subsubsection[{get3rdfing\_\-b}]{\setlength{\rightskip}{0pt plus 5cm}CvPoint Fullhand::get3rdfing\_\-b (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classFullhand_a6e035e567ae7cefb04abc13010a0bea0}
+
+
+Function to return the value of the 3rd finger proximal joint. 
+
+\begin{DoxyReturn}{Returns}
+CvPoint coordinate of thrdfinger\_\-b 
+\end{DoxyReturn}
+\hypertarget{classFullhand_aaabd67aea0c385a6c9b58f03d2ae0e28}{
+\index{Fullhand@{Fullhand}!get3rdfing\_\-c@{get3rdfing\_\-c}}
+\index{get3rdfing\_\-c@{get3rdfing\_\-c}!Fullhand@{Fullhand}}
+\subsubsection[{get3rdfing\_\-c}]{\setlength{\rightskip}{0pt plus 5cm}CvPoint Fullhand::get3rdfing\_\-c (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classFullhand_aaabd67aea0c385a6c9b58f03d2ae0e28}
+
+
+Function to return the value of the 3rd finger distal joint. 
+
+\begin{DoxyReturn}{Returns}
+CvPoint coordinate of thrdfinger\_\-c 
+\end{DoxyReturn}
+\hypertarget{classFullhand_ab9c7d8f54b1363adcd7b0902c0dbf4cf}{
+\index{Fullhand@{Fullhand}!getbaseL@{getbaseL}}
+\index{getbaseL@{getbaseL}!Fullhand@{Fullhand}}
+\subsubsection[{getbaseL}]{\setlength{\rightskip}{0pt plus 5cm}CvPoint Fullhand::getbaseL (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classFullhand_ab9c7d8f54b1363adcd7b0902c0dbf4cf}
+
+
+Function to return the value of the Left wrist point baseptL. 
+
+\begin{DoxyReturn}{Returns}
+CvPoint coordinate of baseptL 
+\end{DoxyReturn}
+\hypertarget{classFullhand_a3381b5876d560c2f7dec7e6412f346ca}{
+\index{Fullhand@{Fullhand}!getbaseR@{getbaseR}}
+\index{getbaseR@{getbaseR}!Fullhand@{Fullhand}}
+\subsubsection[{getbaseR}]{\setlength{\rightskip}{0pt plus 5cm}CvPoint Fullhand::getbaseR (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classFullhand_a3381b5876d560c2f7dec7e6412f346ca}
+
+
+Function to return the value of the Right wrist point baseptR. 
+
+\begin{DoxyReturn}{Returns}
+CvPoint coordinate of baseptR 
+\end{DoxyReturn}
+\hypertarget{classFullhand_a66c4f8020b5319a7002872045515251e}{
+\index{Fullhand@{Fullhand}!getestimations@{getestimations}}
+\index{getestimations@{getestimations}!Fullhand@{Fullhand}}
+\subsubsection[{getestimations}]{\setlength{\rightskip}{0pt plus 5cm}IplImage $\ast$ Fullhand::getestimations (
+\begin{DoxyParamCaption}
+\item[{IplImage $\ast$}]{imahge}
+\end{DoxyParamCaption}
+)}}
+\label{classFullhand_a66c4f8020b5319a7002872045515251e}
+
+
+Function to draw circles on estimated points for any lost or occluded markers. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em fgr\_\-grp\_\-img} & Image to be drawn on \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Image with drawings 
+\end{DoxyReturn}
+\hypertarget{classFullhand_aa3dd5a64c976321b5e3817684898ae97}{
+\index{Fullhand@{Fullhand}!getfingerlines@{getfingerlines}}
+\index{getfingerlines@{getfingerlines}!Fullhand@{Fullhand}}
+\subsubsection[{getfingerlines}]{\setlength{\rightskip}{0pt plus 5cm}IplImage $\ast$ Fullhand::getfingerlines (
+\begin{DoxyParamCaption}
+\item[{IplImage $\ast$}]{fgr\_\-grp\_\-img}
+\end{DoxyParamCaption}
+)}}
+\label{classFullhand_aa3dd5a64c976321b5e3817684898ae97}
+
+
+Function to draw detected points and their joint connections on an image. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em fgr\_\-grp\_\-img} & Image to be drawn on \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Image with drawings 
+\end{DoxyReturn}
+\hypertarget{classFullhand_a296cf91ff96442ddf05397baa621acfe}{
+\index{Fullhand@{Fullhand}!getfingers@{getfingers}}
+\index{getfingers@{getfingers}!Fullhand@{Fullhand}}
+\subsubsection[{getfingers}]{\setlength{\rightskip}{0pt plus 5cm}IplImage $\ast$ Fullhand::getfingers (
+\begin{DoxyParamCaption}
+\item[{IplImage $\ast$}]{fgr\_\-grp\_\-img}
+\end{DoxyParamCaption}
+)}}
+\label{classFullhand_a296cf91ff96442ddf05397baa621acfe}
+
+
+Function to draw detected points and their joint connections on an image, including functions in case points are missing. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em fgr\_\-grp\_\-img} & Image to be drawn on \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Image with drawings 
+\end{DoxyReturn}
+\hypertarget{classFullhand_a56bb1c2f627d6980fb5a0bdb8526cd66}{
+\index{Fullhand@{Fullhand}!getpinkie@{getpinkie}}
+\index{getpinkie@{getpinkie}!Fullhand@{Fullhand}}
+\subsubsection[{getpinkie}]{\setlength{\rightskip}{0pt plus 5cm}CvPoint Fullhand::getpinkie (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classFullhand_a56bb1c2f627d6980fb5a0bdb8526cd66}
+
+
+Function to return the value of the pinkie finger metacarpal. 
+
+\begin{DoxyReturn}{Returns}
+CvPoint coordinate of pinkie 
+\end{DoxyReturn}
+\hypertarget{classFullhand_abf1eccca6f6accd28ad5904593bc487f}{
+\index{Fullhand@{Fullhand}!getpinkie\_\-b@{getpinkie\_\-b}}
+\index{getpinkie\_\-b@{getpinkie\_\-b}!Fullhand@{Fullhand}}
+\subsubsection[{getpinkie\_\-b}]{\setlength{\rightskip}{0pt plus 5cm}CvPoint Fullhand::getpinkie\_\-b (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classFullhand_abf1eccca6f6accd28ad5904593bc487f}
+
+
+Function to return the value of the pinkie proximal joint. 
+
+\begin{DoxyReturn}{Returns}
+CvPoint coordinate of pinkie\_\-b 
+\end{DoxyReturn}
+\hypertarget{classFullhand_ad997cf567d6778a32e31ceedf5913d0a}{
+\index{Fullhand@{Fullhand}!getpinkie\_\-c@{getpinkie\_\-c}}
+\index{getpinkie\_\-c@{getpinkie\_\-c}!Fullhand@{Fullhand}}
+\subsubsection[{getpinkie\_\-c}]{\setlength{\rightskip}{0pt plus 5cm}CvPoint Fullhand::getpinkie\_\-c (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classFullhand_ad997cf567d6778a32e31ceedf5913d0a}
+
+
+Function to return the value of the pinkie distal joint. 
+
+\begin{DoxyReturn}{Returns}
+CvPoint coordinate of pinkie\_\-c 
+\end{DoxyReturn}
+\hypertarget{classFullhand_ab99327b3ecd306053d22e03bf8feaeb8}{
+\index{Fullhand@{Fullhand}!getthumb@{getthumb}}
+\index{getthumb@{getthumb}!Fullhand@{Fullhand}}
+\subsubsection[{getthumb}]{\setlength{\rightskip}{0pt plus 5cm}CvPoint Fullhand::getthumb (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classFullhand_ab99327b3ecd306053d22e03bf8feaeb8}
+
+
+Function to return the value of the thumb point. 
+
+\begin{DoxyReturn}{Returns}
+CvPoint coordinate of thumb 
+\end{DoxyReturn}
+\hypertarget{classFullhand_ac14533aae77906e829390fc46caf551e}{
+\index{Fullhand@{Fullhand}!getthumb\_\-b@{getthumb\_\-b}}
+\index{getthumb\_\-b@{getthumb\_\-b}!Fullhand@{Fullhand}}
+\subsubsection[{getthumb\_\-b}]{\setlength{\rightskip}{0pt plus 5cm}CvPoint Fullhand::getthumb\_\-b (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classFullhand_ac14533aae77906e829390fc46caf551e}
+
+
+Function to return the value of the thumb proximal joint. 
+
+\begin{DoxyReturn}{Returns}
+CvPoint coordinate of thumb\_\-b 
+\end{DoxyReturn}
+\hypertarget{classFullhand_a6bf1d5c8dca245244cd0e74c8a70796b}{
+\index{Fullhand@{Fullhand}!metaset@{metaset}}
+\index{metaset@{metaset}!Fullhand@{Fullhand}}
+\subsubsection[{metaset}]{\setlength{\rightskip}{0pt plus 5cm}void Fullhand::metaset (
+\begin{DoxyParamCaption}
+\item[{{\bf CoorVec}}]{joints, }
+\item[{bool}]{r\_\-or\_\-l}
+\end{DoxyParamCaption}
+)}}
+\label{classFullhand_a6bf1d5c8dca245244cd0e74c8a70796b}
+
+
+Function to set the points of the metacarpals of the hand from the input vector {\itshape joints\/}. If input vector has more elements than the number expected, function calculates distance between previous point and each point in the vector to find the detected point for this frame. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em joints} & Vector containing suspected members of metacarpals of the hand, unordered \\
+\hline
+\mbox{\tt in}  & {\em r\_\-or\_\-l} & Boolean value denoting which hand the points belong to. Left(false) or right(true). \\
+\hline
+\end{DoxyParams}
+\hypertarget{classFullhand_a16c759028b0aa56ef1f77d52f86f09cb}{
+\index{Fullhand@{Fullhand}!proxset@{proxset}}
+\index{proxset@{proxset}!Fullhand@{Fullhand}}
+\subsubsection[{proxset}]{\setlength{\rightskip}{0pt plus 5cm}void Fullhand::proxset (
+\begin{DoxyParamCaption}
+\item[{{\bf CoorVec}}]{joints, }
+\item[{bool}]{r\_\-or\_\-l}
+\end{DoxyParamCaption}
+)}}
+\label{classFullhand_a16c759028b0aa56ef1f77d52f86f09cb}
+
+
+Function to set the points of the proximal joints of the hand from the input vector {\itshape joints\/}. If input vector has more elements than the number expected, function calculates distance between previous point and each point in the vector to find the detected point for this frame. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em joints} & Vector containing suspected members of proximal joints of the hand, unordered \\
+\hline
+\mbox{\tt in}  & {\em r\_\-or\_\-l} & Boolean value denoting which hand the points belong to. Left(false) or right(true). \\
+\hline
+\end{DoxyParams}
+\hypertarget{classFullhand_a650a2916dc3dc72f90442419c0ee71b1}{
+\index{Fullhand@{Fullhand}!set1stfing@{set1stfing}}
+\index{set1stfing@{set1stfing}!Fullhand@{Fullhand}}
+\subsubsection[{set1stfing}]{\setlength{\rightskip}{0pt plus 5cm}void Fullhand::set1stfing (
+\begin{DoxyParamCaption}
+\item[{CvPoint}]{c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classFullhand_a650a2916dc3dc72f90442419c0ee71b1}
+
+
+Function to set the value of the 1st finger metacarpal. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a1} & coordinate to set fstfinger to \\
+\hline
+\end{DoxyParams}
+\hypertarget{classFullhand_ada79a4f4bc30b938fe4bf4133dda4898}{
+\index{Fullhand@{Fullhand}!set1stfing\_\-b@{set1stfing\_\-b}}
+\index{set1stfing\_\-b@{set1stfing\_\-b}!Fullhand@{Fullhand}}
+\subsubsection[{set1stfing\_\-b}]{\setlength{\rightskip}{0pt plus 5cm}void Fullhand::set1stfing\_\-b (
+\begin{DoxyParamCaption}
+\item[{CvPoint}]{h}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classFullhand_ada79a4f4bc30b938fe4bf4133dda4898}
+
+
+Function to set the value of the 1st finger proximal joint. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a1} & coordinate to set fstfinger\_\-b to \\
+\hline
+\end{DoxyParams}
+\hypertarget{classFullhand_a086ad19d367ae967f4b873ca2e86b9f8}{
+\index{Fullhand@{Fullhand}!set1stfing\_\-c@{set1stfing\_\-c}}
+\index{set1stfing\_\-c@{set1stfing\_\-c}!Fullhand@{Fullhand}}
+\subsubsection[{set1stfing\_\-c}]{\setlength{\rightskip}{0pt plus 5cm}void Fullhand::set1stfing\_\-c (
+\begin{DoxyParamCaption}
+\item[{CvPoint}]{l}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classFullhand_a086ad19d367ae967f4b873ca2e86b9f8}
+
+
+Function to set the value of the 1st finger distal joint. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a1} & coordinate to set fstfinger\_\-c to \\
+\hline
+\end{DoxyParams}
+\hypertarget{classFullhand_a14a97b544809b004493914c36b8fe49a}{
+\index{Fullhand@{Fullhand}!set2ndfing@{set2ndfing}}
+\index{set2ndfing@{set2ndfing}!Fullhand@{Fullhand}}
+\subsubsection[{set2ndfing}]{\setlength{\rightskip}{0pt plus 5cm}void Fullhand::set2ndfing (
+\begin{DoxyParamCaption}
+\item[{CvPoint}]{d}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classFullhand_a14a97b544809b004493914c36b8fe49a}
+
+
+Function to set the value of the 2nd finger metacarpal. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a1} & coordinate to set scndfinger to \\
+\hline
+\end{DoxyParams}
+\hypertarget{classFullhand_af9f0979ae5a18fb8c120df33c1b5ce81}{
+\index{Fullhand@{Fullhand}!set2ndfing\_\-b@{set2ndfing\_\-b}}
+\index{set2ndfing\_\-b@{set2ndfing\_\-b}!Fullhand@{Fullhand}}
+\subsubsection[{set2ndfing\_\-b}]{\setlength{\rightskip}{0pt plus 5cm}void Fullhand::set2ndfing\_\-b (
+\begin{DoxyParamCaption}
+\item[{CvPoint}]{i}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classFullhand_af9f0979ae5a18fb8c120df33c1b5ce81}
+
+
+Function to set the value of the 2nd finger proximal joint. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a1} & coordinate to set scndfinger\_\-b to \\
+\hline
+\end{DoxyParams}
+\hypertarget{classFullhand_ac015734d9709a1cda406efe9ed853a3b}{
+\index{Fullhand@{Fullhand}!set2ndfing\_\-c@{set2ndfing\_\-c}}
+\index{set2ndfing\_\-c@{set2ndfing\_\-c}!Fullhand@{Fullhand}}
+\subsubsection[{set2ndfing\_\-c}]{\setlength{\rightskip}{0pt plus 5cm}void Fullhand::set2ndfing\_\-c (
+\begin{DoxyParamCaption}
+\item[{CvPoint}]{m}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classFullhand_ac015734d9709a1cda406efe9ed853a3b}
+
+
+Function to set the value of the 2nd finger distal joint. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a1} & coordinate to set scndfinger\_\-c to \\
+\hline
+\end{DoxyParams}
+\hypertarget{classFullhand_ac0804f3450b70dc576cddcc519246755}{
+\index{Fullhand@{Fullhand}!set3rdfing@{set3rdfing}}
+\index{set3rdfing@{set3rdfing}!Fullhand@{Fullhand}}
+\subsubsection[{set3rdfing}]{\setlength{\rightskip}{0pt plus 5cm}void Fullhand::set3rdfing (
+\begin{DoxyParamCaption}
+\item[{CvPoint}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classFullhand_ac0804f3450b70dc576cddcc519246755}
+
+
+Function to set the value of the 3rd finger metacarpal. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a1} & coordinate to set thrdfinger to \\
+\hline
+\end{DoxyParams}
+\hypertarget{classFullhand_af397802eb0b3046110c2f79df9605f81}{
+\index{Fullhand@{Fullhand}!set3rdfing\_\-b@{set3rdfing\_\-b}}
+\index{set3rdfing\_\-b@{set3rdfing\_\-b}!Fullhand@{Fullhand}}
+\subsubsection[{set3rdfing\_\-b}]{\setlength{\rightskip}{0pt plus 5cm}void Fullhand::set3rdfing\_\-b (
+\begin{DoxyParamCaption}
+\item[{CvPoint}]{j}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classFullhand_af397802eb0b3046110c2f79df9605f81}
+
+
+Function to set the value of the 3rd finger proximal joint. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a1} & coordinate to set thrdfinger\_\-b to \\
+\hline
+\end{DoxyParams}
+\hypertarget{classFullhand_a2da1b866a13f5c0e2dc06a55a0caa13b}{
+\index{Fullhand@{Fullhand}!set3rdfing\_\-c@{set3rdfing\_\-c}}
+\index{set3rdfing\_\-c@{set3rdfing\_\-c}!Fullhand@{Fullhand}}
+\subsubsection[{set3rdfing\_\-c}]{\setlength{\rightskip}{0pt plus 5cm}void Fullhand::set3rdfing\_\-c (
+\begin{DoxyParamCaption}
+\item[{CvPoint}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classFullhand_a2da1b866a13f5c0e2dc06a55a0caa13b}
+
+
+Function to set the value of the 3rd finger distal joint. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a1} & coordinate to set thrdfinger\_\-c to \\
+\hline
+\end{DoxyParams}
+\hypertarget{classFullhand_a30f72eeb4ec77f7fa34b9cee5d7df255}{
+\index{Fullhand@{Fullhand}!setallbases@{setallbases}}
+\index{setallbases@{setallbases}!Fullhand@{Fullhand}}
+\subsubsection[{setallbases}]{\setlength{\rightskip}{0pt plus 5cm}void Fullhand::setallbases (
+\begin{DoxyParamCaption}
+\item[{{\bf CoorVec} \&}]{rightgroup, }
+\item[{int}]{height, }
+\item[{IplImage $\ast$}]{prev, }
+\item[{IplImage $\ast$}]{now, }
+\item[{int}]{r\_\-or\_\-l}
+\end{DoxyParamCaption}
+)}}
+\label{classFullhand_a30f72eeb4ec77f7fa34b9cee5d7df255}
+
+
+Determines the base wrist points from the detected group of blobs {\itshape rightgroup\/} by performing correlation between the previous image {\itshape prev\/} and the current image {\itshape now\/}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em rightgroup} & Vector containing coordinates of all detected blobs for this hand object \\
+\hline
+\mbox{\tt in}  & {\em height} & Height of the image in pixels \\
+\hline
+\mbox{\tt in}  & {\em prev} & The previous frame \\
+\hline
+\mbox{\tt in}  & {\em now} & The current frame \\
+\hline
+\mbox{\tt in}  & {\em r\_\-or\_\-l} & Boolean value denoting whether this is for the right or left hand. 1 is right and 0 is left \\
+\hline
+\end{DoxyParams}
+\hypertarget{classFullhand_a4ef8833718ba7b626289d4123544256c}{
+\index{Fullhand@{Fullhand}!setbaseptL@{setbaseptL}}
+\index{setbaseptL@{setbaseptL}!Fullhand@{Fullhand}}
+\subsubsection[{setbaseptL}]{\setlength{\rightskip}{0pt plus 5cm}void Fullhand::setbaseptL (
+\begin{DoxyParamCaption}
+\item[{CvPoint}]{a1}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classFullhand_a4ef8833718ba7b626289d4123544256c}
+
+
+Function to set the value of the Left wrist point baseptL. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a1} & coordinate to set baseptL to \\
+\hline
+\end{DoxyParams}
+\hypertarget{classFullhand_a928e14bcfb8b5589adcea1c47a9d48f2}{
+\index{Fullhand@{Fullhand}!setbaseptR@{setbaseptR}}
+\index{setbaseptR@{setbaseptR}!Fullhand@{Fullhand}}
+\subsubsection[{setbaseptR}]{\setlength{\rightskip}{0pt plus 5cm}void Fullhand::setbaseptR (
+\begin{DoxyParamCaption}
+\item[{CvPoint}]{a2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classFullhand_a928e14bcfb8b5589adcea1c47a9d48f2}
+
+
+Function to set the value of the Right wrist point baseptR. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a1} & coordinate to set baseptR to \\
+\hline
+\end{DoxyParams}
+\hypertarget{classFullhand_ad645abf60b7a1c1f85d3dd04a49d48a9}{
+\index{Fullhand@{Fullhand}!setfingers@{setfingers}}
+\index{setfingers@{setfingers}!Fullhand@{Fullhand}}
+\subsubsection[{setfingers}]{\setlength{\rightskip}{0pt plus 5cm}void Fullhand::setfingers (
+\begin{DoxyParamCaption}
+\item[{{\bf CoorVec}}]{hand, }
+\item[{int}]{r\_\-or\_\-l, }
+\item[{int}]{width, }
+\item[{int}]{height}
+\end{DoxyParamCaption}
+)}}
+\label{classFullhand_ad645abf60b7a1c1f85d3dd04a49d48a9}
+
+
+Orders the detected blobs in vector {\itshape hand\/} into groups by distance from the detected wrist points. These groups are then themselves ordered by x coordinate and angle from wrist point in order to determine which hand point they belong to. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em hand} & Vector containing coordinates of detected blobs after wrist points have been detected and removed from this vector \\
+\hline
+\mbox{\tt in}  & {\em r\_\-or\_\-l} & Integer value denoting Right (1) hand or Left (0) hands \\
+\hline
+\mbox{\tt in}  & {\em width} & Width of the image \\
+\hline
+\mbox{\tt in}  & {\em height} & Height of the image \\
+\hline
+\end{DoxyParams}
+\hypertarget{classFullhand_acf218c9bc86d5e29b61b2885d86cd1c3}{
+\index{Fullhand@{Fullhand}!setpinkie@{setpinkie}}
+\index{setpinkie@{setpinkie}!Fullhand@{Fullhand}}
+\subsubsection[{setpinkie}]{\setlength{\rightskip}{0pt plus 5cm}void Fullhand::setpinkie (
+\begin{DoxyParamCaption}
+\item[{CvPoint}]{f}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classFullhand_acf218c9bc86d5e29b61b2885d86cd1c3}
+
+
+Function to set the value of the pinkie metacarpal. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a1} & coordinate to set pinkie to \\
+\hline
+\end{DoxyParams}
+\hypertarget{classFullhand_adeb2b0887624feb3d963311254fd26da}{
+\index{Fullhand@{Fullhand}!setpinkie\_\-b@{setpinkie\_\-b}}
+\index{setpinkie\_\-b@{setpinkie\_\-b}!Fullhand@{Fullhand}}
+\subsubsection[{setpinkie\_\-b}]{\setlength{\rightskip}{0pt plus 5cm}void Fullhand::setpinkie\_\-b (
+\begin{DoxyParamCaption}
+\item[{CvPoint}]{k}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classFullhand_adeb2b0887624feb3d963311254fd26da}
+
+
+Function to set the value of the pinkie proximal joint. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a1} & coordinate to set pinkie\_\-b to \\
+\hline
+\end{DoxyParams}
+\hypertarget{classFullhand_a8a6857d6dcdefe5720ef8539e9b959de}{
+\index{Fullhand@{Fullhand}!setpinkie\_\-c@{setpinkie\_\-c}}
+\index{setpinkie\_\-c@{setpinkie\_\-c}!Fullhand@{Fullhand}}
+\subsubsection[{setpinkie\_\-c}]{\setlength{\rightskip}{0pt plus 5cm}void Fullhand::setpinkie\_\-c (
+\begin{DoxyParamCaption}
+\item[{CvPoint}]{o}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classFullhand_a8a6857d6dcdefe5720ef8539e9b959de}
+
+
+Function to set the value of the pinkie distal joint. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a1} & coordinate to set pinkie\_\-c to \\
+\hline
+\end{DoxyParams}
+\hypertarget{classFullhand_a7102dde6836428200b958cb69302754a}{
+\index{Fullhand@{Fullhand}!setpoints\_\-wrt\_\-org@{setpoints\_\-wrt\_\-org}}
+\index{setpoints\_\-wrt\_\-org@{setpoints\_\-wrt\_\-org}!Fullhand@{Fullhand}}
+\subsubsection[{setpoints\_\-wrt\_\-org}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CoorVec} Fullhand::setpoints\_\-wrt\_\-org (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classFullhand_a7102dde6836428200b958cb69302754a}
+
+
+Function to set all the member coordinates of the \hyperlink{classFullhand}{Fullhand} object with respect to an origin point midway between the two wrist markers set to (0,0) 
+
+\begin{DoxyReturn}{Returns}
+vector containing all recalculated member coordinates \hyperlink{classFullhand}{Fullhand} object 
+\end{DoxyReturn}
+\hypertarget{classFullhand_ab4eb28f51b6927e24524958dcd93233b}{
+\index{Fullhand@{Fullhand}!setthumb@{setthumb}}
+\index{setthumb@{setthumb}!Fullhand@{Fullhand}}
+\subsubsection[{setthumb}]{\setlength{\rightskip}{0pt plus 5cm}void Fullhand::setthumb (
+\begin{DoxyParamCaption}
+\item[{CvPoint}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classFullhand_ab4eb28f51b6927e24524958dcd93233b}
+
+
+Function to set the value of the thumb point thumb. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a1} & coordinate to set thumb to \\
+\hline
+\end{DoxyParams}
+\hypertarget{classFullhand_a119df621ef1c610c7e39748d90e88fbe}{
+\index{Fullhand@{Fullhand}!setthumb\_\-b@{setthumb\_\-b}}
+\index{setthumb\_\-b@{setthumb\_\-b}!Fullhand@{Fullhand}}
+\subsubsection[{setthumb\_\-b}]{\setlength{\rightskip}{0pt plus 5cm}void Fullhand::setthumb\_\-b (
+\begin{DoxyParamCaption}
+\item[{CvPoint}]{g}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classFullhand_a119df621ef1c610c7e39748d90e88fbe}
+
+
+Function to set the value of the thumb proximal joint. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a1} & coordinate to set thumb\_\-b to \\
+\hline
+\end{DoxyParams}
+\hypertarget{classFullhand_a92e663c06eb0d0787cb721db20d661a2}{
+\index{Fullhand@{Fullhand}!sort@{sort}}
+\index{sort@{sort}!Fullhand@{Fullhand}}
+\subsubsection[{sort}]{\setlength{\rightskip}{0pt plus 5cm}bool Fullhand::sort (
+\begin{DoxyParamCaption}
+\item[{{\bf CoorVec} \&}]{list, }
+\item[{CvPoint \&}]{finger}
+\end{DoxyParamCaption}
+)}}
+\label{classFullhand_a92e663c06eb0d0787cb721db20d661a2}
+
+
+Calculates distances between each point in vector {\itshape list\/} and the point {\itshape finger\/}. The point in vector {\itshape list\/} with the shortest distance calculated is assigned as the newly detected point of {\itshape finger\/}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em list} & Vector containing suspected points which would be the new value of {\itshape finger\/}. \\
+\hline
+\mbox{\tt in}  & {\em finger} & Previous detected value of specific finger points \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Boolean value true = new point has been assigned. false = no new point has been assigned. 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classFullhand_af41f907b9a1a9db4c55ca8e79f0a7b02}{
+\index{Fullhand@{Fullhand}!baseptL@{baseptL}}
+\index{baseptL@{baseptL}!Fullhand@{Fullhand}}
+\subsubsection[{baseptL}]{\setlength{\rightskip}{0pt plus 5cm}CvPoint {\bf Fullhand::baseptL}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classFullhand_af41f907b9a1a9db4c55ca8e79f0a7b02}
+CvPoint for estimated position of this point \hypertarget{classFullhand_a51e64566da2b001b0cbfecb9e0d05995}{
+\index{Fullhand@{Fullhand}!est\_\-first@{est\_\-first}}
+\index{est\_\-first@{est\_\-first}!Fullhand@{Fullhand}}
+\subsubsection[{est\_\-first}]{\setlength{\rightskip}{0pt plus 5cm}CvPoint {\bf Fullhand::est\_\-first}}}
+\label{classFullhand_a51e64566da2b001b0cbfecb9e0d05995}
+CvPoint for estimated position of this point \hypertarget{classFullhand_acb06ed0b5a90fdb16e34af39604e2fc6}{
+\index{Fullhand@{Fullhand}!est\_\-first\_\-b@{est\_\-first\_\-b}}
+\index{est\_\-first\_\-b@{est\_\-first\_\-b}!Fullhand@{Fullhand}}
+\subsubsection[{est\_\-first\_\-b}]{\setlength{\rightskip}{0pt plus 5cm}CvPoint {\bf Fullhand::est\_\-first\_\-b}}}
+\label{classFullhand_acb06ed0b5a90fdb16e34af39604e2fc6}
+CvPoint for estimated position of this point \hypertarget{classFullhand_aecd703ced5ced05be9330318b507075c}{
+\index{Fullhand@{Fullhand}!est\_\-pinkie@{est\_\-pinkie}}
+\index{est\_\-pinkie@{est\_\-pinkie}!Fullhand@{Fullhand}}
+\subsubsection[{est\_\-pinkie}]{\setlength{\rightskip}{0pt plus 5cm}CvPoint {\bf Fullhand::est\_\-pinkie}}}
+\label{classFullhand_aecd703ced5ced05be9330318b507075c}
+CvPoint for estimated position of this point \hypertarget{classFullhand_a86105eb44b5dbb35dee539a9d7b0739a}{
+\index{Fullhand@{Fullhand}!est\_\-pinkie\_\-b@{est\_\-pinkie\_\-b}}
+\index{est\_\-pinkie\_\-b@{est\_\-pinkie\_\-b}!Fullhand@{Fullhand}}
+\subsubsection[{est\_\-pinkie\_\-b}]{\setlength{\rightskip}{0pt plus 5cm}CvPoint {\bf Fullhand::est\_\-pinkie\_\-b}}}
+\label{classFullhand_a86105eb44b5dbb35dee539a9d7b0739a}
+CvPoint for estimated position of this point \hypertarget{classFullhand_a8c7e6d4c68fde49322b9f0b1b75e9875}{
+\index{Fullhand@{Fullhand}!est\_\-second@{est\_\-second}}
+\index{est\_\-second@{est\_\-second}!Fullhand@{Fullhand}}
+\subsubsection[{est\_\-second}]{\setlength{\rightskip}{0pt plus 5cm}CvPoint {\bf Fullhand::est\_\-second}}}
+\label{classFullhand_a8c7e6d4c68fde49322b9f0b1b75e9875}
+CvPoint for estimated position of this point \hypertarget{classFullhand_a28eba027020a49d241fcd932560b8b70}{
+\index{Fullhand@{Fullhand}!est\_\-second\_\-b@{est\_\-second\_\-b}}
+\index{est\_\-second\_\-b@{est\_\-second\_\-b}!Fullhand@{Fullhand}}
+\subsubsection[{est\_\-second\_\-b}]{\setlength{\rightskip}{0pt plus 5cm}CvPoint {\bf Fullhand::est\_\-second\_\-b}}}
+\label{classFullhand_a28eba027020a49d241fcd932560b8b70}
+CvPoint for estimated position of this point \hypertarget{classFullhand_ac2f0b8420e115e46150ce3e890994cf2}{
+\index{Fullhand@{Fullhand}!est\_\-third@{est\_\-third}}
+\index{est\_\-third@{est\_\-third}!Fullhand@{Fullhand}}
+\subsubsection[{est\_\-third}]{\setlength{\rightskip}{0pt plus 5cm}CvPoint {\bf Fullhand::est\_\-third}}}
+\label{classFullhand_ac2f0b8420e115e46150ce3e890994cf2}
+CvPoint for estimated position of this point \hypertarget{classFullhand_a988a924b677a58065150a33d50fe0dff}{
+\index{Fullhand@{Fullhand}!est\_\-third\_\-b@{est\_\-third\_\-b}}
+\index{est\_\-third\_\-b@{est\_\-third\_\-b}!Fullhand@{Fullhand}}
+\subsubsection[{est\_\-third\_\-b}]{\setlength{\rightskip}{0pt plus 5cm}CvPoint {\bf Fullhand::est\_\-third\_\-b}}}
+\label{classFullhand_a988a924b677a58065150a33d50fe0dff}
+CvPoint for estimated position of this point \hypertarget{classFullhand_a684a292b453f166c89d83bf44c5915bc}{
+\index{Fullhand@{Fullhand}!est\_\-thumb@{est\_\-thumb}}
+\index{est\_\-thumb@{est\_\-thumb}!Fullhand@{Fullhand}}
+\subsubsection[{est\_\-thumb}]{\setlength{\rightskip}{0pt plus 5cm}CvPoint {\bf Fullhand::est\_\-thumb}}}
+\label{classFullhand_a684a292b453f166c89d83bf44c5915bc}
+Boolean value denoting whether this point is occluded/lost true=lost, false=detected \hypertarget{classFullhand_ac9872a6e6fad61831b23adbf22447d49}{
+\index{Fullhand@{Fullhand}!est\_\-thumb\_\-b@{est\_\-thumb\_\-b}}
+\index{est\_\-thumb\_\-b@{est\_\-thumb\_\-b}!Fullhand@{Fullhand}}
+\subsubsection[{est\_\-thumb\_\-b}]{\setlength{\rightskip}{0pt plus 5cm}CvPoint {\bf Fullhand::est\_\-thumb\_\-b}}}
+\label{classFullhand_ac9872a6e6fad61831b23adbf22447d49}
+CvPoint for estimated position of this point \hypertarget{classFullhand_a666a87e3e446ccaf3eea150f5f99cac7}{
+\index{Fullhand@{Fullhand}!est\_\-thumb\_\-c@{est\_\-thumb\_\-c}}
+\index{est\_\-thumb\_\-c@{est\_\-thumb\_\-c}!Fullhand@{Fullhand}}
+\subsubsection[{est\_\-thumb\_\-c}]{\setlength{\rightskip}{0pt plus 5cm}CvPoint {\bf Fullhand::est\_\-thumb\_\-c}}}
+\label{classFullhand_a666a87e3e446ccaf3eea150f5f99cac7}
+CvPoint for estimated position of this point \hypertarget{classFullhand_abfaffa48f3a18c954956cc9f97973d4d}{
+\index{Fullhand@{Fullhand}!hid\_\-pinkie@{hid\_\-pinkie}}
+\index{hid\_\-pinkie@{hid\_\-pinkie}!Fullhand@{Fullhand}}
+\subsubsection[{hid\_\-pinkie}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf Fullhand::hid\_\-pinkie}}}
+\label{classFullhand_abfaffa48f3a18c954956cc9f97973d4d}
+Boolean value denoting whether this point is occluded/lost true=lost, false=detected \hypertarget{classFullhand_adddf4e45d1e336d48a7e0b8c0724979e}{
+\index{Fullhand@{Fullhand}!hid\_\-pinkie\_\-b@{hid\_\-pinkie\_\-b}}
+\index{hid\_\-pinkie\_\-b@{hid\_\-pinkie\_\-b}!Fullhand@{Fullhand}}
+\subsubsection[{hid\_\-pinkie\_\-b}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf Fullhand::hid\_\-pinkie\_\-b}}}
+\label{classFullhand_adddf4e45d1e336d48a7e0b8c0724979e}
+Boolean value denoting whether this point is occluded/lost true=lost, false=detected \hypertarget{classFullhand_a44fe7f34fc6bfcbd034d16b949ecf8b7}{
+\index{Fullhand@{Fullhand}!lost\_\-baseL@{lost\_\-baseL}}
+\index{lost\_\-baseL@{lost\_\-baseL}!Fullhand@{Fullhand}}
+\subsubsection[{lost\_\-baseL}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf Fullhand::lost\_\-baseL}}}
+\label{classFullhand_a44fe7f34fc6bfcbd034d16b949ecf8b7}
+Boolean value denoting right or left hand. Right=true, Left=false \hypertarget{classFullhand_a45a68f96640bf7207d6c2a58bd3ed834}{
+\index{Fullhand@{Fullhand}!lost\_\-baseR@{lost\_\-baseR}}
+\index{lost\_\-baseR@{lost\_\-baseR}!Fullhand@{Fullhand}}
+\subsubsection[{lost\_\-baseR}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf Fullhand::lost\_\-baseR}}}
+\label{classFullhand_a45a68f96640bf7207d6c2a58bd3ed834}
+Boolean value denoting whether this point is occluded/lost true=lost, false=detected \hypertarget{classFullhand_aadb7136f7ce7e3a4a3ffb1188e7fb744}{
+\index{Fullhand@{Fullhand}!lost\_\-fst@{lost\_\-fst}}
+\index{lost\_\-fst@{lost\_\-fst}!Fullhand@{Fullhand}}
+\subsubsection[{lost\_\-fst}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf Fullhand::lost\_\-fst}}}
+\label{classFullhand_aadb7136f7ce7e3a4a3ffb1188e7fb744}
+Boolean value denoting whether this point is occluded/lost true=lost, false=detected \hypertarget{classFullhand_aadd18a982717dfd5e7c10495db566752}{
+\index{Fullhand@{Fullhand}!lost\_\-fst\_\-b@{lost\_\-fst\_\-b}}
+\index{lost\_\-fst\_\-b@{lost\_\-fst\_\-b}!Fullhand@{Fullhand}}
+\subsubsection[{lost\_\-fst\_\-b}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf Fullhand::lost\_\-fst\_\-b}}}
+\label{classFullhand_aadd18a982717dfd5e7c10495db566752}
+Boolean value denoting whether this point is occluded/lost true=lost, false=detected \hypertarget{classFullhand_a79d6ffa5c5dcd09ab56affa468b72b07}{
+\index{Fullhand@{Fullhand}!lost\_\-fst\_\-c@{lost\_\-fst\_\-c}}
+\index{lost\_\-fst\_\-c@{lost\_\-fst\_\-c}!Fullhand@{Fullhand}}
+\subsubsection[{lost\_\-fst\_\-c}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf Fullhand::lost\_\-fst\_\-c}}}
+\label{classFullhand_a79d6ffa5c5dcd09ab56affa468b72b07}
+Boolean value denoting whether this point is occluded/lost true=lost, false=detected \hypertarget{classFullhand_a3f1d564d16316785f7c94ee2c302e59f}{
+\index{Fullhand@{Fullhand}!lost\_\-scnd@{lost\_\-scnd}}
+\index{lost\_\-scnd@{lost\_\-scnd}!Fullhand@{Fullhand}}
+\subsubsection[{lost\_\-scnd}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf Fullhand::lost\_\-scnd}}}
+\label{classFullhand_a3f1d564d16316785f7c94ee2c302e59f}
+Boolean value denoting whether this point is occluded/lost true=lost, false=detected \hypertarget{classFullhand_aaefe4741e3ddeb3fcb7525633df31fd0}{
+\index{Fullhand@{Fullhand}!lost\_\-scnd\_\-b@{lost\_\-scnd\_\-b}}
+\index{lost\_\-scnd\_\-b@{lost\_\-scnd\_\-b}!Fullhand@{Fullhand}}
+\subsubsection[{lost\_\-scnd\_\-b}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf Fullhand::lost\_\-scnd\_\-b}}}
+\label{classFullhand_aaefe4741e3ddeb3fcb7525633df31fd0}
+Boolean value denoting whether this point is occluded/lost true=lost, false=detected \hypertarget{classFullhand_a26ec6d3639ec7cfa414d22f3ffc83663}{
+\index{Fullhand@{Fullhand}!lost\_\-thrd@{lost\_\-thrd}}
+\index{lost\_\-thrd@{lost\_\-thrd}!Fullhand@{Fullhand}}
+\subsubsection[{lost\_\-thrd}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf Fullhand::lost\_\-thrd}}}
+\label{classFullhand_a26ec6d3639ec7cfa414d22f3ffc83663}
+Boolean value denoting whether this point is occluded/lost true=lost, false=detected \hypertarget{classFullhand_a90731df9ecf27e13954ea3bea51dc5f2}{
+\index{Fullhand@{Fullhand}!lost\_\-thrd\_\-b@{lost\_\-thrd\_\-b}}
+\index{lost\_\-thrd\_\-b@{lost\_\-thrd\_\-b}!Fullhand@{Fullhand}}
+\subsubsection[{lost\_\-thrd\_\-b}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf Fullhand::lost\_\-thrd\_\-b}}}
+\label{classFullhand_a90731df9ecf27e13954ea3bea51dc5f2}
+Boolean value denoting whether this point is occluded/lost true=lost, false=detected \hypertarget{classFullhand_a9538ee796a33099f747d8972d9747816}{
+\index{Fullhand@{Fullhand}!occ\_\-thumb@{occ\_\-thumb}}
+\index{occ\_\-thumb@{occ\_\-thumb}!Fullhand@{Fullhand}}
+\subsubsection[{occ\_\-thumb}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf Fullhand::occ\_\-thumb}}}
+\label{classFullhand_a9538ee796a33099f747d8972d9747816}
+Boolean value denoting whether this point is occluded/lost true=lost, false=detected \hypertarget{classFullhand_ae87bfe0cecb5ca9a366d7850c8c8bdd1}{
+\index{Fullhand@{Fullhand}!occ\_\-thumb\_\-b@{occ\_\-thumb\_\-b}}
+\index{occ\_\-thumb\_\-b@{occ\_\-thumb\_\-b}!Fullhand@{Fullhand}}
+\subsubsection[{occ\_\-thumb\_\-b}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf Fullhand::occ\_\-thumb\_\-b}}}
+\label{classFullhand_ae87bfe0cecb5ca9a366d7850c8c8bdd1}
+Boolean value denoting whether this point is occluded/lost true=lost, false=detected 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{fullhand_8h}{fullhand.h}\item 
+fullhand.cpp\end{DoxyCompactItemize}

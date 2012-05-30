@@ -1,0 +1,96 @@
+\hypertarget{namespaceOrganise}{
+\section{Organise Namespace Reference}
+\label{namespaceOrganise}\index{Organise@{Organise}}
+}
+
+
+Namespace containing functions that order vectors depending on x and y coordinates.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{blobby_8h_a7017012a1393f7249d0e03d6ac9f1c7b}{CoorVec} \hyperlink{namespaceOrganise_aec4a1cc23ca1f744d7603f28ac8c50d4}{order\_\-x} (\hyperlink{blobby_8h_a7017012a1393f7249d0e03d6ac9f1c7b}{CoorVec} handvec, int width, int r\_\-or\_\-l)
+\begin{DoxyCompactList}\small\item\em Function that orders the coordinate points in vector {\itshape handvec\/} based on their x coordinate. \end{DoxyCompactList}\item 
+\hyperlink{blobby_8h_a7017012a1393f7249d0e03d6ac9f1c7b}{CoorVec} \hyperlink{namespaceOrganise_a72cef579a9fd93ebe84d4609148aeb0d}{order\_\-y} (\hyperlink{blobby_8h_a7017012a1393f7249d0e03d6ac9f1c7b}{CoorVec} handvec, int height)
+\begin{DoxyCompactList}\small\item\em Function that orders the coordinate points in vector {\itshape handvec\/} based on their y coordinate. \end{DoxyCompactList}\item 
+\hyperlink{blobby_8h_a7017012a1393f7249d0e03d6ac9f1c7b}{CoorVec} \hyperlink{namespaceOrganise_a04ab2ae6c764f4027318f9fcabb7a3bc}{checkblobs} (\hyperlink{blobby_8h_a7017012a1393f7249d0e03d6ac9f1c7b}{CoorVec} ordered)
+\begin{DoxyCompactList}\small\item\em Function to check that no two blobs are in fact right next to each other and could be considered the same blob. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Namespace containing functions that order vectors depending on x and y coordinates. 
+
+\subsection{Function Documentation}
+\hypertarget{namespaceOrganise_a04ab2ae6c764f4027318f9fcabb7a3bc}{
+\index{Organise@{Organise}!checkblobs@{checkblobs}}
+\index{checkblobs@{checkblobs}!Organise@{Organise}}
+\subsubsection[{checkblobs}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CoorVec} Organise::checkblobs (
+\begin{DoxyParamCaption}
+\item[{{\bf CoorVec}}]{ordered}
+\end{DoxyParamCaption}
+)}}
+\label{namespaceOrganise_a04ab2ae6c764f4027318f9fcabb7a3bc}
+
+
+Function to check that no two blobs are in fact right next to each other and could be considered the same blob. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ordered} & Vector containing ordered list (by x coordinate) of points \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector containing ordered list of points, with any double points removed and replaced by a single point 
+\end{DoxyReturn}
+\hypertarget{namespaceOrganise_aec4a1cc23ca1f744d7603f28ac8c50d4}{
+\index{Organise@{Organise}!order\_\-x@{order\_\-x}}
+\index{order\_\-x@{order\_\-x}!Organise@{Organise}}
+\subsubsection[{order\_\-x}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CoorVec} Organise::order\_\-x (
+\begin{DoxyParamCaption}
+\item[{{\bf CoorVec}}]{handvec, }
+\item[{int}]{width, }
+\item[{int}]{r\_\-or\_\-l}
+\end{DoxyParamCaption}
+)}}
+\label{namespaceOrganise_aec4a1cc23ca1f744d7603f28ac8c50d4}
+
+
+Function that orders the coordinate points in vector {\itshape handvec\/} based on their x coordinate. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em handvec} & Vector of CVpoints \\
+\hline
+\mbox{\tt in}  & {\em width} & Width in pixels of the image \\
+\hline
+\mbox{\tt in}  & {\em r\_\-or\_\-l} & integer declaring whether this is the right(1) or left hand(0) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector of coordinate points ordered in increasing (right hand) or decreasing (left hand) order 
+\end{DoxyReturn}
+\hypertarget{namespaceOrganise_a72cef579a9fd93ebe84d4609148aeb0d}{
+\index{Organise@{Organise}!order\_\-y@{order\_\-y}}
+\index{order\_\-y@{order\_\-y}!Organise@{Organise}}
+\subsubsection[{order\_\-y}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CoorVec} Organise::order\_\-y (
+\begin{DoxyParamCaption}
+\item[{{\bf CoorVec}}]{handvec, }
+\item[{int}]{height}
+\end{DoxyParamCaption}
+)}}
+\label{namespaceOrganise_a72cef579a9fd93ebe84d4609148aeb0d}
+
+
+Function that orders the coordinate points in vector {\itshape handvec\/} based on their y coordinate. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em handvec} & Vector of CVpoints \\
+\hline
+\mbox{\tt in}  & {\em height} & Height in pixels of the image \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector of coordinate points ordered in increasing order 
+\end{DoxyReturn}
