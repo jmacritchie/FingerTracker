@@ -20,7 +20,7 @@ CoorVec Blobby::detect(IplImage *img, CoorVec hands, int &numblobs)
 	// delcare a set of blob results
 	CBlobResult blobs;
 	// detect the blobs from the image, with no mask, using a threshold of 100
-	blobs = CBlobResult( img, NULL, 100, false );
+	blobs = CBlobResult( img, NULL, 80, false );
 	//filter blobs so only those with an area between 2 and 150, and with length below 50 are left
 	blobs.Filter( blobs, B_INCLUDE, CBlobGetArea(), B_INSIDE,2,150 );
 	blobs.Filter( blobs, B_INCLUDE, CBlobGetLength(), B_INSIDE,0,50 );

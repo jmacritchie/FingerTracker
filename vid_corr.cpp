@@ -60,6 +60,8 @@ Fullhand rh(true); //true bool argument declares the hand is right
 CoorVec c_block;
 IplImage *correctimg = NULL;
 IplImage *prev_frame = NULL;
+int image_width = 1024;
+int image_height = 268;
 
 
 //defining action for when a mouse event is detected. In this case, we want to store the x and y coordinates
@@ -160,12 +162,12 @@ void correct_onept(int whichhand, char whichgroup, char whichpoint)
 		int thesize = c_block.size();
 		for (int s=0; s<thesize; s++){
 			c_block.erase(cstart);
-			cstart++;
+			//cstart++;
 		}
 	//show results of changing points....update image
-	IplImage *correctone = cvCreateImage(cvSize(780,216),DEPTH_8_BIT, CHANNELS_3);
+	IplImage *correctone = cvCreateImage(cvSize(image_width,image_height),DEPTH_8_BIT, CHANNELS_3);
 	//cvZero(correctone);
-	IplImage *correcttwo = cvCreateImage(cvSize(780,216),DEPTH_8_BIT, CHANNELS_3);
+	IplImage *correcttwo = cvCreateImage(cvSize(image_width,image_height),DEPTH_8_BIT, CHANNELS_3);
 	//cvZero(correcttwo);
 	
 	correctone = lh.getfingerlines(correcttwo);
@@ -239,14 +241,14 @@ void correct_meta(int whichhand){
 		//cout << "size of c_block starts as "<<c_block.size()<<endl;
 		for (int s=0; s<thesize; s++){
 			c_block.erase(cstart);
-			cstart++;
+			//cstart++;
 		}
 		//cout << "size of c_block is now "<<c_block.size()<<endl;
 	
 		//show results of changing points....update image
-		IplImage *correctone = cvCreateImage(cvSize(780,216),DEPTH_8_BIT, CHANNELS_3);
+		IplImage *correctone = cvCreateImage(cvSize(image_width,image_height),DEPTH_8_BIT, CHANNELS_3);
 		//cvZero(correctone);
-		IplImage *correcttwo = cvCreateImage(cvSize(780,216),DEPTH_8_BIT, CHANNELS_3);
+		IplImage *correcttwo = cvCreateImage(cvSize(image_width,image_height),DEPTH_8_BIT, CHANNELS_3);
 		//cvZero(correcttwo);
 		
 		correctone = lh.getfingerlines(correcttwo);
@@ -326,13 +328,13 @@ void correct_prox(int whichhand){
 		//cout << "size of c_block starts as "<<c_block.size()<<endl;
 		for (int s=0; s<thesize; s++){
 			c_block.erase(cstart);
-			cstart++;
+			//cstart++;
 		}
 		//ask user if they are finished with corrections, if not return to hand question, if so , destroy corrections window
 		//show results of changing points....update image
-		IplImage *correctone = cvCreateImage(cvSize(780,216),DEPTH_8_BIT, CHANNELS_3);
+		IplImage *correctone = cvCreateImage(cvSize(image_width,image_height),DEPTH_8_BIT, CHANNELS_3);
 		//cvZero(correctone);
-		IplImage *correcttwo = cvCreateImage(cvSize(780,216),DEPTH_8_BIT, CHANNELS_3);
+		IplImage *correcttwo = cvCreateImage(cvSize(image_width,image_height),DEPTH_8_BIT, CHANNELS_3);
 		//cvZero(correcttwo);
 		
 		correctone = lh.getfingerlines(correcttwo);
@@ -399,13 +401,13 @@ void correct_dist(int whichhand)
 		//cout << "size of c_block starts as "<<c_block.size()<<endl;
 		for (int s=0; s<thesize; s++){
 			c_block.erase(cstart);
-			cstart++;
+			//cstart++;
 		}
 		//ask user if they are finished with corrections, if not return to hand question, if so , destroy corrections window
 		//show results of changing points....update image
-		IplImage *correctone = cvCreateImage(cvSize(780,216),DEPTH_8_BIT, CHANNELS_3);
+		IplImage *correctone = cvCreateImage(cvSize(image_width,image_height),DEPTH_8_BIT, CHANNELS_3);
 		//cvZero(correctone);
-		IplImage *correcttwo = cvCreateImage(cvSize(780,216),DEPTH_8_BIT, CHANNELS_3);
+		IplImage *correcttwo = cvCreateImage(cvSize(image_width,image_height),DEPTH_8_BIT, CHANNELS_3);
 		//cvZero(correcttwo);
 		
 		correctone = lh.getfingerlines(correcttwo);
@@ -435,28 +437,30 @@ void correct_base(int whichhand)
 			if(whichhand)
 				{rh.setbaseptL(c_block[0]);
 				rh.setbaseptR(c_block[1]);
+			cout<<"set right hand\n";
 				}
 			else
 				{lh.setbaseptL(c_block[0]);
 				lh.setbaseptR(c_block[1]);
-				}
+			cout<<"set left hand\n";	}
 	
 			}
 		CoorVecIt cstart = c_block.begin();	
 		int thesize = c_block.size();
-		//cout << "size of c_block starts as "<<c_block.size()<<endl;
+		cout << "size of c_block starts as "<<c_block.size()<<endl;
 		for (int s=0; s<thesize; s++){
 			c_block.erase(cstart);
-			cstart++;
+			//cstart++;
 		}
 	//show results of changing points....update image
-	IplImage *correctone = cvCreateImage(cvSize(780,216),DEPTH_8_BIT, CHANNELS_3);
+	IplImage *correctone = cvCreateImage(cvSize(image_width,image_height),DEPTH_8_BIT, CHANNELS_3);
 	//cvZero(correctone);
-	IplImage *correcttwo = cvCreateImage(cvSize(780,216),DEPTH_8_BIT, CHANNELS_3);
+	IplImage *correcttwo = cvCreateImage(cvSize(image_width,image_height),DEPTH_8_BIT, CHANNELS_3);
 	//cvZero(correcttwo);
 	
 	correctone = lh.getfingerlines(correcttwo);
 	correcttwo = rh.getfingerlines(correctone);
+	cout<<"got finger lines\n";
 	cvNamedWindow("lines",1);
 	cvShowImage("lines", correctone);
 	cvWaitKey(0);
@@ -466,7 +470,7 @@ void correct_base(int whichhand)
 void usage(){
   cout << "\nUsage:\n"
        << "\tTo track blobs in videos for two hands in a piano performance\n"
-       << "\t\ttwobase <start frame number> <gms output file> <frame number just before clap> <output video>\n\n";
+       << "\t\ttwobase <input video> <start frame number> <gms output file> <frame number just before clap> <output video>\n\n";
 
   exit(1);
 }	
@@ -474,7 +478,7 @@ void usage(){
 int main(int argc , char** argv)
 {
 
-	if( argc < 4 ) {usage();}
+	if( argc < 5 ) {usage();}
 
 	//initialise vector for coordinates of hands
 	CoorVec hands;
@@ -487,9 +491,9 @@ int main(int argc , char** argv)
 	DistVec rh_next;
 	vector <CoorVec> lhVec; //lh matrix for gms writing
 	vector <CoorVec> rhVec; //rh matrix for gms writing
-	cout<< "File will be started from frame " << argv[1] <<endl;
-	int startframe = atoi(argv[1]);
-	int clapframe = atoi(argv[3]);
+	cout<< "File will be started from frame " << argv[2] <<endl;
+	int startframe = atoi(argv[2]);
+	int clapframe = atoi(argv[4]);
 	int blobframe = clapframe+startframe;
 	for(int p=0; p<HAND_MARKERS;p++){
 		lhVec.push_back(CoorVec());  //loop creates 6 columns for each hand vector for gms writing
@@ -503,7 +507,7 @@ int main(int argc , char** argv)
 	IplImage* vid = 0; 
 	
 	CvCapture* cap = NULL;
-	cap = cvCaptureFromFile("/home/jenni/Videos/Fingerdance_Videos/SCovfin4.avi"); //capturing video from test avi file
+	cap = cvCaptureFromFile(argv[1]); //capturing video from test avi file
 	tmp_frame = cvQueryFrame(cap);
 	if(!tmp_frame) {
 		printf("bad video \n");
@@ -516,13 +520,13 @@ int main(int argc , char** argv)
 
 	CvVideoWriter *writer = 0;
 	int isColor = 1;
-	writer=cvCreateVideoWriter(argv[4],CV_FOURCC('D','I','V','X'),
+	writer=cvCreateVideoWriter(argv[5],CV_FOURCC('D','I','V','X'),
 				fps,cvSize(frameW,frameH),isColor);
 
 
 
 	//creating and initialising IplImages
-	IplImage *display = cvCreateImage(cvSize(frameW,frameH),DEPTH_8_BIT,CHANNELS_3);
+	//IplImage *display = cvCreateImage(cvSize(frameW,frameH),DEPTH_8_BIT,CHANNELS_3);
 	IplImage *channels = cvCreateImage(cvSize(frameW,frameH),DEPTH_8_BIT,CHANNELS_3);
 	IplImage *twothresh = cvCreateImage( cvSize(frameW,frameH), DEPTH_8_BIT, CHANNELS_1 );
 
@@ -530,7 +534,7 @@ int main(int argc , char** argv)
 	IplImage *one_hand = cvCreateImage(cvSize(frameW,frameH),DEPTH_8_BIT, CHANNELS_3);
 	IplImage *two_hands = cvCreateImage(cvSize(frameW,frameH),DEPTH_8_BIT, CHANNELS_3);
 	IplImage *est = cvCreateImage(cvSize(frameW,frameH),DEPTH_8_BIT, CHANNELS_3);
-	IplImage *final = cvCreateImage(cvSize(frameW,frameH),DEPTH_8_BIT, CHANNELS_3);
+	//IplImage *final = cvCreateImage(cvSize(frameW,frameH),DEPTH_8_BIT, CHANNELS_3);
 	IplImage *prev_frame = NULL;//cvCreateImage(cvSize(frameW,frameH),DEPTH_8_BIT, CHANNELS_3);
 	
 	IplImage *green = cvCreateImage(cvSize(frameW,frameH),8,1);
@@ -538,6 +542,7 @@ int main(int argc , char** argv)
 	IplImage *blue = cvCreateImage(cvSize(frameW,frameH),8,1);
 	IplImage *red_b = cvCreateImage(cvSize(frameW,frameH),8,1);
 	IplImage *blue_b = cvCreateImage(cvSize(frameW,frameH),8,1);
+	IplImage *green_b = cvCreateImage(cvSize(frameW,frameH),8,1);
 	IplImage *thresh_green = cvCreateImage(cvSize(frameW,frameH),8,1);
 	IplImage *mid_green = cvCreateImage(cvSize(frameW,frameH),8,1);
 	IplImage *thresh_g = cvCreateImage(cvSize(frameW,frameH),8,1);
@@ -553,37 +558,45 @@ int main(int argc , char** argv)
 	IplImage *thresh_blue_b = cvCreateImage(cvSize(frameW,frameH),8,1);
 	IplImage *mid_blue_b = cvCreateImage(cvSize(frameW,frameH),8,1);
 	IplImage *thresh_b_b = cvCreateImage(cvSize(frameW,frameH),8,1);
+	IplImage *thresh_green_b = cvCreateImage(cvSize(frameW,frameH),8,1);
+	IplImage *mid_green_b = cvCreateImage(cvSize(frameW,frameH),8,1);
+	IplImage *thresh_g_b = cvCreateImage(cvSize(frameW,frameH),8,1);
 	IplImage *b = cvCreateImage(cvSize(frameW,frameH),8,3);
 	IplImage *b_b = cvCreateImage(cvSize(frameW,frameH),8,3);
 	IplImage *g = cvCreateImage(cvSize(frameW,frameH),8,3);
+	IplImage *g_b = cvCreateImage(cvSize(frameW,frameH),8,3);
 	IplImage *r = cvCreateImage(cvSize(frameW,frameH),8,3);
 	IplImage *r_b = cvCreateImage(cvSize(frameW,frameH),8,3);
 
-	int width =  frameW; //780
-	int height = frameH; //216
+	int width =  frameW; //780 or 1024
+	int height = frameH; //216 or 268
 
 	// threshold values for yellow and turquoise paint
-		//threshold values for yellow UV paint
-		int lowred = 20 ;
-		int highred = 120;
+		//threshold values for yellow UV paint / red paint - LH
+		int lowred = 180 ;
+		int highred = 250;
 		int maxred = 255;
 	
-		int lowgreen = 110;
-		int highgreen = 255;
+		int lowgreen = 70;
+		int highgreen = 120;
 		int maxgreen = 255;
 	
-		int lowblue = 0;
-		int highblue = 40;
+		int lowblue = 40;
+		int highblue = 80;
 		int maxblue = 255;
 	
 		//threshold values for turquoise UV paint
-		int lowred_b = 20 ;
+		int lowred_b = 60 ;
 		int highred_b = 100;
 		int maxred_b = 255;
 
-		int lowblue_b = 30 ;
-		int highblue_b = 160;
+		int lowblue_b = 40 ;
+		int highblue_b = 60;
 		int maxblue_b = 255;
+		
+		int lowgreen_b = 100;
+		int highgreen_b = 150;
+		int maxgreen_b = 255;
 
 
 	for( int fr = 1; tmp_frame;tmp_frame = cvQueryFrame(cap),fr++ ) {
@@ -594,7 +607,7 @@ int main(int argc , char** argv)
 		CoorVec rhfingers_current;	
 
 		//creating and initialising IplImages
-		IplImage *display=cvCloneImage(tmp_frame);
+		//IplImage *display=cvCloneImage(tmp_frame);
 		IplImage *channels = cvCloneImage(tmp_frame);
 		if (fr>(blobframe+1))
 			{//calculating distances etc from hands calculated on previous run (i.e. for first time, for k=0)
@@ -630,6 +643,11 @@ int main(int argc , char** argv)
 		cvZero(mid_red_b);
 		cvZero(thresh_r_b);
 		cvZero(r_b);
+		cvZero(green_b);
+		cvZero(thresh_green_b);
+		cvZero(mid_green_b);
+		cvZero(thresh_g_b);
+		cvZero(g_b);
 
 		IplImage *channels_g = cvCloneImage(channels);
 		cvSetImageCOI(channels_g,2);
@@ -639,8 +657,16 @@ int main(int argc , char** argv)
 		cvCopy (green,mid_green,thresh_green);
 		cvThreshold(mid_green,thresh_g,lowgreen,maxgreen,CV_THRESH_BINARY);
 		cvCopy(channels,g,thresh_g);
+	//second green thresholding for RH
+		IplImage *channels_g_b = cvCloneImage(channels);
+		cvSetImageCOI(channels_g_b,2);
+		cvCopy(channels_g_b,green_b);
 	
-	
+		cvThreshold(green_b,thresh_green_b,highgreen_b,maxgreen_b,CV_THRESH_BINARY_INV);
+		cvCopy (green,mid_green_b,thresh_green_b);
+		cvThreshold(mid_green_b,thresh_g_b,lowgreen_b,maxgreen_b,CV_THRESH_BINARY);
+		cvCopy(channels,g_b,thresh_g_b);
+		
 		//copy image for two sets of thresholds..... yellow and turquoise
 	
 		IplImage *channels_b = cvCloneImage(g);
@@ -661,7 +687,7 @@ int main(int argc , char** argv)
 		cvThreshold(mid_red,thresh_r,lowred,maxred,CV_THRESH_BINARY);
 		cvCopy(channels,r,thresh_r);
 	
-		IplImage *channels_b2 = cvCloneImage(g);
+		IplImage *channels_b2 = cvCloneImage(g_b);
 		cvSetImageCOI(channels_b2,1);
 		cvCopy(channels_b2,blue_b);
 	
@@ -710,10 +736,10 @@ int main(int argc , char** argv)
 			//plotting points of each hand onto image	
 			one_hand = lh.getfingerlines(separated);
 			two_hands = rh.getfingerlines(one_hand);
-			final = cvCloneImage(two_hands);
+			//final = cvCloneImage(two_hands);
 			CoorVec lhfingers_next;
 			CoorVec rhfingers_next;
-			cvShowImage("hands",final);
+			cvShowImage("hands",two_hands);
 			if(fr>(blobframe+1))
 				{//calculating new distances etc now hands have been reassigned on k=1 run
 				/*lhfingers_next = lh.setpoints_wrt_org();
@@ -732,7 +758,7 @@ int main(int argc , char** argv)
 				rhfingers_next.clear();	*/	
 				}
 			
- 			cvShowImage("hands",final); 
+ 			cvShowImage("hands",two_hands); 
 			int k = cvWaitKey(0);
 			if( (char)k == 27 ) break;
 			switch( (char) k) {		//user input to check that points are correct before they are stored.
@@ -802,7 +828,7 @@ int main(int argc , char** argv)
 					
 							} //endswitch
 						}
-				
+				cvReleaseImage(&correctimg);
 			}
 
 			prev_frame=cvCloneImage(tmp_frame);
@@ -815,7 +841,7 @@ int main(int argc , char** argv)
 			cvShowImage("video",both_lines);
 			cvWriteFrame(writer,both_lines); 
 
-			cvZero(final);
+			//cvZero(final);
 			cvZero(est);
 			cvZero(two_hands);
 			cvZero(one_hand);
@@ -858,9 +884,17 @@ int main(int argc , char** argv)
 			rhVec[14].push_back(rh.get3rdfing_c());//cout<<rh.get3rdfing_c().x<<","<<rh.get3rdfing_c().y<<"\t";
 			rhVec[15].push_back(rh.getpinkie_c());//cout<<rh.getpinkie_c().x<<","<<rh.getpinkie_c().y<<"\n";
 
-			
+		cvReleaseImage(&channels);
+		cvReleaseImage(&channels_b);
+		cvReleaseImage(&channels_r);
+		cvReleaseImage(&channels_b2);
+		cvReleaseImage(&channels_r2);
+		cvReleaseImage(&channels_g);
+		cvReleaseImage(&channels_g_b);
+		
 			
 		}	
+		
 	}
 
 	cout <<" writing gms files "<< endl;
@@ -872,7 +906,7 @@ int main(int argc , char** argv)
 	if (startframe==0)
 		{
 		cout<< " starting from frame 0 "<<endl; cout.flush();
-		const char *scenename = argv[2];
+		const char *scenename = argv[3];
 		Gmswriter::writedata(lhVec,rhVec,info_xy, 0);
 		gms_file_t *handposition;
 		//int frame_rate = 50;
@@ -883,7 +917,7 @@ int main(int argc , char** argv)
 	else
 		{
 		cout << "starting from frame "<< startframe << endl; cout.flush();
-		const char *scenename = argv[2];
+		const char *scenename = argv[3];
 		//open exisiting gms file
 		Gmswriter::writedata(lhVec,rhVec,info_xy, 0);
 		gms_file_t *handposition;
@@ -901,7 +935,7 @@ int main(int argc , char** argv)
 
 	cvReleaseImage(&vid);
 	cvReleaseImage(&twothresh);
-	cvReleaseImage(&display);
+	//cvReleaseImage(&display);
 	cvReleaseImage(&green);
 	cvReleaseImage(&red); 
 	cvReleaseImage(&blue); 
@@ -927,7 +961,7 @@ int main(int argc , char** argv)
 	cvReleaseImage(&g );
 	cvReleaseImage(&r );
 	cvReleaseImage(&r_b);
-	cvReleaseImage(&channels);	
+	//cvReleaseImage(&channels);	
 	cvReleaseImage(&green);
 	cvReleaseCapture(&cap);
 

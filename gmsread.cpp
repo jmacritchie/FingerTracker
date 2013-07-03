@@ -20,8 +20,8 @@ int main(int argc, char**argv){
 
 	char * file_name = argv[1];
 	//Gmswriter::readdata();
-	//Gmswriter::read_all_frames(file_name);
-	Gmswriter::read_frames(0,472 ,file_name);
+	Gmswriter::read_all_frames(file_name);
+	//Gmswriter::read_frames(0,150 ,file_name);
 	//Gmswriter::read_curves(0,150,file_name);
 
 	return 0;
