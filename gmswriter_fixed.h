@@ -4,8 +4,8 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include <ctype.h>
-#include <cv.h>
-#include <highgui.h>
+#include "opencv2/highgui/highgui.hpp"
+#include "opencv2/imgproc/imgproc.hpp"
 /*! \file gmswriter_fixed.h
  * \brief Documentation for gmswriter_fixed.h
  */

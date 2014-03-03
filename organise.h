@@ -6,11 +6,12 @@
 #include <stdlib.h>
 #include <stdio.h>
 // OpenCV
-#include <cv.h>
-#include <cxcore.h>
-#include <highgui.h>
+#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
 #include <vector>
 #include "fullhand.h"
+
+using namespace cv;
 using namespace std;
 /*! \brief A vector containing CvPoint structures (an x,y coordinate) */
 typedef std::vector <CvPoint> CoorVec;

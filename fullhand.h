@@ -29,10 +29,10 @@ for finger 1 (i.e the thumb) there are just two knuckles and then the fingertip.
 
 #include <stdlib.h>
 #include <stdio.h>
-#include <cv.h>
-#include <cxcore.h>
-#include <highgui.h>
 #include <vector>
+#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
+#include <opencv/cv.h>
 
 /*! \brief A vector containing CvPoint structures (an x,y coordinate) */
 typedef std::vector <CvPoint> CoorVec;
@@ -305,6 +305,10 @@ public:
 	 * \param[in] width Width of the frame in pixels e.g. 216
 	 */
 	void checkgroups(CoorVec &proxal, CoorVec &distal, int width);
+	/*!\fn void recordGroupsDistances(void)
+	 * \brief Function to record all distances from detected markers to virtual base points
+	 */
+	void recordGroupDistances(void);
 	/*!\fn double angle(CvPoint thepoint, CvPoint base)
 	 * \brief Function to calculate the angle between a detected point and the virtual base point
 	 * \param[in] thepoint Detected point coordinates
@@ -366,6 +370,11 @@ protected:
 	CvPoint org_pinkie;
 	CvPoint org_thumb_b, org_fst_b, org_scnd_b, org_thrd_b, org_pinkie_b;
 	CvPoint org_fst_c, org_scnd_c, org_thrd_c, org_pinkie_c;
+	
+	double meta_mindistance;
+	double meta_maxdistance;
+	double prox_maxdistance;
+	double dist_maxdistance;
 
 };
 #endif

@@ -8,9 +8,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 // OpenCV
-#include <cv.h>
-#include <cxcore.h>
-#include <highgui.h>
+#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
 #include <vector>
 
 /*! \brief A vector containing CvPoint structures (an x,y coordinate) */

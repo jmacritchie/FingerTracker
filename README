@@ -1,13 +1,35 @@
-This program takes a video input and tracks markers of the hand using blob detection and correlation. 
-It assigns the detected blobs into two hand objects, and stores these in a gms file.
-
-In order to run this program the following libraries are required:
-libcv
-libcvaux
-libhighgui
-libcxcore
-
-cvblobslib_v6p1
+Following libraries are needed to compile this source code:
+ffmpeg
 libgms
+opencv libraries - currently using version 2.4.5. Install with ffmpeg support.
+cvblob library - currently using version 0.10.4
 
-The makefile then needs to be ammended to reflect the location of these last two libraries.
+Usage:
+     To track blobs in videos for two hands in a piano performance
+     
+       twobase <input video> <starting frame number> <gms output file> <frame offset> <output video> <background frame file> <threshold values file>
+      
+      - Input video, make sure that you have opencv installed with ffmpeg support, otherwise it will not be able to read the file. Also accepted formats are listed in opencv homepages.
+      - Starting frame number refers to which frame number you wish to start the program from AFTER this frame offset, and will consequently refer to the number of frame the program will write to in the gms file
+      - Enter a name for a gms structure to be output from the tracking program, or an existing gms structure that is to be replaced or appended.
+      - Frame offset is used in order to skip the video on until the pianists hands are in view 
+      - Output video name will create visualisations of each frame with the tracked points over the original video.
+      - Background frame file should be a .png file where the pianists' hands are not present. This is used for background subtraction.
+      - Threshold values file should be in .yml format (see opencv page for yml input and output) containing maximum and minimum values for H, S and V for both colours of makers. Red and green markers are used here (so each variable is determined as HRed, or SGreen etc), but any colours can be used as long as they provide a big enough contrast to the other information in the frame.
+       
+
+Instructions:
+       The program will present each frame onscreen, with the tracked markers and their estimated assignments into the various joint groups of each hand.
+       Make sure you are looking at the "hands" window to survey the marker assignments. If you agree with all the marker assignments, press 't' for true
+       If you wish to change one or more of the marker assignments, press 'f' for false. This will take you to the editing menu. 
+
+       Editing Menu:
+       Here you will be asked to choose which marker you want to edit based on:
+        - which hand ('l' left hand or 'r' right hand)
+        - which joint group ('m', 'p' or 'd')
+        - which finger ('a' for the thumb through to 'e' for the 5th finger, or 'z' for all fingers which have markers in this joint group)
+       You should then click on the correct points in the "corrections" window, and press Enter to register the new marker position(s).
+       You will keep being returned to the editing menu until you select 'q' for quit at the point when asked to choose a hand. 
+       Quitting will move the program onto the next frame.
+       
+       When you want to exit the program, make sure you are not in the editing menu, and press Esc. This will write the tracked information to your output gms file.

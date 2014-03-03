@@ -16,23 +16,14 @@
 using namespace std;
 
 
-/* create function creates new scene and allocates number of units and channels specified
-inputs: -const char* name = name of scene
-	-int nb_units = number of units needed
-	-int nb_channels = number of channels needed
-	-gms_channel_type_t info_type = type of data in buffer to be stored. options are GMS_POSITION or GMS_FORCE
-	-gms_dimension_t dimension = dimension!options are GMS_X, GMS_Y, GMS_Z, GMS_XY, GMS_XZ, GMS_YZ, GMS_XYZ
-*/
 gms_uct_struct_t * Gmswriter::create(const char *name, int nb_units, int nb_channels, gms_channel_type_t info_type ,gms_dimension_t dimension){
 
 //allocate a new and empty scene
-
 gms_uct_struct_t* uct;
 uct = gms_alloc_uct (name );
 
 //add unit to the scene
-//int gms_add_unit (gms_uct_struct_t * uct, const char *name)
-for (int i=0;i<nb_units;i++){				//Units will be hands hopefully!
+for (int i=0;i<nb_units;i++){//Units are each hand object
 	const char* UnitName;
 	if(i==0){
 		if (gms_add_unit (uct,"Unit 1 Hand 1")) {
@@ -46,9 +37,6 @@ for (int i=0;i<nb_units;i++){				//Units will be hands hopefully!
 		if (gms_add_unit (uct,"Unit 3 Hand 3")) {
 		cout<< "error adding unit "<<i<<"\n";}
 		}
-
-	
-
 
 	for (int j=0;j<nb_channels;j++){		//Channels will be fingers and each channel will have two tracks for x and y coordinates
 	const char* ChannelName;
@@ -127,22 +115,10 @@ for (int i=0;i<nb_units;i++){				//Units will be hands hopefully!
 		}
 
 	}
+  }
+  return (uct);
 }
-return (uct);
-}
 
-
-
-/* store function takes data given and stores it in particular gmsfile specified
-inputs:	-gms_uct_struct_t *uct = object (name defined in create function)
-	-gms_file_t *gmsfile
-	-const char *scenename = same as name given above
-	-const double *info = buffer of doubles used as information
-	-double frame_rate = frame rate of images
-	-gms_data_type_t data_type = encoding of the tracks.Options are GMS_FLOAT32, GMS_FLOAT64 or GMS_INT32
-	
-
-*/
 gms_storage_info_t Gmswriter::storenew(gms_uct_struct_t *uct,gms_file_t* gmsfile,const char *scenename,double *info_xy,double frame_rate, int nb_frames, gms_data_type_t data_type){
 
 	//set gms_storage_info struct information
@@ -155,14 +131,10 @@ gms_storage_info_t Gmswriter::storenew(gms_uct_struct_t *uct,gms_file_t* gmsfile
 
 
 	//create a gms file - these must be closed with gms_close()
-	//gms_file_t* gms_create (const char * filename, gms_uct_struct_t *  uct, const gms_storage_info_t * storage_info	) ;	
 	gmsfile = gms_create (scenename, uct, &storage_info) ;
 	gms_fcount_t nb_frames_to_write=nb_frames;
-	//create case switch for each data type
-	//write a given number of frames using a buffer of int32
-	//gms_fcount_t gms_write_int32 (gms_file_t * file, const int32_t * buf, gms_fcount_t  count ) ;
+
 	//write a given number of frames using a buffer of doubles
-	
 	gms_fcount_t nb_frames_written = gms_write_double (gmsfile, info_xy, nb_frames_to_write ) ;
 	cout << "Number of frames written is "<< nb_frames_written <<"\n";cout.flush();
 	
@@ -186,23 +158,18 @@ gms_storage_info_t Gmswriter::storeold(int startingframe,gms_uct_struct_t *uct,g
 	gms_uct_struct_t *uct2;
 	gms_file_t* hands;
 	//create a gms file - these must be closed with gms_close()
-	//gms_file_t* gms_create (const char * filename, gms_uct_struct_t *  uct, const gms_storage_info_t * storage_info	) ;	
 	if (hands = gms_open(scenename, NULL, GMS_READWRITE)) {cout<<"hooray! file is opened!\n";}
 	else {cout<<"boo!";} cout.flush();
 
 	gms_fcount_t nb_frames_to_write=nb_frames;
-	//create case switch for each data type
-	//write a given number of frames using a buffer of int32
-	//gms_fcount_t gms_write_int32 (gms_file_t * file, const int32_t * buf, gms_fcount_t  count ) ;
-	//write a given number of frames using a buffer of doubles
-	
+	//write a given number of frames using a buffer of doubles	
 	//move file pointer to startframe
 	gms_fcount_t offset = gms_seek_frame(hands, startingframe, SEEK_SET);
 	cout <<offset; cout.flush();
-	if(offset==startingframe) 
-	{cout<< "successfully moved file pointer\n"; cout.flush();
-	gms_fcount_t nb_frames_written = gms_write_double (hands, info_xy, nb_frames_to_write ) ;
-	cout << "Number of frames written is "<< nb_frames_written <<"\n";cout.flush();
+	if(offset==startingframe){ 
+	  cout<< "successfully moved file pointer\n"; cout.flush();
+	  gms_fcount_t nb_frames_written = gms_write_double (hands, info_xy, nb_frames_to_write ) ;
+	  cout << "Number of frames written is "<< nb_frames_written <<"\n";cout.flush();
 	}
 	else
 	{cout << "problem moving file pointer"; }
@@ -215,67 +182,6 @@ gms_storage_info_t Gmswriter::storeold(int startingframe,gms_uct_struct_t *uct,g
 
 
 //data function takes vector of cvpoints and converts to streams of doubles in such a way the info will be encoded as two tracks (x,y) per channel (each point). it takes the startframe that the program starts tracking so it can align the frames written in the gms file with the frames of the video - i.e. the first number of frames will be stored as 0 or NULL? until the track is initiated. eventually each unit will represent a hand each...
-// void Gmswriter::writedata(vector<PointVec > pointsStream, double *info_xy, int startframe_num){
-// 
-// 	int nb_channels = pointsStream.size();	//different channels correspond to different points being tracked
-// 	int size = pointsStream[0].size();
-// 
-// 	//makes start of gms tracks NULL as tracking hasnt been intiated yet. this helps to align the gms frames with the video frames
-// 	for (int z=0; z<startframe_num;z++){
-// 		for (int w=0; w<nb_channels; w++){
-// 			
-// 			int infoxy1 = (z*nb_channels*2) + (w*2);
-// 			int infoxy2 = (z*nb_channels*2) + (w*2)+1;
-// 
-// 			info_xy[infoxy1]= 0;	//significance of two is that its two tracks being stored - x&y
-// 			info_xy[infoxy2] = 0;
-// 			
-// 			}
-// 	}
-// 
-// 	//writing gms tracks for after tracking is initiated
-// 	for (int z=startframe_num; z<(size+startframe_num);z++){
-// 		for (int w=0; w<nb_channels; w++){
-// 			double x_coor = pointsStream[w][z].x;
-// 			double y_coor = pointsStream[w][z].y;
-// 			
-// 			int infoxy1 = (z*nb_channels*2) + (w*2);
-// 			int infoxy2 = (z*nb_channels*2) + (w*2)+1;
-// 			
-// 			info_xy[infoxy1]=x_coor;	//significance of two is that its two tracks being stored - x&y
-// 			info_xy[infoxy2] = y_coor;
-// 			
-// 			}
-// 	}
-// }
-// 
-// 
-// void Gmswriter::writedata(vector<PointVec > pointsStream, double *info_xy, vector<int> startframe_nums){
-// 
-// 	int nb_channels = pointsStream.size();	//different channels correspond to different points being tracked
-// 	int size = pointsStream[0].size();
-// 	
-// 	for (int z=0; z<size;z++){
-// 		for (int w=0; w<nb_channels; w++){
-// 
-// 			//number of channels will be the same as the size of vector startframe_nums
-// 			int start_number = startframe_nums[w];
-// 			double x_coor = pointsStream[w][z].x;
-// 			double y_coor = pointsStream[w][z].y;
-// 			
-// 			int infoxy1 = (z*nb_channels*2) + (w*2);
-// 			int infoxy2 = (z*nb_channels*2) + (w*2)+1;
-// 			
-// 			if(z>w)
-// 				{info_xy[infoxy1]=x_coor;	//significance of two is that its two tracks being stored - x&y
-// 				info_xy[infoxy2] = y_coor;}
-// 			else
-// 				{info_xy[infoxy1]=0;	//significance of two is that its two tracks being stored - x&y
-// 				info_xy[infoxy2] = 0;}
-// 			
-// 			}
-// 	}
-// }
 
 void Gmswriter::writedata(vector<PointVec > left, vector<PointVec > right,double *info_xy, int startframe_nums){
 
@@ -292,21 +198,13 @@ void Gmswriter::writedata(vector<PointVec > left, vector<PointVec > right,double
 	int frames = left[0].size(); cout<<"frames is "<<frames<<endl;
 	int marker = 0;
 	for(int f=0; f<frames;f++){
-
-
 		for(int u=0; u<nb_units;u++){
-
-
 			for(int ch=0; ch<nb_channels; ch++){
-
-
 				for(int tr=0; tr<tracks; tr++){
-
 				//what hand info is taken from depends on which unit it is u=0 is left hand u=1 is right hand
 				CvPoint coor = cvPoint(0,0);
 				int coor_part = 0;
 				if(u==0){
-					
 					coor = left[ch][f];
 				}
 				else{
@@ -321,68 +219,30 @@ void Gmswriter::writedata(vector<PointVec > left, vector<PointVec > right,double
 				}
 
 				//setting points to array
-				//int marker = (f*nb_units*nb_channels*tracks)+(u*nb_channels*tracks)+(ch*tracks)+tr;
 				info_xy[marker]=coor_part;
 				marker++;
-
 				}
-
-
 			}
-
-
 		}
-
-
 	}
-	
-/*cout<< " info is ";
-for (int y=0;y<200;y++){
-	cout<<info_xy[y]<<",";
-	//if(!y/2){cout<<"\t";}	
-}*/
-cout<<endl;
-
 }
 
-
-
-/*readdata - outputs details about the gms file
-inputs - uct - the structure of the file
-	storage_info - info like frame rate of file-  this has been created in Gmswriter::store
-
-*/
 void Gmswriter::readdata(gms_uct_struct_t *uct, gms_file_t * gms_file,const gms_storage_info_t storage_info){
 
-
-	//gms_file_t * gms_file = "handposition";
-	//void gms_dump_uct(const gms_uct_struct_t * uct)
 	gms_dump_uct(uct);
 	cout << "\n\n";
-
-	//void gms_dump_storage_info(const gms_storage_info_t * storage_info ) 
 	gms_dump_storage_info(&storage_info );
 	cout << "\n\n";
-
 	//for a better read out of a gms file use program gmsread.
-	//see gmsread.cpp stored in /opencvstuff/motion_track/blobby/occlusion/
-
 }
 
 
-/*
- read _frames function reads the already created gmsfile titled file_name from frame position start to frame position end and prints out the value of each track per frame.
-*/
 void Gmswriter::read_frames(int start, int end, char * file_name){
 
 	int frames2read = end-start;
-	//cout<<"frames to read is "<<frames2read<<endl;
 	gms_uct_struct_t * uct = gms_alloc_uct("no name");
 	gms_file_t * gms_file = gms_open(file_name, uct, GMS_READ);
-	
-	//gms_dump_uct(uct);
-	//gms_dump_storage_info(gms_get_storage_info(gms_file))c 
-	
+		
 	gms_fcount_t frames = gms_get_nb_frames(gms_file);
 	int nb_tracks = gms_get_storage_info(gms_file)->nb_tracks_per_frame;
 
@@ -391,11 +251,7 @@ void Gmswriter::read_frames(int start, int end, char * file_name){
 	if(gms_seek_frame(gms_file, start, SEEK_SET) == -1) {
          	printf("%s\n", gms_strerror());
         	 gms_close(gms_file);
-        	//return EXIT_FAILURE;
-     	}
-
-	
-
+        }
 
 	//runs through each tracks positional data for all frames recorded e.g. 1st track frame 0 - 30, 2nd track frame 0-30. newlines are put in so that gnuplot "lifts the pen" between different tracks' data.
 	ofstream fout("JChan_finale_LHwristL_3Db.dat");
@@ -405,59 +261,20 @@ void Gmswriter::read_frames(int start, int end, char * file_name){
 		for(int i = 0; i < frames2read; i++) {
         	 gms_fcount_t  nb_frames_read;
         	 nb_frames_read = gms_read_double(gms_file, buf_read, 1);
- 		//cout<<"frames is "<<nb_frames_read<<endl;
-// 		for(int change=0; change<200; change++){
-// 		cout<< buf_read[change]<<",";
-// 		} cout<<endl;
-		//cout<<buf_read[(i*nb_tracks-1)+k]<<" "<<buf_read[(i*nb_tracks-1)+k-1]<<" ";
             		 for(int j = k; j <(k+1); j++){
-				//printf("   track %d = %g\n", j, buf_read[j]);
-				//print out to .dat file for plotting
-				//int offset = i*(nb_tracks-1); //DOESNT NEED FRAME OFFSET AS IT ONLY READS ONE AT A TIME!!!!
 				int offset = 0;
-				fout<<i <<"\t"<<buf_read[j-2] <<"\t" << buf_read[j-1]<<"\t" << buf_read[j];
-				//cout<<offset+j-1<<" "<<offset+j<<" ";//for(int trye = 0; trye<3; trye++){fout<<buf_read[trye];}
-		
+				fout<<i <<"\t"<<buf_read[j-2] <<"\t" << buf_read[j-1]<<"\t" << buf_read[j];		
             		 } fout<<"\n";
         	 }k++; fout<<endl<<endl;
-	
 	}fout.close();
 
-
-	
-	/*string outfilename = "graph";
-	FILE *gnu=popen( "/usr/bin/gnuplot", "w" );
-	//fprintf(gnu,"set terminal png\n");
-	//fprintf(gnu,"set pm3d; set palette\n");
-	fprintf(gnu,"set view map\n");
-	//fprintf(gnu," set terminal png\n set output \"graph.png\" \n plot 'positions.dat' using 1:2 with lines\n");
-	fprintf(gnu,"splot 'positions.dat' with linespoints palette\n");
-	fprintf(gnu,"set term postscript eps enhanced colour\n");
-	fprintf(gnu,"set output \"colourgraph.eps\" \n");
-	fprintf(gnu,"replot\n");
-
-	while(1);*/
-	
-	
-/*
-	GnuStream gnu;
-	gnu << "set terminal png\n";
-      	gnu << "set output \"" << outfilename << ".png\"\n";
-	gnu << "plot '"<< "positions.dat" << "' using 1:2 with lines\n";*/
 	gms_close(gms_file);
-
-
 }
-
-/*
-read_all_frames function reads the already created gms file file_name and prints out all the values of each track per frame. storage info is also printed out to enable jumping between different channels (using the offsets)
-
-*/
 
 void Gmswriter::read_velocity(int start, int end, char * file_name){
 
 	int frames2read = end-start;
-	double duration = 0.01818182;
+	double duration = 0.01818182; //this value should be changed depending on the frame rate
 
 	gms_uct_struct_t * uct = gms_alloc_uct("no name");
 	gms_file_t * gms_file = gms_open(file_name, uct, GMS_READ);
@@ -501,10 +318,8 @@ void Gmswriter::read_velocity(int start, int end, char * file_name){
 	//for each frame, calculate the velocity and put to the fstream
 	if(i>0){
 		double velocity = calc_vel(first_pos, second_pos, frametime);
-		//cout<<"vel "<<frametime<<endl;
 		fout << i << "\t" << velocity<<endl;
 		}	
-
 	} 
 
 	fout.close();
@@ -525,7 +340,7 @@ void Gmswriter::read_velocity(int start, int end, char * file_name){
 void Gmswriter::read_movements(int start, int end, char * file_name){
 
 	int frames2read = end-start;
-	double duration = 0.04; //0.01818182 is 1/55 for 55 frames per second
+	double duration = 0.04; //again this should be changed depending on frame rate
 
 	gms_uct_struct_t * uct = gms_alloc_uct("no name");
 	gms_file_t * gms_file = gms_open(file_name, uct, GMS_READ);
@@ -593,8 +408,6 @@ void Gmswriter::read_movements(int start, int end, char * file_name){
 void Gmswriter::read_curves(int start, int end, char *file_name){
 //plotting the relative curvature between the different parts of whichfinger
 	int frames2read = end-start;
-	//double duration = 0.01818182; //is 1/55 for 55 frames per second
-
 	gms_uct_struct_t * uct = gms_alloc_uct("no name");
 	gms_file_t * gms_file = gms_open(file_name, uct, GMS_READ);
 	
@@ -687,12 +500,9 @@ void Gmswriter::read_all_frames(char *file_name){
         if(nb_frames_read != 1) {
              printf("ERROR reading frame %d\n", i);
          } else {
-             //printf("frame %d\n", i);
              for(int j = 0; j < (nb_tracks-1); j++){
-                 //printf("%g\t", buf_read[j]);
 		fout << buf_read[j] << "\t" ;
              }
-		//printf("%g\n", buf_read[nb_tracks-1] );
 		fout << buf_read[nb_tracks-1] << endl;
          }
 	}
@@ -738,10 +548,3 @@ GnuStream::~GnuStream(){
     fclose( gnuplot );
   }
 }
-
-
-
-
-
-
-

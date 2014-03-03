@@ -2,63 +2,48 @@
 // Include files
 #include <stdlib.h>
 #include <stdio.h>
-#include <cv.h>
-#include <cxcore.h>
-#include <highgui.h>
 #include <vector>
-#include <Blob.h>
-#include <BlobResult.h>
 
+#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
+
+#include <cvblob.h>
 #include "blobby.h"
 
+using namespace cv;
+using namespace cvb;
 using namespace std;
 
-CoorVec Blobby::detect(IplImage *img, CoorVec hands, int &numblobs)
+
+CoorVec Blobby::detect(IplImage *orig_img, IplImage *img, CoorVec hands, int &numblobs)
 {
 	//clear hands vector
 	hands.clear();
-	// delcare a set of blob results
-	CBlobResult blobs;
-	// detect the blobs from the image, with no mask, using a threshold of 100
-	blobs = CBlobResult( img, NULL, 80, false );
-	//filter blobs so only those with an area between 2 and 150, and with length below 50 are left
-	blobs.Filter( blobs, B_INCLUDE, CBlobGetArea(), B_INSIDE,2,150 );
-	blobs.Filter( blobs, B_INCLUDE, CBlobGetLength(), B_INSIDE,0,50 );
-	
-	
+	// delcare a set of blob results and image for blobs to be drawn onto
+	CvBlobs blobs;
+	IplImage *labelImg = cvCreateImage(cvGetSize(img),IPL_DEPTH_LABEL, 1);
+	// detect the blobs from the image
+	unsigned int result = cvLabel(img, labelImg, blobs);
+	//filter blobs so only those with an area between 7 and 100 are left
+	cvFilterByArea(blobs, 7, 100);
+	vector < pair<CvLabel, CvBlob*> > redbloblist;
+	copy (blobs.begin(),blobs.end(), back_inserter(redbloblist));
+	for (int i=0; i<redbloblist.size();i++){
+	  cout << "[" <<redbloblist[i].first <<"] -> " << (*redbloblist[i].second) <<endl;
+	}
 	// mark the blobs on the image
-	int i;
-	// declare a single blob
-	CBlob Blob;
-	int iMaxx, iMinx, iMaxy, iMiny, iMeanx, iMeany;
+	cvRenderBlobs (labelImg, blobs, orig_img, orig_img);
 	
-	// For each blob detected, the coordinates of the centre are calculated and registered into the vector hands, as well as being marked on the image.
-	numblobs = blobs.GetNumBlobs();
-	for  (i=0; i<blobs.GetNumBlobs(); ++i)
+	// For each blob detected, the centroid is pushed back into vector hands
+	numblobs = blobs.size()+1;
+	for  (CvBlobs::const_iterator it=blobs.begin(); it!=blobs.end(); ++it)
 	{
-		// get the blob info
-		Blob = blobs.GetBlob(i);
-		// get max, and min co-ordinates
-		iMaxx=(int)Blob.MaxX();
-		iMinx=(int)Blob.MinX();
-		iMaxy=(int)Blob.MaxY();
-		iMiny=(int)Blob.MinY();
-		// find the average of the blob (i.e. estimate its centre)
-		iMeanx=(iMinx+iMaxx)/2;
-		iMeany=(iMiny+iMaxy)/2;
-		// mark centre on the image
-		cvLine( img, cvPoint(iMeanx, iMeany), cvPoint(iMeanx, iMeany), CV_RGB(50, 50 , 50), 4, 8, 0 );
-		// mark box around blob on the image
-		cvRectangle( img, cvPoint(iMinx , iMiny ), cvPoint ( iMaxx, iMaxy ), CV_RGB(150, 150, 150), 1, 8, 0);
+		int iMeanx = it->second->centroid.x;
+		int iMeany = it->second->centroid.y;
 		//add the centre of the blob to the vector hands
 		CvPoint centrepoint = cvPoint(iMeanx,iMeany);
 		hands.push_back(centrepoint);
-
 	}
-
-	// display the image
-	cvNamedWindow("image",1);
-	cvShowImage("image", img);
 	cvZero(img);
 	return (hands);
 }

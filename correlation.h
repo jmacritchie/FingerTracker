@@ -11,9 +11,9 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include <ctype.h>
-#include <cv.h>
-#include <highgui.h>
 #include <math.h>
+#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
 
 /*! \def DEPTH_8_BIT 
  * \brief depth in bits of the grayscale images
@@ -60,14 +60,14 @@
  */
 namespace Correlation{
 
-// creates search template block around point pt and mask for the search area to be put into the max_correlation function to perform correlation
-void search_and_template(CvPoint pt, IplImage *picture,IplImage *corrblock, IplImage *mask);
+  // creates search template block around point pt and mask for the search area to be put into the max_correlation function to perform correlation
+  void search_and_template(CvPoint pt, IplImage *picture,IplImage *corrblock, IplImage *mask);
 
-//recalculates just mask search area
-void masktemplate(CvPoint pt,IplImage *picture, IplImage *mask);
+  //recalculates just mask search area
+  void masktemplate(CvPoint pt,IplImage *picture, IplImage *mask);
 
-//finds the coordinate in the new image with the highest correlation to the feature point point within the old image
-CvPoint max_correlation(CvPoint point,IplImage *corrblock, IplImage *maskarea, IplImage *frame);
+  //finds the coordinate in the new image with the highest correlation to the feature point point within the old image
+  CvPoint max_correlation(CvPoint point,IplImage *corrblock, IplImage *maskarea, IplImage *frame);
 
 }
 

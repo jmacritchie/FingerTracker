@@ -2,9 +2,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 // OpenCV
-#include <cv.h>
-#include <cxcore.h>
-#include <highgui.h>
+#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
 #include <vector>
 #include "fullhand.h"
 #include "transform.h"
@@ -13,6 +12,7 @@
 #include <stdio.h>
 #include <math.h>
 using namespace std;
+using namespace cv;
 
 typedef std::vector <CvPoint> CoorVec;
 typedef std::vector <CvPoint>::iterator CoorVecIt;
@@ -141,8 +141,6 @@ Fullhand Transform::find_fingers(int fingerNo, int number_detected)
 	//calculate average scaling
 	double avg_scale = (scale_thumb + scale_fst + scale_scnd + scale_thrd + scale_pinkie + scale_thumb_b + scale_fst_b + scale_scnd_b + scale_thrd_b + scale_pinkie_b + scale_fst_c + scale_scnd_c + scale_thrd_c + scale_pinkie_c)/number_detected;
 	double avg_rot = (rot_thumb + rot_fst + rot_scnd + rot_thrd + rot_pinkie + rot_thumb_b + rot_fst_b + rot_scnd_b + rot_thrd_b + rot_pinkie_b + rot_fst_c + rot_scnd_c + rot_thrd_c + rot_pinkie_c)/number_detected;
-
-	//cout<< "Average scale and rotation "<<avg_scale<<"\t"<<avg_rot<<endl;
 
 	//apply scaling and rotation to provide estimated position of lost point
 	double new_dist = last_dist * avg_scale;
@@ -282,9 +280,6 @@ void Transform::calc_rotation(CvPoint current, CvPoint next, bool occ, bool same
 		else
 			{scale = dist_next/dist_current; }
 		}
-
-
-
 }
 
 Transform::~Transform()

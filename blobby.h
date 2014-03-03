@@ -11,15 +11,16 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include <ctype.h>
-#include <cv.h>
-#include <highgui.h>
-#include <cxcore.h>
 #include <math.h>
 #include <vector>
 
-#include <Blob.h>
-#include <BlobResult.h>
+#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
 
+#include <cvblob.h>
+
+using namespace cv;
+using namespace cvb;
 using namespace std;
 
 /*! \brief A vector containing CvPoint structures (an x,y coordinate)*/
@@ -39,7 +40,7 @@ typedef std::vector<CvPoint>::iterator CoorVecIt;
 */
 namespace Blobby{
 
-CoorVec detect(IplImage *img, CoorVec hands, int &numblobs);
+  CoorVec detect(IplImage *orig_img, IplImage *img, CoorVec hands, int &numblobs);
 
 }
 

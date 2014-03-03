@@ -6,10 +6,18 @@ SRCS := vid_corr.cpp blobby.cpp fullhand.cpp correlation.cpp transform.cpp gmswr
 OBJS := $(SRCS:.cpp=.o)
 
 CFLAGS +=-g 
-INCLUDES +=-I/usr/include/opencv -I/home/jenni/cvblobslib_v6p1/ 
+INCLUDES +=-I/usr/local/include/opencv2 -I/usr/local/include/opencv -I/home/jenni/cvblobslib_v6p1/ 
 LDFLAGS +=-L/home/jenni/cvblobslib_v6p1/ -L/usr/local/lib
 	
-LIBS += -lm -lcv -lcvaux -lhighgui -lgms -lcxcore -lblob 
+
+
+
+
+
+
+
+LIBS += -lopencv_core -lopencv_imgproc -lopencv_calib3d -lopencv_video -lopencv_features2d -lopencv_ml -lopencv_highgui -lopencv_objdetect -lopencv_contrib -lopencv_legacy -lgms -lblob
+ 
 
 $(PROGNAME): $(OBJS) 
 	$(LINKCC) $(CFLAGS) -o $@ $(OBJS) $(INCLUDES) $(LDFLAGS) $(LIBS)
