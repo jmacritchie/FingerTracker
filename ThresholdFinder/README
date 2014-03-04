@@ -1,0 +1,6 @@
+Threshold Finder program
+By taking in a test frame and background image frame, this program allows the user to manipulate thresholds of the H, S and V channels in order to segment markers as best as possible. The program outputs a .yml file that lists these threshold values.
+
+Requirements: 
+  opencv libraries
+  cvblob library
